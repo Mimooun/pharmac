@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/products.css'
-import image from '../images/01.jpg'
+import image from '../assets/images/01.jpg'
 function Products() {
   return (
     <div className='products'>
