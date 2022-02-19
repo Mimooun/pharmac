@@ -13,7 +13,7 @@ function Navbar() {
                         <ul>
                             <li>Home</li>
                             <li>Shop</li>
-                            <li>Prodacts</li>
+                            <li>Products</li>
                             <li>Pages</li>
                             <li>Blog</li>
                             
