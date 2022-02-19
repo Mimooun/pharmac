@@ -1,5 +1,5 @@
 .home {
-    background-image: url('../assets/images/slide.jpg');
+    background-image: url('../assets/images/slide1.jpg');
     width: 100%;
     height: 80vh;
     margin-top: 85px;
@@ -7,26 +7,26 @@
 }
 
 .home .container .text .text1{
-    font-family:"Londrina Solid",cursive;
+    font-family:"Roboto",sans-serif;
     font-weight:800;
-    font-size: 80px;
+    font-size: 60px;
     color: #3ECFA3;
     padding-top:150px;
     margin-top: 30px;
     text-align: center;
 }
 .home .container .text .text2{
-    font-family: "Londrina Solid",cursive;
-    color: #fff;
-    font-weight: 300;
+    font-family: "Roboto ",sans-serif;
+    color: #3ECFA3;
+    font-weight: 600;
     font-size: 20px;
     margin-top: 30px;
     text-align: center;
 }
 .home .container .text .text3{
-    font-family: "Londrina Solid",cursive;
-    color: #fff;
-    font-weight: 300;
+    font-family: "Roboto",sans-serif;
+    color: #3ECFA3;
+    font-weight: 600;
     margin-top: 30px;
     text-align: center;
 }
@@ -35,11 +35,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #3ECFA3;
+    font-size : 17px;
     background-color:transparent;
     padding: 20px 50px;
-    border:2px solid white;
-    border-radius: 30px;
+    border:2px solid #3ECFA3;
+    border-radius: 17px;
     margin: auto;
     margin-top: 30px;
     
@@ -47,6 +48,7 @@
 .home .container button:hover{
     background-color: #3ECFA3;
     border:2px solid transparent;
+    color : white;
     cursor: pointer;
 }
 .home .container .wraper{

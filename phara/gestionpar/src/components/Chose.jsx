@@ -9,7 +9,7 @@ function Chose() {
     <section className="chose">
       <div className="max-width">
         <div className="container">
-          <div className="tit">why Chose</div>
+          <div className="tit">Why choose us</div>
         </div>
         <div className="cards">
           <div className="card">
