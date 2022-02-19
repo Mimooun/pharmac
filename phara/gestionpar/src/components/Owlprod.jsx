@@ -3,13 +3,13 @@ import OwlCarousel from "react-owl-carousel2";
 import "react-owl-carousel2/lib/styles.css";
 import "react-owl-carousel2/src/owl.theme.default.css";
 import "../styles/owlprod.css";
-import img1 from '../images/25.jpg'
-import img2 from '../images/24.jpg'
-import img3 from '../images/23.jpg'
-import img4 from '../images/22.jpg'
-import img5 from '../images/21.jpg'
-import img6 from '../images/20.jpg'
-import img7 from '../images/19.jpg'
+import img1 from '../assets/images/25.jpg'
+import img2 from '../assets/images/24.jpg'
+import img3 from '../assets/images/23.jpg'
+import img4 from '../assets/images/22.jpg'
+import img5 from '../assets/images/21.jpg'
+import img6 from '../assets/images/20.jpg'
+import img7 from '../assets/images/19.jpg'
 
 function Owlprod() {
   const options = {

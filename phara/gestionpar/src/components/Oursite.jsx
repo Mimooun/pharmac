@@ -1,8 +1,8 @@
 import React from 'react'
  import '../styles/oursite.css'
- import image1 from '../images/user.png'
- import image2 from '../images/bulb.png'
- import image3 from '../images/telegram.png'
+ import image1 from '../assets/images/user.png'
+ import image2 from '../assets/images/bulb.png'
+ import image3 from '../assets/images/telegram.png'
 
 function Oursite() {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/experience.css";
+import "../styles/experience.css"; 
 function Experience() {
   return (
     <section className='experience'>
