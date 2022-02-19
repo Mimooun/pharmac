@@ -7,6 +7,7 @@ import Products from './component/Products';
 import Owlprod from './component/Owlprod';
 import Chose from './component/Chose';
 import Experience from './component/Experience';
+import Pipeline from './component/Pipeline';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
       <Owlprod></Owlprod>
       <Chose></Chose>
       <Experience></Experience>
+      <Pipeline></Pipeline>
     </div>
   );
 }

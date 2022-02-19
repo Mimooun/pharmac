@@ -3,6 +3,7 @@ import '../styles/home.css';
 function Home() {
     return (
         <section className="home">
+            <div className="overly"></div>
             <div className="max-width">
                 <div className="container">
                     <div className="text">
