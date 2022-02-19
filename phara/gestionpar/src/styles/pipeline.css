@@ -1,6 +1,6 @@
 .pipeline {
     position: relative;
-    background-image: url('../images/pipeline.png');
+    background-image: url('../assets/images/pipeline.png');
     background-color: #11333a;
     background-position: center;
     background-size: cover;
@@ -29,13 +29,13 @@
     border-color: #3ECFA3;
     color: #3ECFA3;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 28px;
     margin-top: 30px;
 }
 .pipeline .container .wrap .right .text2{
     color: #919899;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 200;
     line-height: 19px;
     margin-top: 20px;
@@ -66,7 +66,7 @@ color : white ;
 
 .pipeline .container .wrap .right .right-btn .cards .number{
     color: black;
-    font-size: 30px;
+    font-size: 36px;
     font-weight :600;
     font-family: 'Roboto' , sans-serif;
     padding : 7px;
@@ -74,7 +74,7 @@ color : white ;
 }
 .pipeline .container .wrap .right .right-btn .cards .text{
     color: black;
-    font-size : 17px ;
+    font-size : 19px ;
     font-weight : 400 ;
     font-family: 'Roboto' , sans-serif;
 

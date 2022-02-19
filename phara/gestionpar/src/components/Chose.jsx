@@ -4,6 +4,7 @@ import img1 from "../assets/images/diamant.png";
 import img2 from "../assets/images/cloud.png";
 import img3 from "../assets/images/satisfaction.png";
 import img4 from "../assets/images/price-tag.png";
+import img5 from '../assets/images/creative.png'
 function Chose() {
   return (
     <section className="chose">
@@ -59,10 +60,10 @@ function Chose() {
           </div>
           <div className="card">
             <div className="img">
-              <img src={img1} alt="" />
+              <img src={img5} alt="" />
             </div>
             <div className="text">
-              <div className="title"> Company founded </div>
+              <div className="title"> Creativity</div>
               <div className="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Laboriosam. </div>
             </div>
           </div>

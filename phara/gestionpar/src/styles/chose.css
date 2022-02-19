@@ -18,21 +18,26 @@
     gap: 25px;
     margin-top: 30px;
 }
+
 .chose .card .img img{
     display: flex;
     justify-content: center;
+    margin: auto;
     align-items: center;
     background-color: #3ECFA3;
     padding: 10px 15px;
+    width: 45%;
     border-radius: 10px;
+
 }
 .chose .card:hover img {
     background-color: #3ef5a3;
     cursor: pointer;
 }
 .chose .card .img img{
-    width: 60px;
+    width : 75px ;
 }
+
 .chose .cards .card{
     display: flex;
     justify-content:center;
@@ -41,10 +46,13 @@
     border: 1px ;
     border-radius: 5px;
     padding: 20px 40px;
-    gap: 20px;
+    gap : 15px 
 }
 .chose .cards .card .text .title{
-    font-size: 18px;
+    font-size: 16px;
     color: black;
 
+}
+.chose .cards .card .text .txt {
+    font-size: 13px;
 }

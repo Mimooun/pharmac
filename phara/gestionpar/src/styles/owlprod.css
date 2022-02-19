@@ -1,32 +1,39 @@
 .testimonial{
     width: 100%;
-    height: 60vh;
+    height: 90vh;
     margin-top: 100px;
+    position: relative;
     background-image: url('../assets/images/features.jpg');
-    
+    background-attachment: fixed;
+   
 }
 .testimonial .img-testimonial img{
 width : 100% ;
 background-color: #11333a;
+display: block;
+margin: auto;
 }
 .testimonial .overlay{
     width: 100%;
-    background-image: linear-gradient(); 
+    height : 100% ;
+    background-color:#11333ab2 ;
 }
+
+
 .testimonial .container .contenu{
     width: 100%;
-    height: 100%;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin-top: 60px;
+    margin : auto ;  
+    margin-top: 50%;
 }
 .testimonial .container .contenu img{
     width: 300px;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
 
 }
 .testimonial .container .contenu .domaine{
