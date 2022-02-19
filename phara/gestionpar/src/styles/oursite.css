@@ -1,0 +1,77 @@
+.our  .container .title{
+    font-family: "Londrina Solid",cursive;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.our  .container .text{
+    font-family: "Londrina Solid",cursive;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+}
+.our .cards{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.our .cards .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding:40px 30px;
+}
+.our .cards .card:hover{
+    border: 2px dashed #3ECFA3;
+}
+.our .cards .card img{
+    width: 100px;
+}
+.our .cards .card .text .title{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    color: #000;
+    font-family: "IBM Plex Sans",sans-serif;
+    margin-top: 30px;
+}
+.our .cards .card .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.our .cards .card .text button{
+    margin-top: 30px;
+    padding: 10px 10px;
+    color: white;
+    background-color: #3ECFA3;
+    border-radius: 20px;
+    border: #3ECFA3;
+    width: 130px;
+}
+.our .cards .card .text button:hover{
+    background-color: white;
+    color: #3ECFA3;
+    border:1.5px solid #3ECFA3;
+    cursor: pointer;
+}
+/*responsive*/
+@media(max-width: 600px) {
+    .our .cards{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr ;
+        grid-template-columns: 1fr;
+
+    }
+}
