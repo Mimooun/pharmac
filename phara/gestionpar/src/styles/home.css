@@ -1,14 +1,9 @@
 .home {
-<<<<<<< HEAD
     position: relative;
-    background-image: url('../images/slide.jpg');
-=======
     background-image: url('../assets/images/slide1.jpg');
->>>>>>> c7e74884fdffa6f3dc1db96791200c74b1d0c0bf
     width: 100%;
     height: 80vh;
     margin-top: 85px;
-    opacity: 0.9;
 }
 .home .container{
     z-index: 10;
