@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@300&family=Roboto:wght@300;500&display=swap');
+
+.contact .left img {
+    width : 75% ;
+    margin-left: 30px ;
+}
+.contact .title {
+    font-size: 30px ;
+    font-family: 'Roboto' , sans-serif;
+    text-align: center;
+    margin-bottom: 30px ;
+    padding: 15px ;
+}
+.contact .cnt {
+    display : grid ;
+    grid-template-columns: 1fr 1fr ;
+
+}
+.contact .right .inputs {
+    display : flex ;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;   
+    padding : 20px ;
+}
+
+.contact .right .subtitle {
+    text-align: center;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 20px;
+    font-weight : 500;
+}
+
+.contact .right .inputs .MuiTextField-root{
+    width : 55% ;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+    margin-bottom: 20px ;
+}
+/* Responsive */ 
+
+@media (max-width : 768px) {
+    .contact .cnt { 
+        display : grid ;
+        grid-template-columns: 1fr ;
+        gap : 20px ;
+    }
+}

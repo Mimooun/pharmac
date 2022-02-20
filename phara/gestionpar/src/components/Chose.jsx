@@ -19,7 +19,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title"> Newest Technologies  </div>
-              <div className="txt">Consetetur sadipscing elitr diam nonumy eirmod tempor invidunt. </div>
+              <div className="txt">  Consetetur sadipscing elitr diam nonumy eirmod tempor invidunt. </div>
             </div>
           </div>
           <div className="card">
@@ -28,7 +28,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title">Taking Care of Nature </div>
-              <div className="txt">Ut labore et dolore magna aliquyam erat sed diam voluptua </div>
+              <div className="txt">  Ut labore et dolore magna aliquyam erat sed diam voluptua </div>
             </div>
           </div>
           <div className="card">
@@ -37,7 +37,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title">Fair Prices</div>
-              <div className="txt">At vero eos et accusam ejusto duo dolores et ea rebum clita gubergren.</div>
+              <div className="txt">  At vero eos et accusam ejusto duo dolores et ea rebum clita gubergren.</div>
             </div>
           </div>
           <div className="card">
@@ -46,7 +46,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title"> High Satisfaction  </div>
-              <div className="txt">Nosea takimata sanctus est lorem ipsum dolor sit amet. </div>
+              <div className="txt">  Nosea takimata sanctus est lorem ipsum dolor sit amet. </div>
             </div>
           </div>
           <div className="card">
@@ -55,7 +55,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title"> Company founded </div>
-              <div className="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Laboriosam. </div>
+              <div className="txt">  Lorem ipsum dolor, sit amet consectetur adipisicing elit.Laboriosam. </div>
             </div>
           </div>
           <div className="card">
@@ -64,7 +64,7 @@ function Chose() {
             </div>
             <div className="text">
               <div className="title"> Creativity</div>
-              <div className="txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Laboriosam. </div>
+              <div className="txt">  Lorem ipsum dolor, sit amet consectetur adipisicing elit.Laboriosam. </div>
             </div>
           </div>
         </div>

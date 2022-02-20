@@ -1,77 +1,136 @@
-.our  .container .title{
-    font-family: "Londrina Solid",cursive;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 30px;
-}
-.our  .container .text{
-    font-family: "Londrina Solid",cursive;
-    font-weight: 400;
-    color: #000;
-    text-transform: uppercase;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 30px;
-}
-.our .cards{
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 25px;
-}
-.our .cards .card{
+.cards {
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .cards .cards-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 40px 0;
+  }
+  .title {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding:40px 30px;
-}
-.our .cards .card:hover{
-    border: 2px dashed #3ECFA3;
-}
-.our .cards .card img{
-    width: 100px;
-}
-.our .cards .card .text .title{
+    padding: 10px;
+  
+  }
+  .title h1 {
     text-align: center;
-    font-size: 14px;
-    font-weight: 100;
-    color: #000;
-    font-family: "IBM Plex Sans",sans-serif;
-    margin-top: 30px;
-}
-.our .cards .card .btn{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.our .cards .card .text button{
-    margin-top: 30px;
-    padding: 10px 10px;
-    color: white;
-    background-color: #3ECFA3;
-    border-radius: 20px;
-    border: #3ECFA3;
-    width: 130px;
-}
-.our .cards .card .text button:hover{
-    background-color: white;
-    color: #3ECFA3;
-    border:1.5px solid #3ECFA3;
-    cursor: pointer;
-}
-/*responsive*/
-@media(max-width: 600px) {
-    .our .cards{
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr ;
-        grid-template-columns: 1fr;
-
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+    position: relative;
+    font-size: 32px;
+  }
+  
+  .cards-content .card {
+    position: relative;
+      width: 300px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      display: flex;
+      padding : 15px;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+  }
+  
+  .card .container {
+    position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: 0.5s;
+  }
+  .cards-content .card:hover .container {
+    transform: translateY(-20px);
+  
+  }
+  .container .img-container {
+    position: relative;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+  }
+  .container .img-container img {
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+  }
+  .container .txt-container h2 {
+    color: rgb(126, 126, 126);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      margin: 20px 0 10px;
+      line-height: 1.1em;
+  }
+  .container .txt-container p {
+      bottom: 50px;
+      font-size: 14px;
+      color : rgb(70, 70, 70) ;
+      display: flex;
+      text-align: center;
+  }
+  .cards-content .card:hover {
+    background: radial-gradient(circle, rgba(62,207,163,1) 0%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%); 
+    cursor : pointer ;
+    color : rgb(255, 255, 255);
+    transition: 0.4s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    .cards .cards-content {
+      display: grid;
+      padding: 10px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
-}
+    .cards-content .title {
+      padding: 10px ;
+      margin-bottom: 0 ;
+      font-size: 27px ;
+    }
+    .cards .cards-content .card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .cards .cards-content .card .container .img-container {
+      width: 45%;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 5px;
+    }
+    .container h2 {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+    .container p {
+      font-size: 14px;
+    }
+  
+    .cards .cards-content .card .container .img-container img {
+      width: 100%;
+    }
+  }

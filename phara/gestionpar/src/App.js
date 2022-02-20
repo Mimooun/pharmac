@@ -9,6 +9,8 @@ import Owlprod from './components/Owlprod';
 import Chose from './components/Chose';
 import Experience from './components/Experience';
 import Pipeline from './components/Pipeline';
+import Testimonial from './components/Testimonial';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Chose></Chose>
       <Experience></Experience>
       <Pipeline></Pipeline>
+      <Testimonial></Testimonial>
+      <Footer></Footer>
 
     </div>
   );
