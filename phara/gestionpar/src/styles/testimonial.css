@@ -14,10 +14,12 @@
     margin-top: 150px;
     border: 1px solid white;
     padding: 80px 40px;
+    width : 77%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 7px;
 }
 
 .testimonial .container .customer .img-customer {

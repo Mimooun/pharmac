@@ -1,49 +1,50 @@
-.footer{
-    background-color: #3ECFA3;
-    margin-top: 50px;
+.footer {
+  background-color: #3ecfa3;
+  margin-top: 50px;
+  padding: 10px;
 }
-.footer .container .footer-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.footer .container .footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.footer img{
-    width: 100px;
-    margin-top: 20px;
+.footer img {
+  width: 100px;
+  margin-top: 20px;
 }
-.footer .container .footer-content .social-media svg{
-    font-size: 30px;
-    margin-left: 15px;
-    color: white;
-    margin-top: 20px;
+.footer .container .footer-content .social-media svg {
+  font-size: 30px;
+  margin-left: 15px;
+  color: white;
+  margin-top: 20px;
 }
-.footer .container .footer-content .social-media svg:nth-child(1):hover{
-    color: #333;
-    cursor: pointer;
+.footer .container .footer-content .social-media svg:nth-child(1):hover {
+  color: #333;
+  cursor: pointer;
 }
-.footer .container .footer-content .social-media svg:nth-child(2):hover{
-    color: #1DA1F2;
-    cursor: pointer;
+.footer .container .footer-content .social-media svg:nth-child(2):hover {
+  color: #1da1f2;
+  cursor: pointer;
 }
-.footer .container .footer-content .social-media svg:nth-child(3):hover{
-    color: #4267B2;
-    cursor: pointer;
+.footer .container .footer-content .social-media svg:nth-child(3):hover {
+  color: #4267b2;
+  cursor: pointer;
 }
-.footer .container .footer-content .social-media svg:nth-child(4):hover{
-    color: #ff0000;
-    cursor: pointer;
+.footer .container .footer-content .social-media svg:nth-child(4):hover {
+  color: #ff0000;
+  cursor: pointer;
 }
-.footer .container .footer-content .text{
-    color: white;
-    margin-top: 20px;
-    font-family: "Hind", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+.footer .container .footer-content .text {
+  color: white;
+  margin-top: 20px;
+  font-family: "Hind", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 /*responsive*/
-@media(max-width: 600px) {
-    .footer .container .footer-content .text{
-        font-size: 14px;
-    }
+@media (max-width: 600px) {
+  .footer .container .footer-content .text {
+    font-size: 14px;
+  }
 }
