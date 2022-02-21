@@ -1,8 +1,8 @@
 .testimonial{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     margin-top: 10px;
-    background-image: url('../assets/images/s2.jpeg');
+    background-image: url('../assets/images/features.jpg');
     
 }
 .testimonial .img-testimonial img{
@@ -11,7 +11,7 @@ width : 30% ;
 .testimonial .overlay{
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(62,207,163,1) 0%, rgba(255,255,255,0.48501407398897056) 100%, rgba(255,255,255,0) 100%); 
+    background-color : #0000006c;
 }
 .testimonial .container .contenu{
     width: 100%;
