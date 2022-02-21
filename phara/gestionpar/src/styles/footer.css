@@ -1,50 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@300&family=Roboto:wght@300;500&display=swap');
-
-.contact .left img {
-    width : 75% ;
-    margin-left: 30px ;
+.footer{
+    background-color: #3ECFA3;
+    margin-top: 50px;
 }
-.contact .title {
-    font-size: 30px ;
-    font-family: 'Roboto' , sans-serif;
-    text-align: center;
-    margin-bottom: 30px ;
-    padding: 15px ;
-}
-.contact .cnt {
-    display : grid ;
-    grid-template-columns: 1fr 1fr ;
-
-}
-.contact .right .inputs {
-    display : flex ;
-    flex-direction: column;
-    flex-wrap: wrap;
+.footer .container .footer-content{
+    display: flex;
     justify-content: center;
-    align-items: center;   
-    padding : 20px ;
+    align-items: center;
+    flex-direction: column;
 }
-
-.contact .right .subtitle {
-    text-align: center;
-    font-family: 'Roboto' , sans-serif;
-    font-size: 20px;
-    font-weight : 500;
+.footer img{
+    width: 100px;
+    margin-top: 20px;
 }
-
-.contact .right .inputs .MuiTextField-root{
-    width : 55% ;
+.footer .container .footer-content .social-media svg{
+    font-size: 30px;
+    margin-left: 15px;
+    color: white;
+    margin-top: 20px;
 }
-
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-    margin-bottom: 20px ;
+.footer .container .footer-content .social-media svg:nth-child(1):hover{
+    color: #333;
+    cursor: pointer;
 }
-/* Responsive */ 
-
-@media (max-width : 768px) {
-    .contact .cnt { 
-        display : grid ;
-        grid-template-columns: 1fr ;
-        gap : 20px ;
+.footer .container .footer-content .social-media svg:nth-child(2):hover{
+    color: #1DA1F2;
+    cursor: pointer;
+}
+.footer .container .footer-content .social-media svg:nth-child(3):hover{
+    color: #4267B2;
+    cursor: pointer;
+}
+.footer .container .footer-content .social-media svg:nth-child(4):hover{
+    color: #ff0000;
+    cursor: pointer;
+}
+.footer .container .footer-content .text{
+    color: white;
+    margin-top: 20px;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+/*responsive*/
+@media(max-width: 600px) {
+    .footer .container .footer-content .text{
+        font-size: 14px;
     }
 }

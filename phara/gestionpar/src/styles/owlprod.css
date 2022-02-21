@@ -1,52 +1,39 @@
-.testimonial{
+.owlprod{
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     margin-top: 100px;
     position: relative;
     background-image: url('../assets/images/features.jpg');
     background-attachment: fixed;
-   
 }
-.testimonial .img-testimonial img{
-width : 100% ;
-background-color: #11333a;
-display: block;
-margin: auto;
-}
-.testimonial .overlay{
+.owlprod .overlay{
     width: 100%;
     height : 100% ;
-    background-color:#11333ab2 ;
+    background-color:#11333ab2;
 }
 
-
-.testimonial .container .contenu{
+.owlprod .container .contenu-img img{
     width: 100%;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin : auto ;  
-    margin-top: 50%;
+    margin-top: 150px;
+    border-radius: 20px;
 }
-.testimonial .container .contenu img{
-    width: 350px;
+.owlprod .container .contenu-img img{
     height: 100%;
-    border-radius: 9px;
-
 }
-.testimonial .container .contenu .domaine{
+.owlprod .container .contenu-img .domaine{
     font-family: "Hind", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 5px;
+    margin-top: 10px;
     color: #ffffff;
-    margin-top: 20px;
+    text-align: center;
 }
-.owl-theme .owl-nav [class*='owl-'] {
-    display: none;
-}
+
 
 /*res */
 @media(max-width: 976px){

@@ -10,12 +10,12 @@ import Chose from './components/Chose';
 import Experience from './components/Experience';
 import Pipeline from './components/Pipeline';
 import Testimonial from './components/Testimonial';
-import Footer from './components/Footer'
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-
       <Navbar></Navbar>
       <Home></Home>
       <Oursite></Oursite>
@@ -25,8 +25,8 @@ function App() {
       <Experience></Experience>
       <Pipeline></Pipeline>
       <Testimonial></Testimonial>
+      <Contact></Contact>
       <Footer></Footer>
-
     </div>
   );
 }

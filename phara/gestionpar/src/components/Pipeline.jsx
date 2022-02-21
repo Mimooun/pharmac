@@ -24,27 +24,27 @@ function Pipeline() {
                     </div>
 
                     <div className="card">
-                        <div className="number">01</div>
+                        <div className="number">02</div>
                         <div className="text">Staring Phase</div>
                     </div>
 
                     <div className="card">
-                        <div className="number">01</div>
+                        <div className="number">03</div>
                         <div className="text">Staring Phase</div>
                     </div>
 
                     <div className="card">
-                        <div className="number">01</div>
+                        <div className="number">04</div>
                         <div className="text">Staring Phase</div>
                     </div>
 
                     <div className="card">
-                        <div className="number">01</div>
+                        <div className="number">05</div>
                         <div className="text">Staring Phase</div>
                     </div>
 
                     <div className="card">
-                        <div className="number">01</div>
+                        <div className="number">06</div>
                         <div className="text">Staring Phase</div>
                     </div>
                 </div>

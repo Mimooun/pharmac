@@ -1,59 +1,27 @@
-import React from "react";
-import contct from "../assets/images/contct.jpg";
-import contact from "../styles/footer.css";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-
-function Contact() {
-  return (
-    <section id="sect4" className="contact">
-      <Box
-        component="form"
-        sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-      ></Box>
-      <div className="title">Contact Us</div>
-      <div className="cnt">
-        <div className="left">
-          <img src={contct} alt="" />
-        </div>
-        <div className="right">
-          <div className="subtitle">Contact</div>
-          <div className="inputs">
-            <TextField
-              required
-              id="outlined-required"
-              label="First Name"
-            />
-            <TextField
-              required
-              id="outlined-required"
-              label="Last Name"
-            />
-            <TextField
-              required
-              id="outlined-required"
-              label="E-mail"
-            />
-            <TextField
-              required
-              id="outlined-required"
-              label="Phone"
-            />
-            <div className="btn">
-              <Button variant="contained" style={{backgroundColor:'#3ecfa3'}} size="medium">
-                Submit
-              </Button>
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import logo from '../assets/images/logo.png'
+import '../styles/footer.css'
+function Footer() {
+    return (
+        <footer className="footer">
+            <div className="max-width">
+                <div className="container">
+                    <div className="footer-content">
+                        <img src={logo} alt="" />
+                        <div className="social-media">
+                            <FontAwesomeIcon icon={faGithub} className="github"></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faTwitter} className="twitter"></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faFacebook} className="facebook"></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faYoutube} className="youtube"></FontAwesomeIcon>
+                        </div>
+                        <div className="text">Copyright © 2021-2022 All rights reserved.</div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </footer>
+    )
 }
 
-export default Contact;
+export default Footer
