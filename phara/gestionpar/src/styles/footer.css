@@ -3,7 +3,7 @@
   margin-top: 50px;
   padding: 10px;
 }
-.footer .container .footer-content {
+.footer .container .footer-content{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +41,24 @@
   font-family: "Hind", sans-serif;
   font-size: 16px;
   font-weight: 700;
+  text-align: center;
 }
 /*responsive*/
-@media (max-width: 600px) {
+@media (max-width: 967px) {
   .footer .container .footer-content .text {
     font-size: 14px;
   }
+  .footer{
+    padding: 0px;
+    margin-top: 10px;
+  }
+  .footer .container .footer-content .text {
+    color: white;
+    margin-top: 20px;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+
 }

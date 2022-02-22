@@ -78,3 +78,52 @@ color : white ;
     font-family: 'Roboto' , sans-serif;
 
 }
+
+/*responsive */
+@media (max-width: 967px) {
+    .pipeline {
+        position: relative;
+        background-image: url('../assets/images/pipeline.png');
+        background-color: #11333a;
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        width: 100%;
+        height: 110vh;
+    }
+    .pipeline{
+        margin-top: 30px;
+    }
+    .pipeline .container .wrap{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr ;
+        margin-top: 30px;
+    }
+    .pipeline .container .wrap .right .title{
+        font-size: 32px;
+        color: #fff;
+        font-weight: 500;
+        line-height: 0.95;
+        word-wrap: break-word;
+    }
+    .pipeline .container .wrap .right .text1{
+        border-color: #3ECFA3;
+        color: #3ECFA3;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+    .pipeline .container .wrap .right .text2{
+        display: none;
+    }
+    .pipeline .container .wrap .right .right-btn .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+}

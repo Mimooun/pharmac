@@ -37,13 +37,12 @@
 
 /*res */
 @media(max-width: 976px){
-    .cours .container .title .title1{
-        font-size: 25px;
-        color: #0e1133;
-        text-transform: capitalize;
-        font-family: "Hind", sans-serif;
-        font-weight: 700;
-        text-align: center;
-        margin-top: 50px;
+    .owlprod{
+        width: 100%;
+        height: 70vh;
+        position: relative;
+        background-image: url('../assets/images/features.jpg');
+        background-attachment: fixed;
     }
+    
 }

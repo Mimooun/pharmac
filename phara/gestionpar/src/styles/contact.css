@@ -45,9 +45,23 @@
 /* Responsive */ 
 
 @media (max-width : 768px) {
+    .contact .title {
+        font-size: 30px ;
+        font-family: 'Roboto' , sans-serif;
+        text-align: center;
+        margin-bottom: 10px ;
+        padding: 15px ;
+    }
     .contact .cnt { 
         display : grid ;
         grid-template-columns: 1fr ;
-        gap : 20px ;
+        grid-template-rows: 1fr;
+        gap : 10px ;
+    }
+    .contact .left img {
+        width : 80% ;
+    }
+    .contact .right .inputs .MuiTextField-root{
+        width : 100% ;
     }
 }

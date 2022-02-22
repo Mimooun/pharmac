@@ -56,3 +56,25 @@
 .chose .cards .card .text .txt {
     font-size: 13px;
 }
+
+/*responsive */
+@media (max-width: 967px) {
+    .chose .tit{
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        color: #000;
+        font-family: "IBM Plex Sans",sans-serif;
+        margin-top: 20px;
+    }
+    .chose .cards{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr;
+        gap: 20px;
+    }
+    .title{
+        padding: 0px;
+    }
+  }

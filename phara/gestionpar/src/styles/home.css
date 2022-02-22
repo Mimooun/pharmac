@@ -62,18 +62,22 @@
 
 /*responsive*/
 @media(max-width: 976px) {
+    .home{
+        margin-top: 0px;
+    }
     .home .container .text .text1{
-        font-size: 22px;
-        margin-left: 130px;
+        font-size: 28px;
     }
     .home .container .text .text2{
-        font-size: 16px;
+        font-size: 22px;
         margin-top: 30px;
-
+    }
+    .home .container .text .text3{
+        font-size: 20px;
+        margin-top: 30px
     }
     .home .container button{
         padding: 8px 25px;
-        margin-left: 130px;
         margin-top: 30px;
     }
 }

@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 
 function Contact() {
   return (
-    <section id="sect4" className="contact">
+    <section className="contact">
       <div className="max-width">
       <Box
         component="form"

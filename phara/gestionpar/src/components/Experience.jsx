@@ -3,6 +3,7 @@ import "../styles/experience.css";
 function Experience() {
   return (
     <section className='experience'>
+        
            <div className="container">
                <div className="content">
                    <div className="number">25</div>
