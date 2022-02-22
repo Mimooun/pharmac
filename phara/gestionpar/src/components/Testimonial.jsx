@@ -26,6 +26,7 @@ function Testimonial() {
   return (
     <section className="testimonial">
       <div className="overlay">
+      <div className="title">Testimonials	Clients</div>
         <div className="max-width">
           <div className="container">
           <OwlCarousel options={options}>

@@ -46,6 +46,21 @@ nav .container .menu ul li:hover {
   transition: 0.5s;
   padding: 10px;
 }
+nav .container .btn  button{
+  color: #3ECFA3;
+    font-size : 17px;
+    background-color:transparent;
+    padding: 15px 10px;
+    border:2px solid #3ECFA3;
+    border-radius: 15px;
+    margin-top: 13px;
+}
+nav .container .btn button:hover{
+  background-color: #3ECFA3;
+    border:2px solid transparent;
+    color : white;
+    cursor: pointer;
+}
 /*responsive */
 @media (max-width: 600px) {
   nav {

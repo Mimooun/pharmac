@@ -16,10 +16,11 @@ function Navbar() {
                             <li>Products</li>
                             <li>Pages</li>
                             <li>Blog</li>
-                            
                         </ul>
                     </div>
-
+                    <div className="btn">
+                         <button className='button'>Passer une commande</button>
+                    </div>
                 </div>
             </div>
         </nav>

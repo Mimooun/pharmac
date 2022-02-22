@@ -6,7 +6,7 @@
     background-size: cover;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 .pipeline .container .wrap{
     display: grid;
