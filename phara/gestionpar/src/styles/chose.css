@@ -57,7 +57,7 @@
     font-size: 13px;
 }
 
-/*responsive */
+/*responsive  mobile */
 @media (max-width: 967px) {
     .chose .tit{
         width: 100%;
@@ -77,4 +77,14 @@
     .title{
         padding: 0px;
     }
+  }
+
+  /* responsive tablet */ 
+
+  @media (max-width : 1024px) {
+      .chose  .cards {
+          width : 100% ;
+          margin-left : 0;
+          padding : 0
+      }
   }

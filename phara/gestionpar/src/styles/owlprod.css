@@ -35,7 +35,8 @@
 }
 
 
-/*res */
+/*responsive mobile */
+
 @media(max-width: 976px){
     .owlprod{
         width: 100%;
@@ -45,4 +46,20 @@
         background-attachment: fixed;
     }
     
+}
+/* responsive tablet */
+
+@media (max-width : 1024px) {
+    .owlprod .overlay {
+        width: 100vw;
+    }
+    .owlprod .overlay .container {
+        display: flex;
+        flex-direction: row;
+        padding : 10px ;
+    }
+
+    .owlprod .overlay .container .contenu-img {
+        padding: 15px;
+    }
 }

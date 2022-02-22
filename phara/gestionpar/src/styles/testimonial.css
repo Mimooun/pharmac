@@ -57,7 +57,7 @@ border-radius: 50%;
 }
 
 
-/*responsive*/
+/*responsive mobile */
 @media(max-width: 976px){
     .testimonial .overlay  .title{
         color:white;
@@ -77,5 +77,20 @@ border-radius: 50%;
         align-items: center;
         flex-direction: column;
         border-radius: 7px;
+    }
+}
+
+/* responsive tablet */
+
+@media (max-width : 1024px ) {
+    .testimonial .overlay .title {
+        padding : 20px ;
+    }
+    .testimonial .overlay .container .customer {
+        padding : 10px ;
+        width : 70%;
+        display : flex ;
+        margin: auto;
+        margin-top: 150px;
     }
 }

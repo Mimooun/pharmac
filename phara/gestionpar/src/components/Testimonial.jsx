@@ -38,7 +38,6 @@ function Testimonial() {
     <section className="testimonial">
       <div className="overlay">
       <div className="title">Testimonials	Clients</div>
-        <div className="max-width">
           <div className="container">
           <OwlCarousel options={options}>
               <div className="customer">
@@ -99,7 +98,6 @@ function Testimonial() {
               </div>
             </OwlCarousel>
           </div>
-        </div>
       </div>
     </section>
   );
