@@ -9,7 +9,7 @@ function Oursite() {
         <section className="cards" id="sect2">
         <div className="title" data-aos="fade-down-right">
           <h1>Our services </h1>
-        </div>
+        </div> 
         <div className="cards-content">
           <div className="card" data-aos="fade-down-right">
             <div className="container">

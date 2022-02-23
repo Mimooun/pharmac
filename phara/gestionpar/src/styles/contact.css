@@ -42,7 +42,7 @@
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
     margin-bottom: 20px ;
 }
-/* Responsive */ 
+/* Responsive mobile */ 
 
 @media (max-width : 768px) {
     .contact .title {
@@ -65,3 +65,9 @@
         width : 100% ;
     }
 }
+ /* responsive tablet */ 
+ @media screen and (max-width : 1024px) {
+    .contact .right .inputs .MuiTextField-root {
+        width: 100% ;
+    }
+ }

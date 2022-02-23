@@ -8,7 +8,6 @@ import img5 from '../assets/images/creative.png'
 function Chose() {
   return (
     <section className="chose">
-      <div className="max-width">
         <div className="container">
           <div className="tit">Why choose us</div>
         </div>
@@ -68,7 +67,6 @@ function Chose() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
