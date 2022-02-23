@@ -6,14 +6,11 @@
   font-family: "Comfortaa", cursive;
   margin-bottom: 50px;
 }
- .textfield-container{
-     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
 
-}
-
-.textfield-container .textfield{
-    width: 100%;
+.max-width .textfield-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width : 65%
 }
