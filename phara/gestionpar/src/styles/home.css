@@ -60,13 +60,9 @@
 
 /*responsive*/
 @media(max-width: 976px) {
-<<<<<<< HEAD
     .home{
         margin-top: 5px;
     }
-=======
-    
->>>>>>> cc98c956a86e066c505983bdd37a6a1dda55851e
     .home .container .text .text1{
         font-size: 28px;
     }

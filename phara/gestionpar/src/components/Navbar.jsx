@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect, Route, Switch } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import "../styles/navbar.css";
 import logo from "../assets/images/SOSpharma2.png";
 function Navbar() {
