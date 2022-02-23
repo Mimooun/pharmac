@@ -74,6 +74,8 @@ nav .container .btn .button:hover {
 
   nav .container .menu ul {
     display: flex;
-    margin: auto;
-    
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+
   }
