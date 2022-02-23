@@ -35,10 +35,11 @@ nav .container .menu ul li {
   font-weight: 700;
   color: #3ecfa3;
   padding: 10px 0px;
+  transition: 0.5s;
+
 }
 nav .container .menu ul li:hover {
   border-bottom: 1.5px solid #3ecfa3;
-  transition: 0.5s;
   padding: 10px;
 }
 nav .container .btn {
@@ -69,3 +70,10 @@ nav .container .btn .button:hover {
     display: none;
   }
 }
+  /* responsive tablet */ 
+
+  nav .container .menu ul {
+    display: flex;
+    margin: auto;
+    
+  }
