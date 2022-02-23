@@ -1,6 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import logo from "../assets/images/SOSpharma2.png";
 function Navbar() {
@@ -20,7 +19,9 @@ function Navbar() {
           </ul>
         </div>
         <div className="btn">
-          <button className="button">Commandez ici !</button>
+          <Link to="/">
+            <button className="button">Commandez ici !</button>
+          </Link>
         </div>
       </div>
     </nav>
