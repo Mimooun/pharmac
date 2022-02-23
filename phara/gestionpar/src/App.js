@@ -1,5 +1,11 @@
 import "./App.css";
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import Home from "./components/Home";
@@ -12,15 +18,16 @@ import Pipeline from "./components/Pipeline";
 import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { Borwserrouter as Router, Route, Switch } from "react-router-dom";
+import Form from "./components/Form";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-      <Navbar></Navbar>
+      <div>
+      <Navbar />
         <Switch >
-         <Route exact path="/" component={Homepage} />
+         <Route exact path="/" component={HomePage} />
+         <Route path="/home" component={Home} />
          <Route path="/Oursite" component={Oursite} />
          <Route path="/Products" components={Products} />
          <Route path="/owlprod" components={Owlprod} />
@@ -30,6 +37,7 @@ function App() {
          <Route path="/testimonial" components={Testimonial} />
          <Route path="/contact" components={Contact} />
          <Route path="/footer" components={Footer} />
+         <Route exact path="/form" components={Form} />
         </Switch>
       
       </div>
