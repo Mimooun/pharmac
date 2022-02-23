@@ -64,6 +64,9 @@ nav .container .btn .button:hover {
   color: white;
   cursor: pointer;
 }
+nav .container .btn a:link{
+  text-decoration: none;
+}
 /*responsive */
 @media (max-width: 600px) {
   nav {

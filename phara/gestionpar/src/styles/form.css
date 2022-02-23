@@ -1,7 +1,19 @@
-.area .title {
-    font-size: 45px;
-    text-align: center;
-    font-weight: 800;
-    color : red ;
-    margin-top: 300px;
+.title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 400;
+  color: #3ecfa3;
+  font-family: "Comfortaa", cursive;
+  margin-bottom: 50px;
+}
+ .textfield-container{
+     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+
+}
+
+.textfield-container .textfield{
+    width: 100%;
 }

@@ -1,14 +1,105 @@
-import React from "react";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import "../styles/form.css";
 
-function Form() {
+export default function FormPropsTextFields() {
   return (
-    <div className="area">
-<div className="title">chi qlwa   </div>  
-    
-    
+    <Box
+      component="form"
+      sx={{
+        "& .MuiTextField-root": { m: 1, width: "25ch" },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <div className="max-width">
+        <div className="title">Commande</div>
+        <div className="textfield-container">
+          <TextField className="textfield"
+            required
+            id="outlined-required"
+            label="Nom Complet"
+            defaultValue="Nom Complet"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Pharmacie"
+            defaultValue="Nom pharmacie"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Adresse pharmacie"
+            defaultValue="Adresse pharmacie"
+          />
+          <TextField className="textfield"
+            required
+            id="outlined-required"
+            label="Nom Médicaments"
+            defaultValue="Nom Médicaments"
+          />
+          <TextField className="textfield"
+            id="outlined-number"
+            label="Number"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField className="textfield"
+            id="date"
+            label="Date Commande"
+            type="date"
+            defaultValue="2017-05-24"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField className="textfield"
+            id="date"
+            label="Date Livraison"
+            type="date"
+            defaultValue="2017-05-24"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <FormControl className="textfield">
+            <FormLabel id="demo-row-radio-buttons-group-label">
+              Situation
+            </FormLabel>
+            <RadioGroup
+              row
+              aria-labelledby="demo-row-radio-buttons-group-label"
+              name="row-radio-buttons-group"
+            >
+              <FormControlLabel
+                value="female"
+                control={<Radio />}
+                label="Urgent"
+              />
+              <FormControlLabel
+                value="male"
+                control={<Radio />}
+                label="Pas Urgent"
+              />
+            </RadioGroup>
+          </FormControl>
+          <Stack direction="row" spacing={3}>
+            <Button variant="contained">Commander</Button>
+          </Stack>
+        </div>
       </div>
+    </Box>
   );
 }
-
-export default Form;

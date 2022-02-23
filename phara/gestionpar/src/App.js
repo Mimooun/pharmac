@@ -27,19 +27,9 @@ function App() {
       <Navbar />
         <Switch >
          <Route exact path="/" component={HomePage} />
-         <Route path="/home" component={Home} />
-         <Route path="/Oursite" component={Oursite} />
-         <Route path="/Products" components={Products} />
-         <Route path="/owlprod" components={Owlprod} />
-         <Route path="/chose" components={Chose} />
-         <Route path="/experience" components={Experience} />
-         <Route path="/pipeline" components={Pipeline} />
-         <Route path="/testimonial" components={Testimonial} />
-         <Route path="/contact" components={Contact} />
-         <Route path="/footer" components={Footer} />
-         <Route exact path="/form" components={Form} />
+         <Route exact path="/home" component={HomePage} />
+         <Route exact path="/form" component={Form} />
         </Switch>
-      
       </div>
     </Router>
   );
