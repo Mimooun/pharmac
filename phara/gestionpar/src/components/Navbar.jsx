@@ -19,7 +19,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="btn">
-          <Link to="/form">
+          <Link to="/">
             <button className="button">Commandez ici !</button>
           </Link>
         </div>
