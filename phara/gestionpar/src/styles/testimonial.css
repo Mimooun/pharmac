@@ -3,7 +3,7 @@
     height: 80vh;
     background-image: url('../assets/images/testimonials.jpg');
 }
-.testimonial .overlay{
+.testimonial  .overlay{
     background-color: rgba(0, 0, 0, 0.500);
     width: 100%;
     height: 80vh;
