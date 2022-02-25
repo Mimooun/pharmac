@@ -46,11 +46,12 @@
     margin-top:30px;
 }
 .products .prod .content .button button{
-padding: 10px 15px;
+padding: 15px;
 background-color: #ffffff;
 color: #3ECFA3;
 border:  1.5px solid #3ECFA3;
-border-radius: 10px;
+border-radius: 7px;
+font-size: 16px;
 margin-top: 30px;
 }
 .products .prod .content .button button:hover{

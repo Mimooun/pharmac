@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import "../styles/login.css";
+import { Link } from "react-router-dom";
+import sos from '../assets/images/SOSpharma2.png'
 
 function Login() {
   return (
-    <div></div>
-  )
+    <section className="login-form">
+      <div className="title">
+         <img src={sos} alt="" />
+       </div>
+      <div className="inputs">
+        <input type="text" placeholder="Entrer votre username" />
+        <input type="password" placeholder="Entrer le mot de passe " />
+      </div>
+      <div className="btn">
+        <button>Login</button>
+      </div>
+    </section>
+  );
 }
 
-export default Login
+export default Login;

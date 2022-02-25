@@ -6,6 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import Home from "./components/Home";
@@ -24,9 +25,8 @@ function App() {
   return (
     <Router>
       <div>
-      <Navbar />
         <Switch >
-         <Route exact path="/" component={HomePage} />
+         <Route exact path="/" component={Login} />
          <Route exact path="/home" component={HomePage} />
          <Route exact path="/form" component={Form} />
         </Switch>

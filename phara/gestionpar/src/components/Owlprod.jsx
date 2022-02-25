@@ -34,37 +34,39 @@ function Owlprod() {
   return (
     <section className="owlprod">
       <div className="overlay">
-        <div className="container">
-          <OwlCarousel options={options}>
-            <div className="contenu-img">
-              <img src={img1} alt="" />
-              <div className="domaine">
-                Digne de plus de 10 ans d'experience
+        <div className="max-width">
+          <div className="container">
+            <OwlCarousel options={options}>
+              <div className="contenu-img">
+                <img src={img1} alt="" />
+                <div className="domaine">
+                  Digne de plus de 10 ans d'experience
+                </div>
               </div>
-            </div>
-            <div className="contenu-img">
-              <img src={img2} alt="" />
-              <div className="domaine">
-                Avec des idées impréssionanteet 16 ans d'experience
+              <div className="contenu-img">
+                <img src={img2} alt="" />
+                <div className="domaine">
+                  Avec des idées impréssionanteet 16 ans d'experience
+                </div>
               </div>
-            </div>
-            <div className="contenu-img">
-              <img src={img3} alt="" />
-              <div className="domaine">
-                Plus de 15 ans en tant que chef de projet{" "}
+              <div className="contenu-img">
+                <img src={img3} alt="" />
+                <div className="domaine">
+                  Plus de 15 ans en tant que chef de projet{" "}
+                </div>
               </div>
-            </div>
-            <div className="contenu-img">
-              <img src={img4} alt="" />
-              <div className="domaine">
-                Des compétences extra-ordinaires en UI/UX design
+              <div className="contenu-img">
+                <img src={img4} alt="" />
+                <div className="domaine">
+                  Des compétences extra-ordinaires en UI/UX design
+                </div>
               </div>
-            </div>
-            <div className="contenu-img">
-              <img src={img5} alt="" />
-              <div className="domaine">Chasseur d'erreurs </div>
-            </div>
-          </OwlCarousel>
+              <div className="contenu-img">
+                <img src={img5} alt="" />
+                <div className="domaine">Chasseur d'erreurs </div>
+              </div>
+            </OwlCarousel>
+          </div>
         </div>
       </div>
     </section>
