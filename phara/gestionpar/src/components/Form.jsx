@@ -46,16 +46,7 @@ function Form() {
               shrink: true,
             }}
           />
-          <TextField
-            className="textfield"
-            id="date"
-            label="Date Livraison"
-            type="date"
-            defaultValue="2017-05-24"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+        
         </div>
         <div className="right">
           <TextField
@@ -79,7 +70,9 @@ function Form() {
             id="outlined-required"
             label="Pharmacie"
           />
-
+         <div className="situation">
+           
+         </div>
           <FormControl className="textfield">
             <FormLabel id="demo-row-radio-buttons-group-label">
               Situation
