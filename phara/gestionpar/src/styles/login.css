@@ -20,9 +20,10 @@
   margin: auto;
 }
 .login-form .title img {
-  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
-  padding: 5px;
 }
 .login-form .inputs {
   display: flex;
@@ -45,6 +46,7 @@
   position: relative;
   margin: auto;
   padding: 7px;
+  transition: ease-in-out 0.8s;
 }
 .login-form .btn button {
   padding: 10px;
@@ -54,10 +56,10 @@
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   background-color: #fdfdfd;
-  transition: ease-in-out 0.5s;
+  
 }
 
-.login-form .btn button:hover {
+.login-form .btn button:hover{
   color: rgba(45, 253, 172, 1);
   cursor: pointer;
   border : 3px solid rgba(45, 253, 172, 1);

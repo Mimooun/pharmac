@@ -1,4 +1,5 @@
 import * as React from "react";
+import Navbar from "./Navbar";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
@@ -10,113 +11,131 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import "../styles/form.css";
 
-function Form() {
+export default function FormPropsTextFields() {
   return (
-    <Box
-    component="form"
-    sx={{
-      "& .MuiTextField-root": { m: 1, width: "40ch" },
-    }}
-    noValidate
-    autoComplete="off"
-  >
-    <section>
-      <div className="max-width">
-      <div className="title"> Commande ici !</div>
-      <div className="form-area">
-        <div className="left">
-          
-          <TextField
-            className="textfield"
-            required
-            id="outlined-required"
-            label="Nom Complet"
-          />
-          <TextField
-            required
-            id="outlined-required"
-            label="Adresse pharmacie"
-          />
-          <TextField
-            className="textfield"
-            id="outlined-number"
-            label="Quantité"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-        
-        </div>
-        <div className="right">
-          <TextField
-            className="textfield"
-            required
-            id="outlined-required"
-            label="Nom Médicaments"
-          />
-          <TextField
-            className="textfield"
-            id="date"
-            label="Date Commande"
-            type="date"
-            defaultValue="2017-05-24"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
-            required
-            id="outlined-required"
-            label="Pharmacie"
-          />
-         <div className="situation">
-           
-         </div>
-          <FormControl className="textfield">
-            <FormLabel id="demo-row-radio-buttons-group-label">
-              Situation
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="demo-row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-            >
-              <FormControlLabel
-                value="female"
-                control={<Radio />}
-                label="Urgent"
-              />
-              <FormControlLabel
-                value="male"
-                control={<Radio />}
-                label="Pas Urgent"
-              />
-            </RadioGroup>
-          </FormControl>
-        </div>
+    <div>
+      <Navbar />
+      <Box
+        sx={{
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <div className="max-width">
+          <div className="titre">Commande</div>
+          <div className="box">
+            <div className="textfield-container">
+              <div className="one">
+                <TextField
+                  style={{
+                    borderBlockStyle: "red",
+                  }}
+                  className="textfield"
+                  required
+                  id="outlined-required"
+                  label="Nom Complet"
+                />
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Nom pharmacie"
+                />
+              </div>
+              <div className="two">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Adresse pharmacie"
+                />
+                <TextField
+                  className="textfield"
+                  required
+                  id="outlined-required"
+                  label="Nom Médicaments"
+                  defaultValue="Nom Médicaments"
+                />
+              </div>
 
-      </div>
+              <div className="three">
+                <TextField
+                  className="textfield"
+                  id="date"
+                  label="Date Commande"
+                  type="date"
+                  defaultValue="2017-05-24"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
 
-      <Stack direction="row" spacing={3}>
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "#3ecfa3",
-              marginTop: "80px",
-              display: "block",
-              margin: "auto",
-              fontSize:"17px"
-            }}
-          >
-            commander !{""}
-          </Button>
-        </Stack>
-      </div>
-     
-    </section>
-    </Box>
+                <FormControl className="textfield">
+                  <FormLabel id="demo-row-radio-buttons-group-label">
+                    Situation
+                  </FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Urgent"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label="Pas Urgent"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </div>
+              <div className="btn">
+                <Stack direction="row" spacing={3}>
+                  <Button
+                    variant="contained"
+                    style={{
+                      backgroundColor: "#3ecfa3",
+                      marginTop: "100px",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                  >
+                    commander
+                  </Button>
+                </Stack>
+                <Stack direction="row" spacing={3}>
+                  <Button
+                    variant="contained"
+                    style={{
+                      backgroundColor: "#3ecfa3",
+                      marginTop: "100px",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                  >
+                    Ajouter Autre Produit
+                  </Button>
+                </Stack>
+                <Stack direction="row" spacing={3}>
+                  <Button
+                    variant="contained"
+                    style={{
+                      backgroundColor: "#3ecfa3",
+                      marginTop: "100px",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                  >
+                    Annuler
+                  </Button>
+                </Stack>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Box>
+    </div>
   );
 }
-
-export default Form;
