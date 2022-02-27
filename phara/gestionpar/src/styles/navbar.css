@@ -51,7 +51,6 @@ nav .container .btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   padding : 10px ;
 }
 nav .container .btn .button {

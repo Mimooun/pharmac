@@ -35,6 +35,8 @@
   margin-top: 15px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
 }
 .css-13r4j3i .MuiTextField-root {

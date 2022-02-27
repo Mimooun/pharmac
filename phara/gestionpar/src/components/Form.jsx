@@ -115,7 +115,7 @@ export default function FormPropsTextFields() {
                       margin: "auto",
                     }}
                   >
-                    Ajouter Autre Produit
+                    Ajouter Un Produit
                   </Button>
                 </Stack>
                 <Stack direction="row" spacing={3}>
