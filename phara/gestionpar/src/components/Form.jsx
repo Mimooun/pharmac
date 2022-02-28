@@ -91,7 +91,7 @@ export default function FormPropsTextFields() {
                   </RadioGroup>
                 </FormControl>
               </div>
-              <div className="btn">
+              <div className="btn-form">
                 <Stack direction="row" spacing={3}>
                   <Button
                     variant="contained"

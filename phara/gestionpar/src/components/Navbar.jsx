@@ -22,7 +22,7 @@ function Navbar() {
         </div>
         <div className="btn">
           <Link to="/form">
-            <button className="button">Commandez ici !</button>
+            <button style={{display:"block",margin:"auto"}}className="button">Commandez ici !</button>
           </Link>
         </div>
       </div>

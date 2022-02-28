@@ -49,13 +49,10 @@ nav .container .menu ul li:hover {
 }
 nav .container .btn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  padding : 10px ;
+  align-items: center;
 }
 nav .container .btn .button {
-  display: block;
-  margin: auto;
   border: 2px solid #3ecfa3;
   padding: 10px;
   border-radius: 10px;
