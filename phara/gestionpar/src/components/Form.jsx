@@ -1,5 +1,5 @@
 import * as React from "react";
-import Navbar from "./Navbar";
+import Formnav from "./Formnav";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
@@ -14,7 +14,7 @@ import "../styles/form.css";
 export default function FormPropsTextFields() {
   return (
     <div>
-      <Navbar />
+      <Formnav />
       <Box
         sx={{
           "& .MuiTextField-root": { m: 1, width: "25ch" },
@@ -53,7 +53,6 @@ export default function FormPropsTextFields() {
                   required
                   id="outlined-required"
                   label="Nom Médicaments"
-                  defaultValue="Nom Médicaments"
                 />
               </div>
 
@@ -102,7 +101,7 @@ export default function FormPropsTextFields() {
                       margin: "auto",
                     }}
                   >
-                    commander
+                    Ajouter au panier
                   </Button>
                 </Stack>
                 <Stack direction="row" spacing={3}>
@@ -115,7 +114,7 @@ export default function FormPropsTextFields() {
                       margin: "auto",
                     }}
                   >
-                    Ajouter Un Produit
+                    Quantité
                   </Button>
                 </Stack>
                 <Stack direction="row" spacing={3}>
