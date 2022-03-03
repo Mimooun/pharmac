@@ -21,7 +21,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="btn">
-          <Link to="/form">
+          <Link to="/Login">
             <button style={{display:"block",margin:"auto"}}className="button">Commandez ici !</button>
           </Link>
         </div>
