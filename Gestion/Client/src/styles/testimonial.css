@@ -84,6 +84,15 @@ background: #3ECFA3;
         flex-direction: column;
         border-radius: 7px;
     }
+   .testimonial .container .customer .text {
+       font-size: 15px;
+       margin-top: 40px;
+       color: white;
+   }
+   .testimonial .container .customer .customer-name {
+       font-weight: 800;
+       color: white;
+   } 
 }
 
 /* responsive tablet */

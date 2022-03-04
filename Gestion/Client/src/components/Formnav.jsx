@@ -9,7 +9,7 @@ function Formnav() {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <Link to="/home">
+          <Link to="/">
             <img src={logo} alt="" />
           </Link>
         </div>
