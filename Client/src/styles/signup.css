@@ -1,0 +1,91 @@
+.signUp {
+    background: linear-gradient(#3ECFA3, #07e7a4);
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #222222;
+  }
+  
+  .signUp .container__form {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 26vw;
+    min-width: 320px;
+    min-height: 75vh;
+    overflow: hidden;
+  }
+  
+  .signUp .container__form .MuiAlert-standardError {
+    display: none;
+    margin-bottom: 50px;
+    width: 90%;
+    z-index: 9;
+  }
+  
+  .signUp .container__form .MuiAlert-standardError.active {
+    display: flex;
+  }
+  
+  
+  
+  .signUp .container__form .icon-container img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: 50%;
+    margin-bottom: 60px;
+  }
+  
+  
+  
+  .signUp .container__form .inputs {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .signUp .container__form p {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  
+  .signUp .container__form .btn {
+    width: 100%;
+    margin-top: 60px;
+  }
+  
+  .signUp .container__form .MuiFormLabel-root,
+  .signUp .container__form .MuiInputBase-root {
+    font-size: 14px !important;
+  }
+  
+  .signUp .container__form .MuiButton-contained {
+    background-color: #3ECFA3 !important;
+    color: white !important;
+  }
+  
+  @media(max-width:400px) {
+    .signUp .container__form {
+        width: 80%;
+        min-width: 80%;
+    }
+  }
