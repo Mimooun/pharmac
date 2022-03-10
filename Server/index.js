@@ -11,7 +11,7 @@ const db = mysql.createConnection({
     user:'root',
     host: 'localhost',
     password:'',
-    database:'gestion_stock ',
+    database:'stock',
 
 });
 app.get("/" ,(req , res) => {
@@ -29,7 +29,7 @@ app.use(cors({
 
 /** login script */
 
-app.post("/login", (req, res) => {
+app.post("/Login", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const sqlSelect = "SELECT * FROM admin WHERE `username` = ? and `password` = ?";

@@ -1,12 +1,10 @@
 import React , {useState} from "react";
 import "../styles/login.css";
-import { Link } from "react-router-dom";
 import sos from "../assets/images/SOSpharma2.png";
 import TextField from '@material-ui/core/TextField'
 import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button'
 import Axios from 'axios'
-import { Redirect } from 'react-router'
 import { useHistory } from 'react-router-dom'
 
 function SignUp() {
@@ -18,7 +16,7 @@ function SignUp() {
 
 
     function submitLogin() {
-        Axios.post("http://localhost:3001/login", { username: username, password: password }).then((response) => {
+        Axios.post("http://localhost:3001/Login", { username: username, password: password }).then((response) => {
             if (response.data.length > 0) {
                 /*history.push({
                     pathname: '/home',
