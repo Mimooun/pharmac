@@ -9,6 +9,7 @@ import {
 import Login from "./components/Login";
 import HomePage from "./components/HomePage";
 import Form from '../src/components/Form';
+import Signup from "./components/Signup";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
          <Route exact path="/" component={HomePage} />
          <Route exact path="/Login" component={Login}  />
          <Route exact path="/form" component={Form}   />
+         <Route exact path="/signup" component={Signup} />
         </Switch>
       </div>
     </Router>
