@@ -46,8 +46,8 @@ function Signup() {
         <p>Forgot Password ?</p>
         <div className="btn1">
           <Link to="/">
-            <Button fullWidth disableElevation variant="contained">
-              Signup
+            <Button style={{textDecoration:"none" , listStyle:"none"}} fullWidth disableElevation variant="contained">
+              GO !
             </Button>
           </Link>
         </div>

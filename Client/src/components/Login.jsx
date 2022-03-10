@@ -20,11 +20,12 @@ function SignUp() {
       password: password,
     }).then((response) => {
       if (response.data.length > 0) {
-        /*history.push({
-                    pathname: '/home',
+        history.push({
+                    pathname: '/Form',
                     
-                });*/
-        alert("test");
+                 });
+
+        
       } else if (response.data.message === "Authentication failed") {
         SetAuthFailed(true);
       }
@@ -95,7 +96,7 @@ function SignUp() {
               disableElevation
               variant="contained"
             >
-              Create Account
+              Create Account!
             </Button>
           </Link>
         </div>
