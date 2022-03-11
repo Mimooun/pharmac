@@ -21,23 +21,10 @@ function SignUp() {
     }).then((response) => {
       if (response.data.length > 0) {
         history.push({
-<<<<<<< HEAD
-<<<<<<< Updated upstream
           pathname: "/Form",
         });
-=======
-                    pathname: '/Form',
-                    
-                });
-        
->>>>>>> Stashed changes
-=======
-                    pathname: '/Form',
-                    
-                 });
 
         
->>>>>>> 9ae589b42b715ab3b473450cb5ccc802a46d4835
       } else if (response.data.message === "Authentication failed") {
         SetAuthFailed(true);
       }
@@ -97,28 +84,13 @@ function SignUp() {
           >
             Login
           </Button>
-<<<<<<< HEAD
         </div>
         <div className="register">
           <Link to="/Signup">
             <p>
               Don't have a compte <span className="lien">Register</span>
             </p>
-=======
-          <Link to="/signup">
-            <Button
-              style={{ marginTop: "20px",
-            textDecoration:"none" }}
-              onClick={() => {
-                submitLogin();
-              }}
-              fullWidth
-              disableElevation
-              variant="contained"
-            >
-              Create Account!
-            </Button>
->>>>>>> 9ae589b42b715ab3b473450cb5ccc802a46d4835
+
           </Link>
         </div>
       </div>

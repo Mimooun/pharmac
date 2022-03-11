@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/signup.css";
 import TextField from "@mui/material/TextField";
 import Button from "@material-ui/core/Button";
-<<<<<<< Updated upstream
 import sos from "../assets/images/SOSpharma2.png";
 import {Link} from "react-router-dom"
 
@@ -12,17 +11,7 @@ function Signup() {
       <div className="container__form1">
         <div className="inputz">
           <div className="icon-container1">
-=======
-import sos  from "../assets/images/SOSpharma2.png";
-import { Link } from "react-router-dom";
 
-function Signup() {
-  return (
-    <section className="signUp">
-      <div className="container__form">
-        <div className="inputs">
-          <div className="icon-container">
->>>>>>> Stashed changes
             <img src={sos} alt="" />
           </div>
           <TextField
@@ -56,19 +45,12 @@ function Signup() {
           />
         </div>
         <p>Forgot Password ?</p>
-<<<<<<< Updated upstream
         <div className="btn1">
           <Link to="/">
             <Button style={{textDecoration:"none" , listStyle:"none"}} fullWidth disableElevation variant="contained">
               GO !
             </Button>
-=======
-        <div className="btn-sign">
-        <Link to="/">
-          <Button fullWidth disableElevation variant="contained">
-            Signup
-          </Button>
->>>>>>> Stashed changes
+
           </Link>
         </div>
       </div>
