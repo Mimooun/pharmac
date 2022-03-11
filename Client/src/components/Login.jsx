@@ -21,8 +21,15 @@ function SignUp() {
     }).then((response) => {
       if (response.data.length > 0) {
         history.push({
+<<<<<<< Updated upstream
           pathname: "/Form",
         });
+=======
+                    pathname: '/Form',
+                    
+                });
+        
+>>>>>>> Stashed changes
       } else if (response.data.message === "Authentication failed") {
         SetAuthFailed(true);
       }

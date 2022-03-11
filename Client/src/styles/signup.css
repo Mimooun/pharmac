@@ -37,9 +37,13 @@
     display: flex;
   }
   
+<<<<<<< Updated upstream
   
   
   .signUp1 .container__form1 .icon-container1 img {
+=======
+  .signUp .container__form .icon-container img {
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +73,11 @@
     cursor: pointer;
   }
   
+<<<<<<< Updated upstream
   .signUp1 .container__form1 .btn1 {
+=======
+  .signUp .container__form .btn-sign {
+>>>>>>> Stashed changes
     width: 100%;
     margin-top: 60px;
   }
