@@ -6,7 +6,7 @@ import Alert from "@material-ui/lab/Alert";
 import Button from "@material-ui/core/Button";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function SignUp() {
   let history = useHistory();
@@ -20,11 +20,9 @@ function SignUp() {
       password: password,
     }).then((response) => {
       if (response.data.length > 0) {
-        /*history.push({
-                    pathname: '/home',
-                    
-                });*/
-        alert("test");
+        history.push({
+          pathname: "/Form",
+        });
       } else if (response.data.message === "Authentication failed") {
         SetAuthFailed(true);
       }
@@ -84,19 +82,12 @@ function SignUp() {
           >
             Login
           </Button>
-          <Link to="/signup">
-            <Button
-              style={{ marginTop: "20px",
-            textDecoration:"none" }}
-              onClick={() => {
-                submitLogin();
-              }}
-              fullWidth
-              disableElevation
-              variant="contained"
-            >
-              Create Account
-            </Button>
+        </div>
+        <div className="register">
+          <Link to="/Signup">
+            <p>
+              Don't have a compte <span className="lien">Register</span>
+            </p>
           </Link>
         </div>
       </div>

@@ -9,7 +9,7 @@ import {
 import Login from "./components/Login";
 import HomePage from "./components/HomePage";
 import Form from '../src/components/Form';
-import Signup from "./components/Signup";
+import Signup from "../src/components/Signup";
 
 
 function App() {
