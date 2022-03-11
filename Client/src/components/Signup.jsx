@@ -59,8 +59,8 @@ function Signup() {
 <<<<<<< Updated upstream
         <div className="btn1">
           <Link to="/">
-            <Button fullWidth disableElevation variant="contained">
-              Signup
+            <Button style={{textDecoration:"none" , listStyle:"none"}} fullWidth disableElevation variant="contained">
+              GO !
             </Button>
 =======
         <div className="btn-sign">
