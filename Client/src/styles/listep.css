@@ -1,0 +1,61 @@
+
+
+.liste-product .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-top: 30px;
+}
+.liste-product .type-medicament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  
+}
+.liste-product .type-medicament .comprime:hover{
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .type-medicament .gelule:hover {
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .type-medicament .injectables:hover {
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .type-medicament .inhalees:hover {
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .type-medicament .dermiques:hover {
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .type-medicament .liquide:hover {
+  border-bottom: 2px solid #3ecfa3;
+}
+.liste-product .medicaments{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.liste-product .medicaments .medicament{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.liste-product .medicaments .medicament .img-medicament {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  
+}
+.liste-product .medicaments .medicament .img-medicament img{
+    width: 100%;
+}
+.liste-product .medicaments .medicament .title-medicament{
+    text-align: center;
+}
+.liste-product .medicaments .medicament .prix{
+    text-align: center;
+    margin-top: 20px; 
+}

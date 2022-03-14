@@ -10,7 +10,7 @@ import Login from "./components/Login";
 import HomePage from "./components/HomePage";
 import Form from '../src/components/Form';
 import Signup from "../src/components/Signup";
-
+import Listep from "./components/Listep";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
          <Route exact path="/Login" component={Login}  />
          <Route exact path="/form" component={Form}   />
          <Route exact path="/Signup" component={Signup} />
+         <Route exact path="/Listep" component={Listep} />
         </Switch>
       </div>
     </Router>

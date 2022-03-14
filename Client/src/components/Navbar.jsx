@@ -15,7 +15,10 @@ function Navbar() {
           <ul>
             <li>Home</li>
             <li>Shop</li>
+            <Link to="/Listep">
             <li>Products</li>
+            </Link>
+            
             <li>Pages</li>
             <li>Blog</li>
           </ul>
