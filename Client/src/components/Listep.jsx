@@ -5,14 +5,14 @@ import doliprane from "../assets/images/doliprane.jpg";
 import aspegic from "../assets/images/aspegic.jpg";
 function Listep() {
     const options = {
-        items: 10,
+        items: 2,
         nav: false,
         dots: false,
         autoplay: false,
         loop: true,
         autoplayTimeout: 3000,
         margin: 20,
-        margin: 10,
+        margin: 20,
         responsive: {
           0: {
             items: 1,
@@ -42,50 +42,140 @@ function Listep() {
         
         
         <div className="medicaments" style={{display:activeCategorie === 1? "grid": 'none'}}>
-            <OwlCarousel options={options}>
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={aspegic} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={aspegic} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-          </OwlCarousel>
-        </div>
-          
         
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={aspegic} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={aspegic} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+        </div>
+        {/*fin products  */}
+        {/* owl best saller*/}
+        <div className="best-saller">Best Saller</div>
+
+        
+        <div className="best-medicaments">
+        <OwlCarousel options={options}>
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={doliprane} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={aspegic} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={doliprane} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={aspegic} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={doliprane} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={aspegic} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={doliprane} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+        <div className="best-medicament">
+          <div className="img-medicament">
+            <img src={aspegic} alt="" />
+          </div>
+          <div className="title-medicament">Doliprane</div>
+          <div className="prix">10.00</div>
+        </div>
+        </OwlCarousel>
+      </div>
+
+        
+       
         <div className="medicaments" style={{display:activeCategorie === 2? "grid": 'none'}}>
           <div className="medicament">
             <div className="img-medicament">

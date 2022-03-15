@@ -18,21 +18,27 @@
 }
 .liste-product .type-medicament .comprime:hover{
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .type-medicament .gelule:hover {
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .type-medicament .injectables:hover {
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .type-medicament .inhalees:hover {
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .type-medicament .dermiques:hover {
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .type-medicament .liquide:hover {
   border-bottom: 2px solid #3ecfa3;
+  cursor: pointer;
 }
 .liste-product .medicaments{
     margin-top: 50px;
@@ -41,6 +47,7 @@
     gap: 20px;
 }
 .liste-product .medicaments .medicament{
+  padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .liste-product .medicaments .medicament .img-medicament {
@@ -50,7 +57,7 @@
   
 }
 .liste-product .medicaments .medicament .img-medicament img{
-    width: 100%;
+    width: 60%;
 }
 .liste-product .medicaments .medicament .title-medicament{
     text-align: center;
@@ -58,4 +65,33 @@
 .liste-product .medicaments .medicament .prix{
     text-align: center;
     margin-top: 20px; 
+}
+.title-best-saller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.owl .medicaments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.best-saller{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #3ecfa3;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-top: 30px;
+}
+/*code best saller owl */
+.best-medicaments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.best-medicaments .best-medicament .img-medicament img{
+  width: 60%;
 }
