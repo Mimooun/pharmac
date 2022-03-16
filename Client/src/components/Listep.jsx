@@ -1,8 +1,8 @@
 import React  , {useState} from "react";
 import OwlCarousel from 'react-owl-carousel2';
 import "../styles/listep.css";
-import doliprane from "../assets/images/doliprane.jpg";
-import aspegic from "../assets/images/aspegic.jpg";
+import doliprane from "../assets/images/doli.png";
+import aspegic from "../assets/images/aspeg.png";
 function Listep() {
     const options = {
       className:"owl-theme",
