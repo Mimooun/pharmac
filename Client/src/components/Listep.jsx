@@ -5,14 +5,15 @@ import doliprane from "../assets/images/doliprane.jpg";
 import aspegic from "../assets/images/aspegic.jpg";
 function Listep() {
     const options = {
-        items: 2,
+      className:"owl-theme",
+        items: 5,
         nav: false,
-        dots: false,
-        autoplay: false,
+        dots:true,
+        autoplay: true,
         loop: true,
         autoplayTimeout: 3000,
-        margin: 20,
-        margin: 20,
+        margin: 0,
+        margin: 0,
         responsive: {
           0: {
             items: 1,
@@ -106,11 +107,9 @@ function Listep() {
         </div>
         {/*fin products  */}
         {/* owl best saller*/}
+        <div className="best-medicaments" style={{display:activeCategorie === 1? "block": 'none'}}>
         <div className="best-saller">Best Saller</div>
-
-        
-        <div className="best-medicaments">
-        <OwlCarousel options={options}>
+        <OwlCarousel options={options} >
         <div className="best-medicament">
           <div className="img-medicament">
             <img src={doliprane} alt="" />
@@ -173,58 +172,7 @@ function Listep() {
         </div>
         </OwlCarousel>
       </div>
-
-        
-       
-        <div className="medicaments" style={{display:activeCategorie === 2? "grid": 'none'}}>
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">pro</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">pro</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">pro</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">pro</div>
-            <div className="prix">10.00</div>
-          </div>
-
-          <div className="medicament">
-            <div className="img-medicament">
-              <img src={doliprane} alt="" />
-            </div>
-            <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
-          </div>
-        </div>
-
-
       </div>
-
-
-
-      
-      
     </section>
   );
 }
