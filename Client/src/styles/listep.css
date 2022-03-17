@@ -123,7 +123,9 @@
   .liste-product .type-medicament {
     display : flex ;
     flex-direction: row;
-    width : 100%;
+    justify-content: center;
+    align-items: center;
+    width : 50%;
     gap : 10px ;
     position: relative;
     
