@@ -116,3 +116,21 @@
   text-align: center;
   margin-top: 30px;
 }
+
+/* responsive mobile */
+
+@media (max-width : 768px) {
+  .liste-product .type-medicament {
+    display : flex ;
+    flex-direction: row;
+    width : 100%;
+    gap : 10px ;
+    position: relative;
+    
+  }
+  .liste-product .medicaments {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    width : 100%;
+  }
+}
