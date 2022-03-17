@@ -50,7 +50,12 @@
 }
 .liste-product .medicaments .medicament{
   padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.5s ease-in-out; 
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.liste-product .medicaments .medicament:hover {
+  transform: translateY(-20px);
+
 }
 .liste-product .medicaments .medicament .img-medicament {
     display: flex;
