@@ -10,12 +10,18 @@
   font-family: "IBM Plex Sans", sans-serif;
   margin-top: 30px;
 }
+.liste-product .type{
+  display: flex;
+  justify-content: center;
+}
 .liste-product .type-medicament {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  width: 100%;
   
 }
 .liste-product .type-medicament .comprime:hover{
@@ -50,12 +56,7 @@
 }
 .liste-product .medicaments .medicament{
   padding: 20px;
-  transition: 0.5s ease-in-out; 
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-.liste-product .medicaments .medicament:hover {
-  transform: translateY(-20px);
-
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .liste-product .medicaments .medicament .img-medicament {
     display: flex;
@@ -121,19 +122,17 @@
   text-align: center;
   margin-top: 30px;
 }
-
-/* responsive mobile */
-
-@media (max-width : 768px) {
+/*responsive*/
+@media (max-width : 976px) {
   .liste-product .type-medicament {
     display : flex ;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width : 50%;
+    width : 30%;
     gap : 10px ;
     position: relative;
-    
   }
   .liste-product .medicaments {
     display: grid;

@@ -33,7 +33,7 @@ function Owlprod() {
       <div className="overlay">
         <div className="max-width">
           <div className="container">
-            <OwlCarousel options={options} className="owl" >
+            <OwlCarousel options={options} >
               <div className="contenu-img">
                 <img src={img1} alt="" />
                 <div className="domaine">

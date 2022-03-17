@@ -11,6 +11,7 @@ import HomePage from "./components/HomePage";
 import Form from '../src/components/Form';
 import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
+import Detailsproduct from "./components/Detailsproduct";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
          <Route exact path="/form" component={Form}   />
          <Route exact path="/Signup" component={Signup} />
          <Route exact path="/Listep" component={Listep} />
+         <Route exact path="/Detailsproduct" component={Detailsproduct} />
         </Switch>
       </div>
     </Router>
