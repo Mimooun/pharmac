@@ -115,7 +115,7 @@ function Listep() {
         {/* owl best saller*/}
         
         <div className="best-medicaments" style={{display:activeCategorie === 1? "block": 'none'}}>
-        <div className="best-saller">Best Saller</div>
+        <div className="best-saller">Best Seller</div>
         <OwlCarousel options={options} >
         <div className="best-medicament">
           <div className="img-medicament">

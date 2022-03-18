@@ -39,7 +39,7 @@ function Detailsproduct() {
             </div>
             <div className="prix">30DH</div>
             <div className="size">
-                Size :
+               <span>Size :</span> 
                 <div className="small">250 Mg</div>
                 <div className="meduim">500 Mg</div>
                 <div className="large">1000 Mg</div>

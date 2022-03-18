@@ -21,8 +21,26 @@
 .detailsproduct .dtls-products .contenu .size{
     display: flex;
     flex-direction: row;
-     gap: 30px;
+         gap: 30px;
      margin-top: 20px;
+}
+.detailsproduct .dtls-products .contenu .size span{
+    margin-top: 5px;
+}
+.detailsproduct .dtls-products .contenu .size .small{
+    border: 1px solid #3ecfa3;
+    padding: 7px;
+    
+}
+.detailsproduct .dtls-products .contenu .size .meduim{
+    border: 1px solid #3ecfa3;
+    padding: 7px;
+    
+}
+.detailsproduct .dtls-products .contenu .size .large{
+    border: 1px solid #3ecfa3;
+    padding: 7px;
+    
 }
 .detailsproduct .dtls-products .contenu .prix{
     margin-top: 20px;
@@ -34,5 +52,9 @@
     border: 1px solid #3ecfa3;
     background-color: #3ecfa3;
     color: white;
-
+}
+.detailsproduct .dtls-products .contenu .btn button:hover{
+    background-color: white;
+    color: #3ecfa3;
+    cursor: pointer;
 }
