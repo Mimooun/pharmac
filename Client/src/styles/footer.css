@@ -49,13 +49,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom : 0 ;
   }
   .footer .container .footer-content .text {
     font-size: 14px;
   }
-  .footer{
-    padding: 0px;
-  }
+ 
   .footer .container .footer-content .text {
     color: white;
     margin-top: 20px;
