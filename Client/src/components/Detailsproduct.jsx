@@ -37,7 +37,7 @@ function Detailsproduct() {
               de tête, états grippaux, douleurs dentaires, courbatures, règles
               douloureuses, douleurs de l'arthrose.
             </div>
-            <div className="prix">30DH</div>
+            <div className="prix"> <span> Prixe :</span> 30DH</div>
             <div className="size">
                <span>Size :</span> 
                 <div className="small">250 Mg</div>

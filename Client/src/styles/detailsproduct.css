@@ -4,7 +4,8 @@
   margin-top: 150px;
 }
 .detailsproduct .dtls-products .product .img-product img {
-  height: 60vh;
+  width: 80%;
+  height: 70vh;
 }
 .detailsproduct .dtls-products .contenu .tit {
   font-size: 30px;
@@ -62,6 +63,9 @@
 .detailsproduct .dtls-products .contenu .prix{
     margin-top: 20px;
     font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 .detailsproduct .dtls-products .contenu .btn button {
   margin-top: 30px;
@@ -69,6 +73,7 @@
   border: 1px solid #3ecfa3;
   background-color: #3ecfa3;
   color: white;
+  border-radius: 5px;
 }
 .detailsproduct .dtls-products .contenu .btn button:hover {
   background-color: white;
@@ -81,13 +86,12 @@
   .detailsproduct .dtls-products {
     display: grid;
     grid-template-columns: 1fr;
+    margin-top: 0px;
   }
+  
   .detailsproduct .dtls-products .product .img-product img {
     height: 30vh;
     width: 100%;
-  }
-  .detailsproduct .dtls-products .product .img-product img {
-    height: 60vh;
   }
   .detailsproduct .dtls-products .contenu .tit {
     font-size: 22px;
@@ -100,6 +104,7 @@
   }
   .detailsproduct .dtls-products .contenu .content {
     margin-top: 10px;
+    font-size: 14px;
   }
   .detailsproduct .dtls-products .contenu .size span {
       font-size: 14px;
@@ -109,13 +114,13 @@
     font-size: 16px;
   }
   .detailsproduct .dtls-products .contenu .btn button {
-    margin-top: 10px;
+      position: relative;
+    top: 30px;
     padding: 10px 40px;
     border: 1px solid #3ecfa3;
     background-color: #3ecfa3;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    margin: auto;
   }
 }

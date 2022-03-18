@@ -45,12 +45,16 @@
 }
 /*responsive*/
 @media (max-width: 967px) {
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .footer .container .footer-content .text {
     font-size: 14px;
   }
   .footer{
     padding: 0px;
-    margin-top: 10px;
   }
   .footer .container .footer-content .text {
     color: white;
