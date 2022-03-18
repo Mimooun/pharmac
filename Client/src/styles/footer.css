@@ -1,7 +1,8 @@
 .footer {
-  background-color: #3ecfa3;
+  background-color: #38a3a5;
   margin-top: 50px;
   padding: 10px;
+  margin-bottom: 0;
 }
 .footer .container .footer-content{
   display: flex;
@@ -44,13 +45,13 @@
   text-align: center;
 }
 /*responsive*/
-@media (max-width: 967px) {
+@media (max-width: 768px) {
   .footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom : 0 ;
   }
+  
   .footer .container .footer-content .text {
     font-size: 14px;
   }

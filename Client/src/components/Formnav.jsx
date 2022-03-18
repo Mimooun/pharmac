@@ -15,11 +15,11 @@ function Formnav() {
         </div>
         <div className="menu">
           <ul>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Products</li>
-            <li>Pages</li>
-            <li>Blog</li>
+            <Link to="/"><li>Home</li></Link>
+            <Link to=""><li>Shop</li></Link>
+            <Link to="/Listep"><li>Products</li></Link>
+            <Link to=""><li>Pages</li></Link>
+            <Link to=""><li>Blog</li></Link>
           </ul>
         </div>
         <div className="cart">

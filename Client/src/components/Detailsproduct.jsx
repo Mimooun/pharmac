@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import React from "react";
 import { render } from "react-dom";
 import "../styles/detailsproduct.css";
-import aspegic from "../assets/images/aspegic.jpg";
+import aspegic from "../assets/images/aspeg.png";
 function Detailsproduct() {
   const ratingChanged = (newRating) => {
     console.log(newRating);
@@ -37,20 +37,20 @@ function Detailsproduct() {
               de tête, états grippaux, douleurs dentaires, courbatures, règles
               douloureuses, douleurs de l'arthrose.
             </div>
-            <div className="prix"> <span> Prixe :</span> 30DH</div>
+            <div className="prix"> <span> Prix :</span> 30DH</div>
             <div className="size">
-               <span>Size :</span> 
+               <span>Size</span> 
                 <div className="small">250 Mg</div>
                 <div className="meduim">500 Mg</div>
                 <div className="large">1000 Mg</div>
              </div>
              <div className="btn">
-                 <button> Add TO CART</button>
+                 <button>Add to cart</button>
              </div>
           </div>
         </div>
       </div>
-      <Footer />
+      
     </section>
   );
 }
