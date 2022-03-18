@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
 }
-.liste-product .type-medicament {
+.liste-product .type .type-medicament {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,25 +24,43 @@
   width: 100%;
   
 }
+.liste-product .type-medicament .comprime {
+  transition: 0.3s ease-in-out;
+}
 .liste-product .type-medicament .comprime:hover{
   border-bottom: 2px solid #3ecfa3;
   cursor: pointer;
+}
+.liste-product .type-medicament .gelule {
+  transition: 0.3s ease-in-out;
 }
 .liste-product .type-medicament .gelule:hover {
   border-bottom: 2px solid #3ecfa3;
   cursor: pointer;
 }
+.liste-product .type-medicament .injectables {
+  transition: 0.3s ease-in-out;
+}
 .liste-product .type-medicament .injectables:hover {
   border-bottom: 2px solid #3ecfa3;
   cursor: pointer;
+}
+.liste-product .type-medicament .inhalees {
+  transition: 0.3s ease-in-out;
 }
 .liste-product .type-medicament .inhalees:hover {
   border-bottom: 2px solid #3ecfa3;
   cursor: pointer;
 }
+.liste-product .type-medicament .dermiques {
+  transition: 0.3s ease-in-out;
+}
 .liste-product .type-medicament .dermiques:hover {
   border-bottom: 2px solid #3ecfa3;
   cursor: pointer;
+}
+.liste-product .type-medicament .liquide{
+  transition: 0.3s ease-in-out;
 }
 .liste-product .type-medicament .liquide:hover {
   border-bottom: 2px solid #3ecfa3;
@@ -128,14 +146,11 @@
   margin-top: 30px;
 }
 /*responsive*/
-@media (max-width : 976px) {
-  .liste-product .type-medicament {
+@media (max-width : 768px) {
+  .liste-product .type .type-medicament {
     display : flex ;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width : 30%;
+    width : 100vw;
     gap : 10px ;
     position: relative;
   }
