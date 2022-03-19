@@ -31,8 +31,13 @@
   display: flex;
   gap: 20px;
 }
+.textfield-container .number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .btn-form {
-  margin-top: 15px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,3 +51,4 @@
 #demo-row-radio-buttons-group-label {
   color: #666666;
 }
+

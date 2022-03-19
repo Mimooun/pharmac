@@ -50,6 +50,34 @@ app.post("/Login", (req, res) => {
         }
     });
 });
+/** Add Student script */
+
+app.post("/addpanier", (req, res) => {
+    const nameRef = req.body.nameRef;
+    const pharmacieRef = req.body.pharmacieRef;
+    const adresseRef = req.body.adresseRef;
+    const medicamentRef = req.body.medicamentRef;
+    const dateRef = req.body.dateRef;
+    const quantiteRef = req.body.quantiteRef;
+    const situation = "";
+   
+    const sqlSelect = "INSERT INTO `panier` (`id_panier`, `nom`, `nom_pharmacie`, `adresse_pharmacie`, `nom_medicament`, `date_commande`, `situation`, `quantite`) VALUES (NULL,?,?,?,?,?,?,?)";
+    db.query(sqlSelect, [nameRef, pharmacieRef,adresseRef,medicamentRef, dateRef,situation,quantiteRef ], (err, result) => {
+        if (err) {
+            res.send({
+                err: err
+            })
+        } else {
+            res.send({
+                message: "Operation completed"
+                
+            })
+
+        }
+    });
+});
+
+/** fin Add Student script */
 app.listen(3001, () => {
     console.log("running")
 });
