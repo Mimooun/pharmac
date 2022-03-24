@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Home from "./Home";
 import Navbar from "./Navbar";
+import Panier from "./Panier";
 
 function HomePage() {
   return (
@@ -24,6 +25,7 @@ function HomePage() {
       <Pipeline />
       <Testimonial />
       <Contact />
+      <Panier />
       <Footer />
     </div>
   );

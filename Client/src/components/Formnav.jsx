@@ -23,7 +23,7 @@ function Formnav() {
           </ul>
         </div>
         <div className="cart">
-            <img src={chario} alt="" />
+           <Link to="/panier"><img src={chario} alt="" /></Link>  
         </div>
       </div>
     </nav>

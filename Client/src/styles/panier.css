@@ -1,0 +1,62 @@
+
+section {
+  padding : 20px ;
+}
+section .cart {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  background-color: rgb(236, 236, 236);
+  border-radius: 10px;
+  height : 70vh ;
+  padding : 20px ;
+  margin: auto;
+}
+section .cart .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+section .cart .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+section .cart .cards .card {
+  
+  display : flex ;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  border : 1px solid #838383 ;
+  padding : 10px ;
+  transition: 0.4s ease-in-out;
+}
+section .cart .cards .card:hover {
+  transform: translateY(-10px);
+  background-color: white;
+
+}
+section .cart .card .cards .img-area  {
+  display: block ;
+  margin: auto ;
+}
+section .cart .cards .card .content {
+  display: block;
+  margin: auto;
+}
+section .cart .cards .card .icon {
+  display: block;
+  margin: auto;
+}
+section .cart .cards .card .trash {
+  display: block;
+  margin: auto;
+}
+
