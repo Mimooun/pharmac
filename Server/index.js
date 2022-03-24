@@ -50,7 +50,7 @@ app.post("/Login", (req, res) => {
         }
     });
 });
-/** Add Student script */
+/** Add commande script */
 
 app.post("/addpanier", (req, res) => {
     const nameRef = req.body.nameRef;
@@ -76,6 +76,26 @@ app.post("/addpanier", (req, res) => {
         }
     });
 });
+
+app.get("/produitspanier", (req, res) => {
+    const sqlSelect = "SELECT * FROM `panier` ORDER BY `id_panier` ASC";
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            res.send({
+                err: err
+            })
+        } else {
+            if (result.length == 0) {
+                res.send({
+                    message: "No Rows"
+                })
+            } else {
+                res.send(result);
+            }
+        }
+    });
+});
+/**fin script teachers */
 
 /** fin Add Student script */
 app.listen(3001, () => {
