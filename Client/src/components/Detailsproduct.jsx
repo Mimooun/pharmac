@@ -11,7 +11,6 @@ function Detailsproduct() {
   };
   return (
     <section className="detailsproduct">
-        <Formnav />
       <div className="max-width">
         <div className="dtls-products">
           <div className="product">
@@ -39,7 +38,7 @@ function Detailsproduct() {
             </div>
             <div className="prix"> <span> Prix :</span> 30DH</div>
             <div className="size">
-               <span>Size</span> 
+              <span>Dosage</span>
                 <div className="small">250 Mg</div>
                 <div className="meduim">500 Mg</div>
                 <div className="large">1000 Mg</div>

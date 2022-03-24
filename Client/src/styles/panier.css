@@ -1,24 +1,24 @@
 
-section {
+.sec {
   padding : 20px ;
 }
-section .cart {
+.sec .cart {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 80%;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(212, 212, 212);
   border-radius: 10px;
   height : 70vh ;
   padding : 20px ;
   margin: auto;
 }
-section .cart .title {
+.sec .cart .title {
   text-align: center;
   font-size: 30px;
   font-weight: 800;
 }
-section .cart .cards {
+.sec .cart .cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -26,7 +26,7 @@ section .cart .cards {
   margin: auto;
   padding: 10px;
 }
-section .cart .cards .card {
+.sec .cart .cards .card {
   
   display : flex ;
   flex-direction: row;
@@ -38,24 +38,27 @@ section .cart .cards .card {
   padding : 10px ;
   transition: 0.4s ease-in-out;
 }
-section .cart .cards .card:hover {
+.sec .cart .cards .card:hover {
   transform: translateY(-10px);
   background-color: white;
 
 }
-section .cart .card .cards .img-area  {
+.sec .cart .card .cards .img-area  {
   display: block ;
   margin: auto ;
 }
-section .cart .cards .card .content {
+.sec .cart .cards .card .content {
   display: block;
   margin: auto;
 }
-section .cart .cards .card .icon {
-  display: block;
+.sec .cart .cards .card .icon {
+  display: flex;
+  flex-direction: row;
+  gap  : 20px;
   margin: auto;
 }
-section .cart .cards .card .trash {
+
+.sec .cart .cards .card .trash {
   display: block;
   margin: auto;
 }
