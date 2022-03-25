@@ -9,7 +9,6 @@
   width: 80%;
   background-color: rgb(236, 236, 236);
   border-radius: 10px;
-  height : 70vh ;
   padding : 20px ;
   margin: auto;
 }
@@ -52,9 +51,24 @@
   margin: auto;
 }
 .sec .cart .cards .card .icon {
+<<<<<<< Updated upstream
   display: block;
   margin: auto;
 }
+=======
+display: block;
+margin: auto;
+
+}
+.sec .cart .cards .card .icon .counter {
+  display: flex;
+  flex-direction: row;
+  gap  : 20px;
+  
+}
+
+
+>>>>>>> Stashed changes
 .sec .cart .cards .card .trash {
   display: block;
   margin: auto;

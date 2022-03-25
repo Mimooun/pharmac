@@ -20,9 +20,9 @@ function SignUp() {
       password: password,
     }).then((response) => {
       if (response.data.length > 0) {
-        history.push({
-          pathname: "/Form",
-        });
+        // history.push({
+        //   pathname: "/Form",
+        // });
 
         
       } else if (response.data.message === "Authentication failed") {

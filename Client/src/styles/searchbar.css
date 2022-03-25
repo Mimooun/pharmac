@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@300&family=Poppins:wght@300&family=Roboto:wght@300;500&display=swap");
+
+.srcbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  flex-direction: row;
+  width: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: white;
+}
+.srcbar .srccontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  width: 100vw;
+}
+.srcbar .srccontainer .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.srcbar .srccontainer .logo img {
+  width: 150px;
+  padding: 11px;
+  border-radius: 5px;
+}
+.srcbar .srccontainer .brand {
+    display: flex;
+    flex-direction: flex-start;
+    width : 100%;
+}
+
+
+.srccontainer .cart img {
+   display : block ;
+   margin-left: auto;
+   padding : 10px ;
+   margin-top: 10px;
+}
+.srcbar .srccontainer .search-area {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
+    width : 50% ;
+    border-radius: 7px;
+    border : 1px solid black ;
+    padding : 10px ;
+
+}
+.srcbar .srccontainer .search-area input {
+    width : 100% ;
+    border : none 
+}
+
+
+
+/*responsive */
+@media (max-width: 600px) {
+  .srcbar {
+    display: none;
+  }
+}
+  /* responsive tablet */ 
+
