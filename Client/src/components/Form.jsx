@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Axios from "axios";
 import Searchnav from "./Searchnav";
 import Box from "@mui/material/Box";
+import Formnav from '../components/Formnav'
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -69,7 +70,7 @@ export default function FormPropsTextFields() {
   }
   return (
     <div>
-      <Searchnav />
+      <Formnav />
       <Box
         sx={{
           "& .MuiTextField-root": { m: 1, width: "25ch" },

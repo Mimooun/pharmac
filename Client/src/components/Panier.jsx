@@ -1,7 +1,5 @@
-
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-
 import "../styles/panier.css";
 import doli from "../assets/images/shopping-bag.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -15,7 +13,6 @@ function Panier() {
       setProduitPanier(response.data);
     });
   }, []);
-
   const [quantity, setQuantity] = useState(1);
   return (
     <section className="sec">
@@ -28,20 +25,39 @@ function Panier() {
                 <img src={doli} />
               </div>
               <div className="content">
-                 <div className="name">{produit.nom} </div>
-                {produit.nom_pharmacie } 
+                <div className="name">{produit.nom} </div>
+                {produit.nom_pharmacie}
               </div>
               <div className="icon">
-                <AddIcon />
-                1
-                <RemoveIcon />
+                <div className="counter">
+                  <div className="primary-btn">
+                    <button
+                      onClick={() => {
+                        quantity > 1
+                          ? setQuantity(quantity - 1)
+                          : setQuantity(quantity);
+                      }}
+                    >
+                      -
+                    </button>
+                  </div>
+                  <div className="count"> {quantity} </div>
+                  <div className="primary-btn">
+                    <button
+                      onClick={() => {
+                        setQuantity(quantity + 1);
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="trash">
                 <DeleteForeverIcon />
               </div>
             </div>
           ))}
-        
         </div>
       </div>
     </section>

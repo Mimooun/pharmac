@@ -20,9 +20,9 @@ function SignUp() {
       password: password,
     }).then((response) => {
       if (response.data.length > 0) {
-        // history.push({
-        //   pathname: "/Form",
-        // });
+        history.push({
+        pathname: "/Form",
+         });
 
         
       } else if (response.data.message === "Authentication failed") {
@@ -88,7 +88,7 @@ function SignUp() {
         <div className="register">
           <Link to="/Signup">
             <p>
-              Don't have a compte <span className="lien">Register</span>
+              Don't have an account ? <span className="lien">Register</span>
             </p>
 
           </Link>
