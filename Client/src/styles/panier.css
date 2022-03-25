@@ -1,19 +1,19 @@
 
-.sec {
+.sec section {
   padding : 20px ;
 }
-.sec .cart {
+ .sec  .cart {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 80%;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(236, 236, 236);
   border-radius: 10px;
   height : 70vh ;
   padding : 20px ;
   margin: auto;
 }
-.sec .cart .title {
+.sec  .cart .title {
   text-align: center;
   font-size: 30px;
   font-weight: 800;
@@ -26,7 +26,7 @@
   margin: auto;
   padding: 10px;
 }
-.sec .cart .cards .card {
+.sec  .cart .cards .card {
   
   display : flex ;
   flex-direction: row;
@@ -38,28 +38,29 @@
   padding : 10px ;
   transition: 0.4s ease-in-out;
 }
-.sec .cart .cards .card:hover {
+.sec  .cart .cards .card:hover {
   transform: translateY(-10px);
   background-color: white;
 
 }
-.sec .cart .card .cards .img-area  {
+.sec  .cart .card .cards .img-area  {
   display: block ;
   margin: auto ;
 }
-.sec .cart .cards .card .content {
+.sec  .cart .cards .card .content {
   display: block;
   margin: auto;
 }
 .sec .cart .cards .card .icon {
-  display: flex;
-  flex-direction: row;
-  gap  : 20px;
+  display: block;
   margin: auto;
 }
-
 .sec .cart .cards .card .trash {
   display: block;
   margin: auto;
+}
+.sec .cart .card .content .name{
+  font-size: 28px;
+  color:pink
 }
 
