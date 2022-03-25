@@ -12,7 +12,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import "../styles/form.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -22,8 +22,9 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-
+import { useHistory } from "react-router-dom";
 export default function FormPropsTextFields() {
+  let history = useHistory();
   const [situation, setSituaion] = useState();
   const nameRef = useRef();
   const pharmacieRef = useRef();
@@ -61,9 +62,9 @@ export default function FormPropsTextFields() {
         if (response.data.message === "Operation completed") {
           /** redirect to students list */
           console.log("Operation Completed");
-          /* history.push({
-                    pathname: '/home/students',
-                });*/
+          history.push({
+            pathname: "/Panier",
+             })
         }
       });
     }

@@ -1,17 +1,46 @@
-import React from "react";
+import React, { useRef } from "react";
+import Axios from "axios";
 import "../styles/signup.css";
 import TextField from "@mui/material/TextField";
 import Button from "@material-ui/core/Button";
 import sos from "../assets/images/SOSpharma2.png";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-function Signup() {
+export default function SignupTextFields() {
+  const lastnameRef = useRef();
+  const firstnameRef = useRef();
+  const passwordRef = useRef();
+  const confirmationpasswordRef = useRef();
+
+  function validate() {
+    if (
+      lastnameRef.current.value !== "" &&
+      firstnameRef.current.value !== "" &&
+      passwordRef.current.value !== "" &&
+      confirmationpasswordRef.current.value !== ""
+    ) {
+      Axios.post("http://localhost:3001/addutilisateur", {
+        lastnameRef: lastnameRef.current.value,
+        firstnameRef: firstnameRef.current.value,
+        passwordRef: passwordRef.current.value,
+        confirmationpasswordRef: confirmationpasswordRef.current.value,
+      }).then((response) => {
+        if (response.data.message === "Operation completed") {
+          /** redirect to  list */
+          console.log("Operation Completed");
+          /*history.push({
+            pathname: "/Panier",
+             })*/
+        }
+      });
+    }
+  }
   return (
     <section className="signUp1">
       <div className="container__form1">
         <div className="inputz">
           <div className="icon-container1">
-
             <img src={sos} alt="" />
           </div>
           <TextField
@@ -19,6 +48,7 @@ function Signup() {
             size="small"
             label="Firstname"
             variant="outlined"
+            inputRef={lastnameRef}
           />
           <TextField
             fullWidth
@@ -26,6 +56,7 @@ function Signup() {
             size="small"
             label="Lastname"
             variant="outlined"
+            inputRef={firstnameRef}
           />
           <TextField
             fullWidth
@@ -34,6 +65,7 @@ function Signup() {
             size="small"
             label="Password"
             variant="outlined"
+            inputRef={passwordRef}
           />
           <TextField
             fullWidth
@@ -42,20 +74,26 @@ function Signup() {
             size="small"
             label="Confirm Password"
             variant="outlined"
+            inputRef={confirmationpasswordRef}
           />
         </div>
         <p>Forgot Password ?</p>
         <div className="btn1">
           <Link to="/">
-            <Button style={{textDecoration:"none" , listStyle:"none"}} fullWidth disableElevation variant="contained">
+            <Button
+              style={{ textDecoration: "none", listStyle: "none" }}
+              fullWidth
+              disableElevation
+              variant="contained"
+              onClick={() => {
+                validate();
+              }} 
+            >
               GO !
             </Button>
-
           </Link>
         </div>
       </div>
     </section>
   );
 }
-
-export default Signup;

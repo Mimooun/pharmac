@@ -77,6 +77,28 @@ app.post("/addpanier", (req, res) => {
     });
 });
 
+/** Add utilisateur script */
+
+app.post("/addutilisateur", (req, res) => {
+    const lastnameRef = req.body.lastnameRef;
+    const firstnameRef = req.body.firstnameRef;
+    const passwordRef = req.body.passwordRef;
+    const sqlSelect = "INSERT INTO `utilisateur` (`id_utilisateur`,`lastname`,`firstname`,`password`) VALUES (NULL,?,?,?)";
+    db.query(sqlSelect, [lastnameRef,firstnameRef,passwordRef], (err, result) => {
+        if (err) {
+            res.send({
+                err: err
+            })
+        } else {
+            res.send({
+                message: "Operation completed"
+                
+            })
+
+        }
+    });
+});
+
 app.get("/produitspanier", (req, res) => {
     const sqlSelect = "SELECT * FROM `panier` ORDER BY `id_panier` ASC";
     db.query(sqlSelect, (err, result) => {
