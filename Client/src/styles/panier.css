@@ -51,24 +51,16 @@
   margin: auto;
 }
 .sec .cart .cards .card .icon {
-<<<<<<< Updated upstream
   display: block;
   margin: auto;
 }
-=======
-display: block;
-margin: auto;
 
-}
 .sec .cart .cards .card .icon .counter {
   display: flex;
   flex-direction: row;
   gap  : 20px;
   
 }
-
-
->>>>>>> Stashed changes
 .sec .cart .cards .card .trash {
   display: block;
   margin: auto;
