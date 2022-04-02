@@ -1,0 +1,123 @@
+.dashboard{
+    padding: 40px;
+    overflow: auto;
+}
+
+.dashboard .cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard .cards .card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 45px;
+    color: #303030;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    background-position: bottom;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.dashboard .cards .card:nth-child(1){
+    background-image: url('../assets/images/card1-pattern.png');
+}
+
+.dashboard .cards .card:nth-child(2){
+    background-image: url('../assets/images/card2-pattern.png');
+}
+
+.dashboard .cards .card:nth-child(3){
+    background-image: url('../assets/images/card3-pattern.png');
+}
+
+.dashboard .cards .card:nth-child(4){
+    background-image: url('../assets/images/card4-pattern.png');
+}
+
+.dashboard .cards .card .number{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.dashboard .cards .card .title{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dashboard .cards .card:nth-child(2) svg{
+    stroke: #00487E;
+    fill: none;
+}
+
+.dashboard .cards .card svg{
+    font-size: 30px;
+    fill: #00487E;
+}
+
+.dashboard .graph-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard .graph-container .apexcharts-legend{
+    display: none;
+}
+
+.dashboard .graph-container .apexcharts-toolbar{
+    display: none;
+}
+
+
+.dashboard .graph-container .graph1,
+.dashboard .graph-container .graph2{
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+.dashboard .graph-container .graph-info,
+.dashboard .table-container .table-info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+.dashboard .graph-container .divider,
+.dashboard .table-container .table-info .divider{
+    position: absolute;
+    height: 80%;
+    width: 3px;
+    background-color: #00487E ;
+    border-radius: 10px;
+}
+
+.dashboard .graph-container .graph-info .title,
+.dashboard .table-container .table-info .title{
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.dashboard .graph-container .graph-info .text,
+.dashboard .table-container .table-info .text{
+    font-size: 12px;
+    color: #969BA0;
+    margin-left: 15px;
+}
+
+.dashboard .table-container{
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}

@@ -1,0 +1,17 @@
+.app__body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+}
+
+.app__body .dashboard-container{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: auto;
+}
+
+.app__body .dashboard-container .dashboard-body{
+    overflow-y: auto;
+}
