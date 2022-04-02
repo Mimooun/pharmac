@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef  } from "react";
 import Axios from "axios";
 import "../styles/signup.css";
 import TextField from "@mui/material/TextField";
@@ -8,30 +8,34 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 export default function SignupTextFields() {
+  let history = useHistory();
   const lastnameRef = useRef();
   const firstnameRef = useRef();
+  const usernameRef = useRef();
   const passwordRef = useRef();
   const confirmationpasswordRef = useRef();
 
   function validate() {
     if (
-      lastnameRef.current.value !== "" &&
       firstnameRef.current.value !== "" &&
+      lastnameRef.current.value !== "" &&
+      usernameRef.current.value !== "" &&
       passwordRef.current.value !== "" &&
       confirmationpasswordRef.current.value !== ""
     ) {
       Axios.post("http://localhost:3001/addutilisateur", {
-        lastnameRef: lastnameRef.current.value,
         firstnameRef: firstnameRef.current.value,
+        lastnameRef: lastnameRef.current.value,
+        usernameRef: usernameRef.current.value,
         passwordRef: passwordRef.current.value,
         confirmationpasswordRef: confirmationpasswordRef.current.value,
       }).then((response) => {
         if (response.data.message === "Operation completed") {
           /** redirect to  list */
           console.log("Operation Completed");
-          /*history.push({
-            pathname: "/Panier",
-             })*/
+          history.push({
+            pathname: "/Login",
+             })
         }
       });
     }
@@ -57,6 +61,13 @@ export default function SignupTextFields() {
             label="Lastname"
             variant="outlined"
             inputRef={firstnameRef}
+          />
+           <TextField
+            fullWidth
+            size="small"
+            label="Username"
+            variant="outlined"
+            inputRef={usernameRef}
           />
           <TextField
             fullWidth
