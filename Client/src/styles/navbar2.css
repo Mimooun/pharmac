@@ -1,0 +1,78 @@
+nav {
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+nav.active {
+    box-shadow: 0 0 10px rgb(0 0 0 / 6%);
+}
+
+nav .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+nav .icons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .icons-container .avatar-container {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+nav button {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+    padding: 8px !important;
+}
+
+nav button svg {
+    font-size: 18px;
+}
+
+nav .icons-container button .notif {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+}
+
+nav .icons-container .avatar-container .MuiAvatar-circular {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+nav .icons-container .avatar-container .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+nav .icons-container .avatar-container .text1 {
+    font-weight: 200;
+    font-size: 12px;
+    color: #969BA0;
+}
+
+nav .icons-container .avatar-container .text2 {
+    font-size: 14px;
+}

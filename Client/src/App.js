@@ -13,6 +13,8 @@ import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
 import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
+import DashboardPage from "./components/DashboardPage";
+import Dashboard from './components/Dashboard'
 function App() {
   return (
     <Router>
@@ -25,6 +27,7 @@ function App() {
          <Route exact path="/Listep" component={Listep} />
          <Route exact path="/panier" component={Panier} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
+         <Route exact path="/Dash" component={Dashboard} />
         </Switch>
       </div>
     </Router>
