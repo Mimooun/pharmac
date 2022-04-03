@@ -55,9 +55,7 @@ app.post("/Login", (req, res) => {
             }
           }
         });
-        /* res.send({
-                    message: "Authentication failed"
-                }) */
+
       } else {
         req.user = result;
         res.send(result);

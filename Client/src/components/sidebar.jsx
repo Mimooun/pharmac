@@ -7,7 +7,7 @@ import { FaChalkboardTeacher, FaUserGraduate } from 'react-icons/fa';
 import { RiMoneyEuroCircleFill } from 'react-icons/ri';
 import { GoSettings } from 'react-icons/go';
 import { CgLogOut } from 'react-icons/cg';
-import logo from '../assets/images/logo-white.png'
+import logo from '../assets/images/SOSpharma2-removebg-preview.png'
 
 function Sidebar() {
 
@@ -22,9 +22,7 @@ function Sidebar() {
         <div className="sidebar">
             <div className="logo__container">
                 <img src={logo} alt="" />
-                <div className="logo__name">
-                    Space4Staff
-                </div>
+                
             </div>
             <ul className="menu">
                 <li  className="active">
@@ -66,8 +64,8 @@ function Sidebar() {
             </ul>
             <div className="copyRight">
                 <div>
-                    <span>Space4Staff</span> <br />
-                    © 2021 All Rights Reserved
+                    <span>SOS PHARMA</span> <br />
+                    © 2022 All Rights Reserved
                 </div>
             </div>
         </div>

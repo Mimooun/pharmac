@@ -21,7 +21,7 @@ function SignUp() {
     }).then((response) => {
       if (response.data.length > 0) {
         history.push({
-        pathname: "/Form",
+        pathname: "/Dash",
          });
 
         

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router'
 import { useLocation } from "react-router-dom";
 import Sidebar from "./sidebar";
-import Navbar from "./Navbar";
 import DashboardPage from "./DashboardPage";
 
 
@@ -14,7 +13,6 @@ function Dashboard () {
                 <div className="app__body">
                     <Sidebar />
                     <div className="dashboard-container">
-                        <Navbar />
                         <div className="dashboard-body">
                             <Router>
                                 <Switch>

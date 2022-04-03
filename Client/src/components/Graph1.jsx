@@ -34,7 +34,7 @@ class Graph1 extends React.Component {
             format: 'dd/MM/yy HH:mm'
           },
         },
-        colors:['#00487E', '#fd7a23']
+        colors: ['#3ecfa3', '#05668d']
       },
 
 

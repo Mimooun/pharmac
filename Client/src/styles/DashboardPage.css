@@ -51,13 +51,13 @@
 }
 
 .dashboard .cards .card:nth-child(2) svg{
-    stroke: #00487E;
+    stroke: #3ECFA3;
     fill: none;
 }
 
 .dashboard .cards .card svg{
     font-size: 30px;
-    fill: #00487E;
+    fill: #3ECFA3;
 }
 
 .dashboard .graph-container{
@@ -98,7 +98,7 @@
     position: absolute;
     height: 80%;
     width: 3px;
-    background-color: #00487E ;
+    background-color: #3ECFA3 ;
     border-radius: 10px;
 }
 
@@ -120,4 +120,7 @@
     padding: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
+}
+.apexcharts-bar-area {
+    color: #3ECFA3;
 }
