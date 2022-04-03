@@ -13,8 +13,8 @@ import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
 import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
-import DashboardPage from "./components/DashboardPage";
-import Dashboard from './components/Dashboard'
+import DashboardPage from "./components/Dash/DashboardPage";
+import Dashboard from './components/Dash/Dashboard'
 function App() {
   return (
     <Router>

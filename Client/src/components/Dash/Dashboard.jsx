@@ -1,5 +1,5 @@
 import React, { } from "react";
-import '../styles/Dashboard.css';
+import '../../styles/Dash/Dashboard.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router'
 import { useLocation } from "react-router-dom";
