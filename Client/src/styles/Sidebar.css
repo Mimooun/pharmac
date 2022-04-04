@@ -11,11 +11,11 @@
     gap: 10px;
     align-items: center;
     margin-bottom: 80px;
-    margin-left: 40px;
+    margin-left: 0px;
 }
 
 .sidebar .logo__container img {
-    width: 70%;
+    width: 100%;
 }
 
 .sidebar .menu {

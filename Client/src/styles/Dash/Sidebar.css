@@ -9,13 +9,13 @@
 .sidebar .logo__container {
     display: flex;
     gap: 10px;
+    justify-content: center;
     align-items: center;
     margin-bottom: 80px;
-    margin-left: 60px;
 }
 
 .sidebar .logo__container img {
-    width: 60%;
+    width: 80%;
 }
 
 .sidebar .menu {
@@ -59,7 +59,7 @@
 .sidebar .menu li.active {
     position: relative;
     background-color: white;
-    color: #00487E;
+    color: #3ECFA3;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
 }

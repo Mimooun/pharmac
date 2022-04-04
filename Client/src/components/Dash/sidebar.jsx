@@ -7,7 +7,7 @@ import { FaChalkboardTeacher, FaUserGraduate } from 'react-icons/fa';
 import { RiMoneyEuroCircleFill } from 'react-icons/ri';
 import { GoSettings } from 'react-icons/go';
 import { CgLogOut } from 'react-icons/cg';
-import logo from '../../assets/images/SOSpharma2-preview.png'
+import logo from '../../assets/images/soswhite.png'
 
 function Sidebar() {
 
