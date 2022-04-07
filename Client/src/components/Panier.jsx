@@ -138,13 +138,11 @@ function Panier() {
                       >
                         Cancel
                       </Button>
-                        <Button
-                          //onClick={deletePanier(produit.id_panier)}
-                          autoFocus
-                          style={{ color: "#3ecfa3" }}
-                        >
+                      <Link to="/Panier">
+                        <Button onClick={handleClose}  autoFocus  style={{color:"#3ecfa3", }}>
                           Confirm
                         </Button>
+                        </Link>
                     </DialogActions>
                   </Dialog>
                 </Stack>
