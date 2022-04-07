@@ -22,12 +22,37 @@ function Panier() {
 
   const [Panier, setPanier] = useState([]);
 
+  const [data, setData] = useState();
+
   const [open, setOpen] = React.useState(false);
   useEffect(() => {
     Axios.get("http://localhost:3001/produitspanier").then((response) => {
       setProduitPanier(response.data);
     });
   }, []);
+
+  function suprimer (){
+    Axios.get("http://localhost:3001/Panier").then((response) => {
+      setPanier(response.data);
+    });
+  }
+
+  const deletePanier = () => {
+    if (Panier.length === 0) {
+        /** no row selected */
+    } else if (Panier.length > 0) {
+        Axios.post("http://localhost:3001/deletePanier", { Panier: Panier }).then((response) => {
+            handleClose();
+            setPanier([])
+            alert('test')
+            Axios.get("http://localhost:3001/newReg").then((response) => {
+                
+                setData(response.data)
+            });
+        })
+    }
+}
+ 
  
 /*open and clos */
   const handleClickOpen = () => {
@@ -136,9 +161,6 @@ function Panier() {
                     </DialogActions>
                   </Dialog>
                 </Stack>
-                  
-                
-               
               </div>
             </div>
           ))}
