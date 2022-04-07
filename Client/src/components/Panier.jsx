@@ -15,15 +15,15 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
 function Panier() {
-  const [produitPanier, setProduitPanier] = useState([]);
-
   const [open, setOpen] = React.useState(false);
+
+  const [produitPanier, setProduitPanier] = useState([]);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/produitspanier").then((response) => {
-      setProduitPanier(response.data);
+      setProduitPanier(response.data)
     });
-  }, []);
+  });
 
   /*function deletePanier(id) {
     console.log('test');
@@ -34,7 +34,7 @@ function Panier() {
 
       }
     );
-  }*/
+  }
 
   /*open and clos */
   const handleClickOpen = () => {
@@ -43,7 +43,6 @@ function Panier() {
 
   const handleClose = () => {
     setOpen(false);
-    console.log("test");
   };
   /* fin script*/
 
@@ -88,34 +87,25 @@ function Panier() {
                 </div>
               </div>
               <div className="trash">
+              <Stack direction="row" spacing={3}>
+                  
+                </Stack>
+
                 <Stack direction="row" spacing={3}>
                   <Button
-                    variant="contained"
-                    onClick={handleClickOpen}
                     style={{
-                      backgroundColor: "transeparent",
+                      backgroundColor: "#3ecfa3",
                       marginTop: "100px",
                       display: "block",
                       margin: "auto",
                       color: "white",
-                      border: "0px solid #3ecfa3 ",
+                      border: "1px solid #3ecfa3 ",
                     }}
                     disableElevation
-                    //variant="outlined"
+                    variant="outlined"
                     onClick={handleClickOpen}
-                    
                   >
-                    <DeleteForeverIcon
-                      style={{
-                        backgroundColor: "#3ecfa3",
-                        marginTop: "100px",
-                        display: "block",
-                        margin: "auto",
-                        color: "white",
-                        border: "1px solid #3ecfa3 ",
-                        borderRadius: "5px",
-                      }}
-                    ></DeleteForeverIcon>
+                    <DeleteForeverIcon></DeleteForeverIcon>
                   </Button>
                   <Dialog
                     open={open}
@@ -133,16 +123,20 @@ function Panier() {
                     </DialogContent>
                     <DialogActions>
                       <Button
-                        onClick={handleClose()}
+                        onClick={handleClose}
                         style={{ color: "#3ecfa3" }}
                       >
                         Cancel
                       </Button>
                       <Link to="/Panier">
-                        <Button onClick={handleClose}  autoFocus  style={{color:"#3ecfa3", }}>
+                        <Button
+                          onClick={handleClose}
+                          autoFocus
+                          style={{ color: "#3ecfa3" }}
+                        >
                           Confirm
                         </Button>
-                        </Link>
+                      </Link>
                     </DialogActions>
                   </Dialog>
                 </Stack>

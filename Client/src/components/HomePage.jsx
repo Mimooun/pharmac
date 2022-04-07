@@ -25,7 +25,6 @@ function HomePage() {
       <Pipeline />
       <Testimonial />
       <Contact />
-      <Panier />
       <Footer />
     </div>
   );
