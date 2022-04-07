@@ -11,44 +11,32 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
-import { Link} from "react-router-dom";
-import Stack from '@mui/material/Stack';
+import { Link } from "react-router-dom";
+import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
 function Panier() {
   const [produitPanier, setProduitPanier] = useState([]);
 
-  const [Panier, setPanier] = useState([]);
-
-  const [data, setData] = useState();
-
   const [open, setOpen] = React.useState(false);
+
   useEffect(() => {
     Axios.get("http://localhost:3001/produitspanier").then((response) => {
       setProduitPanier(response.data);
     });
   }, []);
 
-  function suprimer (){
-    Axios.get("http://localhost:3001/Panier").then((response) => {
-      setPanier(response.data);
-    });
-  }
+  /*function deletePanier(id) {
+    console.log('test');
+    Axios.post("http://localhost:3001/deletePanier", { id: id }).then(
+      (response) => {
+        handleClose();
+        console.log(response);
 
-  const deletePanier = () => {
-        Axios.post("http://localhost:3001/deletePanier", { Panier: Panier }).then((response) => {
-            handleClose();
-            setPanier([])
-            console.log(response);
-            Axios.get("http://localhost:3001/newReg").then((response) => {
-                alert('test')
-                setData(response.data)
-            });
-        })
-    
-}
- 
- 
-/*open and clos */
+      }
+    );
+  }*/
+
+  /*open and clos */
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -59,7 +47,6 @@ function Panier() {
   };
   /* fin script*/
 
-  
   const [quantity, setQuantity] = useState(1);
   return (
     <section className="sec">
@@ -101,33 +88,33 @@ function Panier() {
                 </div>
               </div>
               <div className="trash">
-                
-              <Stack direction="row" spacing={3}>
-                  <Button variant="contained" onClick={handleClickOpen}
-                   style={{
-                    backgroundColor: "transeparent",
-                    marginTop: "100px",
-                    display: "block",
-                    margin: "auto",
-                    color:"white",
-                    border:"0px solid #3ecfa3 ",
-                    
-                  }}
-                    disableElevation
-                    variant="outlined"
+                <Stack direction="row" spacing={3}>
+                  <Button
+                    variant="contained"
                     onClick={handleClickOpen}
-                  >
-                    <DeleteForeverIcon
-                     style={{
-                      backgroundColor: "#3ecfa3",
+                    style={{
+                      backgroundColor: "transeparent",
                       marginTop: "100px",
                       display: "block",
                       margin: "auto",
-                      color:"white",
-                      border:"1px solid #3ecfa3 ",
-                      borderRadius:"5px",
-                      
+                      color: "white",
+                      border: "0px solid #3ecfa3 ",
                     }}
+                    disableElevation
+                    //variant="outlined"
+                    onClick={handleClickOpen}
+                    
+                  >
+                    <DeleteForeverIcon
+                      style={{
+                        backgroundColor: "#3ecfa3",
+                        marginTop: "100px",
+                        display: "block",
+                        margin: "auto",
+                        color: "white",
+                        border: "1px solid #3ecfa3 ",
+                        borderRadius: "5px",
+                      }}
                     ></DeleteForeverIcon>
                   </Button>
                   <Dialog
@@ -140,19 +127,24 @@ function Panier() {
                       {"Please confirm !"}
                     </DialogTitle>
                     <DialogContent>
-                      <DialogContentText id="alert-dialog-description"  >
+                      <DialogContentText id="alert-dialog-description">
                         Are you sure you want to continue ?
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                      <Button onClick={handleClose}  style={{ color:"#3ecfa3", }}>
+                      <Button
+                        onClick={handleClose()}
+                        style={{ color: "#3ecfa3" }}
+                      >
                         Cancel
                       </Button>
-                      <Link to="/Panier">
-                        <Button onClick={deletePanier}  autoFocus  style={{color:"#3ecfa3", }}>
+                        <Button
+                          //onClick={deletePanier(produit.id_panier)}
+                          autoFocus
+                          style={{ color: "#3ecfa3" }}
+                        >
                           Confirm
                         </Button>
-                      </Link>
                     </DialogActions>
                   </Dialog>
                 </Stack>

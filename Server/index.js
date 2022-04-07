@@ -187,9 +187,9 @@ app.get("/produitspanier", (req, res) => {
 
 
 app.post("/deletePanier", (req, res) => {
-  const panier = req.body.panier;
+  const id = req.body.id;
   const sqlSelect = "DELETE FROM `panier` WHERE `id_panier` = ?";
-  db.query(sqlSelect, panier, (err) => {
+  db.query(sqlSelect, id, (err) => {
       if (err) {
           res.send({
               err: err
