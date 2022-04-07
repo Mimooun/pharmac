@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Axios from "axios";
 import Searchnav from "./Searchnav";
 import Box from "@mui/material/Box";
-import Formnav from '../components/Formnav'
+import Formnav from "../components/Formnav";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -12,7 +12,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import "../styles/form.css";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -34,55 +34,55 @@ export default function FormPropsTextFields() {
   const quantiteRef = useRef();
   const [open, setOpen] = React.useState(false);
 
-    const [verfName, setverfName] = useState(false);
-    const [verfNamepharmacie, setverfNamepharmacie] = useState(false);
-    const [verfAdressepharmacie, setverfAdressepharmacie] = useState(false);
-    const [verfNamemedicament, setverfNamemedicament] = useState(false);
-    const [verfQuantite, setverfQuantite] = useState(false);
+  const [verfName, setverfName] = useState(false);
+  const [verfNamepharmacie, setverfNamepharmacie] = useState(false);
+  const [verfAdressepharmacie, setverfAdressepharmacie] = useState(false);
+  const [verfNamemedicament, setverfNamemedicament] = useState(false);
+  const [verfQuantite, setverfQuantite] = useState(false);
 
   const verifName = () => {
     const reg = new RegExp(/^[a-zA-Z]*$/);
     if (reg.test(nameRef.current.value) === false) {
-        setverfName(true)
+      setverfName(true);
     } else {
-        setverfName(false)
+      setverfName(false);
     }
-}
+  };
 
-const verifNamepharmacie = () => {
-  const reg = new RegExp(/^[a-zA-Z]*$/);
-  if (reg.test(pharmacieRef.current.value) === false) {
-      setverfNamepharmacie(true)
-  } else {
-      setverfNamepharmacie(false)
-  }
-}
+  const verifNamepharmacie = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(pharmacieRef.current.value) === false) {
+      setverfNamepharmacie(true);
+    } else {
+      setverfNamepharmacie(false);
+    }
+  };
 
-const verifAdressepharmacie = () => {
-  const reg = new RegExp(/^[a-zA-Z]*$/);
-  if (reg.test(adresseRef.current.value) === false) {
-      setverfAdressepharmacie(true)
-  } else {
-      setverfAdressepharmacie(false)
-  }
-}
+  const verifAdressepharmacie = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(adresseRef.current.value) === false) {
+      setverfAdressepharmacie(true);
+    } else {
+      setverfAdressepharmacie(false);
+    }
+  };
 
-const verifNamemedicament = () => {
-  const reg = new RegExp(/^[a-zA-Z]*$/);
-  if (reg.test(medicamentRef.current.value) === false) {
-      setverfNamemedicament(true)
-  } else {
-      setverfNamemedicament(false)
-  }
-}
-const verifQuantite = () => {
-  const reg = new RegExp(/^[0-9]*$/);
-  if (reg.test(quantiteRef.current.value) === false) {
-      setverfQuantite(true)
-  } else {
-    setverfQuantite(false)
-  }
-}
+  const verifNamemedicament = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(medicamentRef.current.value) === false) {
+      setverfNamemedicament(true);
+    } else {
+      setverfNamemedicament(false);
+    }
+  };
+  const verifQuantite = () => {
+    const reg = new RegExp(/^[0-9]*$/);
+    if (reg.test(quantiteRef.current.value) === false) {
+      setverfQuantite(true);
+    } else {
+      setverfQuantite(false);
+    }
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -93,20 +93,24 @@ const verifQuantite = () => {
   };
 
   function validate() {
-    
     if (
-      nameRef.current.value !== " " && !verfName && 
-      pharmacieRef.current.value !== " " && !verfNamepharmacie &&
-      adresseRef.current.value !== " " && !verfAdressepharmacie &&
+      nameRef.current.value !== " " &&
+      !verfName &&
+      pharmacieRef.current.value !== " " &&
+      !verfNamepharmacie &&
+      adresseRef.current.value !== " " &&
+      !verfAdressepharmacie &&
       medicamentRef.current.value !== " " &&
       dateRef.current.value !== " " &&
-      quantiteRef.current.value !==  " "&& !verfQuantite
-    );{
+      quantiteRef.current.value !== " " &&
+      !verfQuantite
+    );
+    {
       Axios.post("http://localhost:3001/addpanier", {
         nameRef: nameRef.current.value,
         pharmacieRef: pharmacieRef.current.value,
-        adresseRef: adresseRef.current.value ,
-        medicamentRef: medicamentRef.current.value ,
+        adresseRef: adresseRef.current.value,
+        medicamentRef: medicamentRef.current.value,
         dateRef: dateRef.current.value,
         quantiteRef: quantiteRef.current.value,
       }).then((response) => {
@@ -115,24 +119,23 @@ const verifQuantite = () => {
           console.log("Operation Completed");
           history.push({
             pathname: "/Panier",
-             })
-        }
-        else {
-          if (nameRef.current.value === '') {
-              setverfName (true)
+          });
+        } else {
+          if (nameRef.current.value === "") {
+            setverfName(true);
           }
-          if (pharmacieRef.current.value === '') {
-              setverfNamepharmacie(true)
+          if (pharmacieRef.current.value === "") {
+            setverfNamepharmacie(true);
           }
-          if (adresseRef.current.value === '') {
-              setverfAdressepharmacie(true)
+          if (adresseRef.current.value === "") {
+            setverfAdressepharmacie(true);
           }
-          if (medicamentRef.current.value === '') {
-              setverfNamemedicament(true)
-          } 
-          if (quantiteRef.current.value === '') {
-            setverfQuantite(true)
-        }
+          if (medicamentRef.current.value === "") {
+            setverfNamemedicament(true);
+          }
+          if (quantiteRef.current.value === "") {
+            setverfQuantite(true);
+          }
         }
       });
     }
@@ -157,7 +160,6 @@ const verifQuantite = () => {
                     borderBlockStyle: "red",
                   }}
                   inputRef={nameRef}
-                  
                   className="textfield"
                   required
                   id="outlined-required"
@@ -188,7 +190,7 @@ const verifQuantite = () => {
                   required
                   id="outlined-required"
                   label="Nom Médicaments"
-                  inputRef={medicamentRef} 
+                  inputRef={medicamentRef}
                   onChange={verifNamemedicament}
                   error={verfNamemedicament}
                 />
@@ -207,33 +209,10 @@ const verifQuantite = () => {
                   }}
                 />
 
-                <FormControl className="textfield">
-                  <FormLabel id="demo-row-radio-buttons-group-label">
-                    Situation
-                  </FormLabel>
-                  <RadioGroup
-                    row
-                    aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
-                  >
-                    <FormControlLabel
-                      value="urgent"
-                      control={<Radio />}
-                      label="Urgent"
-                    />
-                    <FormControlLabel
-                      value="male"
-                      control={<Radio />}
-                      label="Pas Urgent"
-                    />
-                  </RadioGroup>
-                </FormControl>
-              </div>
-              <div className="number">
                 <TextField
                   style={{
                     backgroundColor: "white",
-                    
+                    marginLeft:"auto"
                   }}
                   inputRef={quantiteRef}
                   onChange={verifQuantite}
@@ -247,6 +226,7 @@ const verifQuantite = () => {
                   variant="filled"
                 />
               </div>
+              <div className="number"></div>
               <div className="btn-form">
                 <Stack direction="row" spacing={3}>
                   <Button
@@ -267,14 +247,14 @@ const verifQuantite = () => {
 
                 <Stack direction="row" spacing={3}>
                   <Button
-                   style={{
-                    backgroundColor: "#3ecfa3",
-                    marginTop: "100px",
-                    display: "block",
-                    margin: "auto",
-                    color:"white",
-                    border:"1px solid #3ecfa3 "
-                  }}
+                    style={{
+                      backgroundColor: "#3ecfa3",
+                      marginTop: "100px",
+                      display: "block",
+                      margin: "auto",
+                      color: "white",
+                      border: "1px solid #3ecfa3 ",
+                    }}
                     disableElevation
                     variant="outlined"
                     onClick={handleClickOpen}
@@ -291,16 +271,23 @@ const verifQuantite = () => {
                       {"Please confirm !"}
                     </DialogTitle>
                     <DialogContent>
-                      <DialogContentText id="alert-dialog-description"  >
+                      <DialogContentText id="alert-dialog-description">
                         Are you sure you want to continue ?
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                      <Button onClick={handleClose}  style={{ color:"#3ecfa3", }}>
+                      <Button
+                        onClick={handleClose}
+                        style={{ color: "#3ecfa3" }}
+                      >
                         Cancel
                       </Button>
                       <Link to="/">
-                        <Button onClick={handleClose} autoFocus  style={{color:"#3ecfa3", }}>
+                        <Button
+                          onClick={handleClose}
+                          autoFocus
+                          style={{ color: "#3ecfa3" }}
+                        >
                           Confirm
                         </Button>
                       </Link>

@@ -12,10 +12,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import { Link} from "react-router-dom";
-import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import DoneIcon from '@mui/icons-material/Done';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { borderRadius } from "@mui/system";
 function Panier() {
   const [produitPanier, setProduitPanier] = useState([]);
@@ -38,18 +35,16 @@ function Panier() {
   }
 
   const deletePanier = () => {
-    if (Panier.length === 0) {
-        /** no row selected */
-    } else if (Panier.length > 0) {
         Axios.post("http://localhost:3001/deletePanier", { Panier: Panier }).then((response) => {
             handleClose();
             setPanier([])
+            console.log(response);
             Axios.get("http://localhost:3001/newReg").then((response) => {
                 alert('test')
                 setData(response.data)
             });
         })
-    }
+    
 }
  
  
@@ -60,6 +55,7 @@ function Panier() {
 
   const handleClose = () => {
     setOpen(false);
+    console.log("test");
   };
   /* fin script*/
 
@@ -153,7 +149,7 @@ function Panier() {
                         Cancel
                       </Button>
                       <Link to="/Panier">
-                        <Button onClick={handleClose }  autoFocus  style={{color:"#3ecfa3", }}>
+                        <Button onClick={deletePanier}  autoFocus  style={{color:"#3ecfa3", }}>
                           Confirm
                         </Button>
                       </Link>
