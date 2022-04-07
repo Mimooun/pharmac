@@ -44,9 +44,8 @@ function Panier() {
         Axios.post("http://localhost:3001/deletePanier", { Panier: Panier }).then((response) => {
             handleClose();
             setPanier([])
-            alert('test')
             Axios.get("http://localhost:3001/newReg").then((response) => {
-                
+                alert('test')
                 setData(response.data)
             });
         })
@@ -154,7 +153,7 @@ function Panier() {
                         Cancel
                       </Button>
                       <Link to="/Panier">
-                        <Button onClick={handleClose}  autoFocus  style={{color:"#3ecfa3", }}>
+                        <Button onClick={handleClose }  autoFocus  style={{color:"#3ecfa3", }}>
                           Confirm
                         </Button>
                       </Link>
