@@ -34,6 +34,56 @@ export default function FormPropsTextFields() {
   const quantiteRef = useRef();
   const [open, setOpen] = React.useState(false);
 
+    const [verfName, setverfName] = useState(false);
+    const [verfNamepharmacie, setverfNamepharmacie] = useState(false);
+    const [verfAdressepharmacie, setverfAdressepharmacie] = useState(false);
+    const [verfNamemedicament, setverfNamemedicament] = useState(false);
+    const [verfQuantite, setverfQuantite] = useState(false);
+
+  const verifName = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(nameRef.current.value) === false) {
+        setverfName(true)
+    } else {
+        setverfName(false)
+    }
+}
+
+const verifNamepharmacie = () => {
+  const reg = new RegExp(/^[a-zA-Z]*$/);
+  if (reg.test(pharmacieRef.current.value) === false) {
+      setverfNamepharmacie(true)
+  } else {
+      setverfNamepharmacie(false)
+  }
+}
+
+const verifAdressepharmacie = () => {
+  const reg = new RegExp(/^[a-zA-Z]*$/);
+  if (reg.test(adresseRef.current.value) === false) {
+      setverfAdressepharmacie(true)
+  } else {
+      setverfAdressepharmacie(false)
+  }
+}
+
+const verifNamemedicament = () => {
+  const reg = new RegExp(/^[a-zA-Z]*$/);
+  if (reg.test(medicamentRef.current.value) === false) {
+      setverfNamemedicament(true)
+  } else {
+      setverfNamemedicament(false)
+  }
+}
+const verifQuantite = () => {
+  const reg = new RegExp(/^[0-9]*$/);
+  if (reg.test(quantiteRef.current.value) === false) {
+      setverfQuantite(true)
+  } else {
+    setverfQuantite(false)
+  }
+}
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -43,19 +93,20 @@ export default function FormPropsTextFields() {
   };
 
   function validate() {
+    
     if (
-      nameRef.current.value !== " " &&
-      pharmacieRef.current.value !== " " &&
-      adresseRef.current.value !== " " &&
+      nameRef.current.value !== " " && !verfName && 
+      pharmacieRef.current.value !== " " && !verfNamepharmacie &&
+      adresseRef.current.value !== " " && !verfAdressepharmacie &&
       medicamentRef.current.value !== " " &&
       dateRef.current.value !== " " &&
-      quantiteRef.current.value !== " "
-    ) {
+      quantiteRef.current.value !==  " "&& !verfQuantite
+    );{
       Axios.post("http://localhost:3001/addpanier", {
         nameRef: nameRef.current.value,
         pharmacieRef: pharmacieRef.current.value,
-        adresseRef: adresseRef.current.value,
-        medicamentRef: medicamentRef.current.value,
+        adresseRef: adresseRef.current.value ,
+        medicamentRef: medicamentRef.current.value ,
         dateRef: dateRef.current.value,
         quantiteRef: quantiteRef.current.value,
       }).then((response) => {
@@ -65,6 +116,23 @@ export default function FormPropsTextFields() {
           history.push({
             pathname: "/Panier",
              })
+        }
+        else {
+          if (nameRef.current.value === '') {
+              setverfName (true)
+          }
+          if (pharmacieRef.current.value === '') {
+              setverfNamepharmacie(true)
+          }
+          if (adresseRef.current.value === '') {
+              setverfAdressepharmacie(true)
+          }
+          if (medicamentRef.current.value === '') {
+              setverfNamemedicament(true)
+          } 
+          if (quantiteRef.current.value === '') {
+            setverfQuantite(true)
+        }
         }
       });
     }
@@ -89,16 +157,21 @@ export default function FormPropsTextFields() {
                     borderBlockStyle: "red",
                   }}
                   inputRef={nameRef}
+                  
                   className="textfield"
                   required
                   id="outlined-required"
                   label="Nom Complet"
+                  onChange={verifName}
+                  error={verfName}
                 />
                 <TextField
                   required
                   id="outlined-required"
                   label="Nom pharmacie"
                   inputRef={pharmacieRef}
+                  onChange={verifNamepharmacie}
+                  error={verfNamepharmacie}
                 />
               </div>
               <div className="two">
@@ -107,13 +180,17 @@ export default function FormPropsTextFields() {
                   id="outlined-required"
                   label="Adresse pharmacie"
                   inputRef={adresseRef}
+                  onChange={verifAdressepharmacie}
+                  error={verfAdressepharmacie}
                 />
                 <TextField
                   className="textfield"
                   required
                   id="outlined-required"
                   label="Nom Médicaments"
-                  inputRef={medicamentRef}
+                  inputRef={medicamentRef} 
+                  onChange={verifNamemedicament}
+                  error={verfNamemedicament}
                 />
               </div>
 
@@ -155,10 +232,12 @@ export default function FormPropsTextFields() {
               <div className="number">
                 <TextField
                   style={{
-                    backgroundColor: "pink",
+                    backgroundColor: "white",
                     
                   }}
                   inputRef={quantiteRef}
+                  onChange={verifQuantite}
+                  error={verfQuantite}
                   id="filled-number"
                   label="Quantite"
                   type="Quantite"

@@ -8,6 +8,8 @@ import { RiMoneyEuroCircleFill } from 'react-icons/ri';
 import { GoSettings } from 'react-icons/go';
 import { CgLogOut } from 'react-icons/cg';
 import logo from '../../assets/images/soswhite.png'
+import { Link } from "react-router-dom";
+
 
 function Sidebar() {
 
@@ -31,12 +33,16 @@ function Sidebar() {
                     </div>
                     Dashboard
                 </li>
-                <li >
+                
+                 
+                <li>
                     <div className="menu__icon">
                         <FaChalkboardTeacher />
                     </div>
                     Teachers
+                
                 </li>
+                
                 <li >
                     <div className="menu__icon">
                         <FaUserGraduate />

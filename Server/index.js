@@ -1,9 +1,13 @@
 const express = require("express");
-const app = express();
-const mysql = require("mysql");
+const bodyParser = require("body-parser");
 const cors = require("cors");
-app.use(cors());
-app.use(express.json());
+const mysql = require("mysql");
+const multer = require('multer')
+const path = require('path')
+const app = express();
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+
 
 const db = mysql.createConnection({
   user: "root",
@@ -22,6 +26,40 @@ app.use(
     credentials: true,
   })
 );
+
+
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+    extended: true,
+}));
+app.use(express.static("./public"));
+app.use(express.json());
+
+app.use(session({
+    key: "userId",
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 1000 * 60 * 60 * 24,
+    },
+}));
+
+/** check if session exist */
+
+app.get("/login", (req, res) => {
+    if (req.session.user) {
+        res.send({
+            loggedIn: true,
+            firstname: req.session.user[0].firstname,
+            lastname: req.session.user[0].lastname
+        })
+    } else {
+        res.send({
+            loggedIn: false
+        })
+    }
+})
 
 /** login script */
 
@@ -50,7 +88,7 @@ app.post("/Login", (req, res) => {
                 message: "Authentication failed",
               });
             } else {
-              req.user = result;
+              req.session.user = result;
               res.send(result);
             }
           }
@@ -73,7 +111,6 @@ app.post("/addpanier", (req, res) => {
   const dateRef = req.body.dateRef;
   const quantiteRef = req.body.quantiteRef;
   const situation = "";
-
   const sqlSelect =
     "INSERT INTO `panier` (`id_panier`, `nom`, `nom_pharmacie`, `adresse_pharmacie`, `nom_medicament`, `date_commande`, `situation`, `quantite`) VALUES (NULL,?,?,?,?,?,?,?)";
   db.query(
@@ -145,7 +182,25 @@ app.get("/produitspanier", (req, res) => {
     }
   });
 });
-/**fin script teachers */
+/**fin script  */
+
+
+
+app.post("/deletePanier", (req, res) => {
+  const panier = req.body.panier;
+  const sqlSelect = "DELETE FROM `panier` WHERE `id_panier` = ?";
+  db.query(sqlSelect, panier, (err, result) => {
+      if (err) {
+          res.send({
+              err: err
+          })
+      } else {
+          res.send({
+              message: "Operation completed"
+          })
+      }
+  })
+})
 
 /** fin Add Student script */
 app.listen(3001, () => {
