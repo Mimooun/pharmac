@@ -90,7 +90,7 @@ export default function SignupTextFields() {
         </div>
         <p>Forgot Password ?</p>
         <div className="btn1">
-          <Link to="/">
+          <Link to="/Login">
             <Button
               style={{ textDecoration: "none", listStyle: "none" }}
               fullWidth
