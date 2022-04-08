@@ -185,7 +185,7 @@ export default function FormPropsTextFields() {
     }
   };
 
-  const verifNamemedicament = () => {
+  const verifNomMedicament = () => {
     const reg = new RegExp(/^[a-zA-Z]*$/);
     if (reg.test(medicamentRef.current.value) === false) {
       setverfNamemedicament(true);
@@ -317,6 +317,8 @@ export default function FormPropsTextFields() {
                           ...params.InputProps,
                           type: "search",
                         }}
+                        inputRef={medicamentRef}
+                        onChange={verfNamemedicament}
                       />
                     )}
                   />
