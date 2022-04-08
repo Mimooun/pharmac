@@ -4,15 +4,15 @@ nav {
   display: flex;
   position: fixed;
   top: 0;
-  z-index: 99999;
+
   flex-direction: row;
   width: 100%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: white;
+  /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+  background-color: transparent;
 }
 nav .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 10px;
   width: 100vw;
 }
@@ -64,6 +64,13 @@ nav .container .menu ul li:hover {
    margin-left: auto;
    padding : 10px ;
    margin-top: 10px;
+}
+nav .container .search-area{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 /*responsive */

@@ -25,13 +25,11 @@ function Panier() {
     });
   });
 
-  /*function deletePanier(id) {
+  function deletePanier(id) {
     console.log('test');
     Axios.post("http://localhost:3001/deletePanier", { id: id }).then(
       (response) => {
-        handleClose();
-        console.log(response);
-
+        
       }
     );
   }
@@ -128,15 +126,14 @@ function Panier() {
                       >
                         Cancel
                       </Button>
-                      <Link to="/Panier">
                         <Button
-                          onClick={handleClose}
+                        onClick={deletePanier()}
+                          
                           autoFocus
                           style={{ color: "#3ecfa3" }}
                         >
                           Confirm
                         </Button>
-                      </Link>
                     </DialogActions>
                   </Dialog>
                 </Stack>
