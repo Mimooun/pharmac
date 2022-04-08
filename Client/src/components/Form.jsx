@@ -339,7 +339,7 @@ export default function FormPropsTextFields() {
                 <TextField
                   style={{
                     backgroundColor: "white",
-                    marginLeft: "auto",
+                    marginLeft: "5px",
                   }}
                   inputRef={quantiteRef}
                   onChange={verifQuantite}
