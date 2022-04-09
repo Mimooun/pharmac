@@ -185,6 +185,26 @@ app.get("/produitspanier", (req, res) => {
 /**fin script  */
 
 
+app.get("/categories", (req, res) => {
+  const sqlSelect = "SELECT * FROM `categorie` ORDER BY `id_categorie` ASC";
+  db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+});
+
+
 
 app.post("/deletePanier", (req, res) => {
   const id = req.body.id;

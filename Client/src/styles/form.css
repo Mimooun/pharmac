@@ -10,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .textfield-container {
@@ -18,20 +17,27 @@
   margin: auto;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   border-radius: 15px;
-  padding : 20px ;
+  padding : 40px 40px ;
 }
 
 .textfield-container .one {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .textfield-container .two {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
+
 .textfield-container .three {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .textfield-container .number{
   display: flex;
@@ -39,18 +45,30 @@
   align-items: center;
 }
 .btn-form {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
-.css-13r4j3i .MuiTextField-root {
-  margin-left: 0px;
-}
+
 
 #demo-row-radio-buttons-group-label {
   color: #666666;
 }
+.css-16awh2u-MuiAutocomplete-root {
+  margin-bottom: 20px;
+}
+.css-cio0x1-MuiInputBase-root-MuiFilledInput-root{
+  margin-bottom: 25px;
+  background-color: none  !important ;
+}
 
+.css-10botns-MuiInputBase-input-MuiFilledInput-input{
+  background-color: none ;
+}
+
+.css-cio0x1-MuiInputBase-root-MuiFilledInput-root {
+  background-color: none  !important ;
+}

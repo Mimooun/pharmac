@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef ,useEffect} from "react";
 import Axios from "axios";
 import Box from "@mui/material/Box";
 import Formnav from "../components/Formnav";
@@ -144,6 +144,7 @@ export default function FormPropsTextFields() {
   ];
   let history = useHistory();
   const [situation, setSituaion] = useState();
+  const [categorie, setcategorie] = useState([""]);
   const nameRef = useRef();
   const pharmacieRef = useRef();
   const adresseRef = useRef();
@@ -209,6 +210,11 @@ export default function FormPropsTextFields() {
   const handleClose = () => {
     setOpen(false);
   };
+  useEffect(() => {
+    Axios.get("http://localhost:3001/categories").then((response) => {
+      setcategorie(response.data)
+    });
+  } ,[]);
 
   function validate() {
     if (
@@ -295,15 +301,27 @@ export default function FormPropsTextFields() {
                 />
               </div>
               <div className="two">
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Adresse pharmacie"
-                  inputRef={adresseRef}
-                  onChange={verifAdressepharmacie}
-                  error={verfAdressepharmacie}
-                />
-                <Stack spacing={2} sx={{ width: 300 }}>
+              <Stack>
+                  <Autocomplete
+                    freeSolo
+                    id="free-solo-2-demo"
+                    disableClearable
+                    options={categorie.map((option) => option.libelle_categorie)}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Search input"
+                        InputProps={{
+                          ...params.InputProps,
+                          type: "search",
+                        }}
+                        inputRef={medicamentRef}
+                        onChange={verfNamemedicament}
+                      />
+                    )}
+                  />
+                </Stack>
+                <Stack>
                   <Autocomplete
                     freeSolo
                     id="free-solo-2-demo"
@@ -341,7 +359,7 @@ export default function FormPropsTextFields() {
                 <TextField
                   style={{
                     backgroundColor: "white",
-                    marginLeft: "5px",
+                    
                   }}
                   inputRef={quantiteRef}
                   onChange={verifQuantite}
