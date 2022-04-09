@@ -145,6 +145,7 @@ export default function FormPropsTextFields() {
   let history = useHistory();
   const [situation, setSituaion] = useState();
   const [categorie, setcategorie] = useState([""]);
+  const [produits, setproduits] = useState([""]);
   const nameRef = useRef();
   const pharmacieRef = useRef();
   const adresseRef = useRef();
@@ -213,6 +214,11 @@ export default function FormPropsTextFields() {
   useEffect(() => {
     Axios.get("http://localhost:3001/categories").then((response) => {
       setcategorie(response.data)
+    });
+  } ,[]);
+  useEffect(() => {
+    Axios.get("http://localhost:3001/produits").then((response) => {
+      setproduits(response.data)
     });
   } ,[]);
 
@@ -326,7 +332,7 @@ export default function FormPropsTextFields() {
                     freeSolo
                     id="free-solo-2-demo"
                     disableClearable
-                    options={top100Films.map((option) => option.title)}
+                    options={produits.map((option) => option.title)}
                     renderInput={(params) => (
                       <TextField
                         {...params}

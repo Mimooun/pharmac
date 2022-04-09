@@ -203,6 +203,26 @@ app.get("/categories", (req, res) => {
     }
   });
 });
+/* selection de produits */
+
+app.get("/produits", (req, res) => {
+  const sqlSelect = "SELECT * FROM `produits` ORDER BY `id_produit` ASC";
+  db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+});
 
 
 
