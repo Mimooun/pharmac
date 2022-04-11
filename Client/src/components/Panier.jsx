@@ -14,16 +14,25 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
+import { useLocation } from "react-router-dom";
 function Panier() {
+  const location = useLocation();
   const [open, setOpen] = React.useState(false);
 
   const [produitPanier, setProduitPanier] = useState([]);
 
+  const [id_utilisateur, setId_utilisateur] = useState();
+
   useEffect(() => {
-    Axios.get("http://localhost:3001/produitspanier").then((response) => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      setId_utilisateur(response.data.id);
+    });
+    Axios.post("http://localhost:3001/produitspanier", {
+      id: location.id,
+    }).then((response) => {
       setProduitPanier(response.data);
     });
-  });
+  }, []);
 
   function deletePanier(id) {
     console.log("test");
@@ -56,6 +65,8 @@ function Panier() {
               <div className="content">
                 <div className="name">{produit.nom} </div>
                 {produit.nom_pharmacie}
+                {produit.libelle_categorie}
+                {produit.libelle_produit}
               </div>
               <div className="icon">
                 <div className="counter">

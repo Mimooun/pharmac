@@ -78,6 +78,11 @@
 }
 
 
-.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+/*.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   line-height: 2.5em;
+}*/
+
+
+.MuiSelect-select .MuiSelect-outlined .MuiOutlinedInput-input .MuiInputBase-input .MuiInputBase-inputSizeSmall .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+text-align: center !important;
 }

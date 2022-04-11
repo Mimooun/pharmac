@@ -41,6 +41,13 @@ export default function FormPropsTextFields() {
   const [verfQuantite, setverfQuantite] = useState(false);
   const [selectedid, setselectedid] = useState(false);
 
+  const [id_utilisateur, setId_utilisateur] = useState();
+  useEffect(() => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      setId_utilisateur(response.data.id);
+    });
+  }, []);
+
   const verifNamepharmacie = () => {
     const reg = new RegExp(/^[a-zA-Z]*$/);
     if (reg.test(pharmacieRef.current.value) === false) {
@@ -114,12 +121,14 @@ export default function FormPropsTextFields() {
         produit: produit,
         dateRef: dateRef.current.value,
         quantiteRef: quantiteRef.current.value,
+        id: id_utilisateur,
       }).then((response) => {
         if (response.data.message === "Operation completed") {
           /** redirect to students list */
           console.log("Operation Completed");
           history.push({
             pathname: "/Panier",
+            id: id_utilisateur,
           });
         } else {
           if (pharmacieRef.current.value === "") {
@@ -175,7 +184,7 @@ export default function FormPropsTextFields() {
                 />
               </div>
               <div className="two">
-                <FormControl style={{ width: "45%"  }}>
+                <FormControl style={{ width: "45%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -193,10 +202,7 @@ export default function FormPropsTextFields() {
                     onChange={handleChangecategorie}
                   >
                     {categories.map((categorie) => (
-                      <MenuItem
-                        value={categorie.id_categorie}
-
-                      >
+                      <MenuItem value={categorie.id_categorie}>
                         {categorie.libelle_categorie}
                       </MenuItem>
                     ))}

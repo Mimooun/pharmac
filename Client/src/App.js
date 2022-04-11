@@ -15,7 +15,10 @@ import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
 import DashboardPage from "./components/Dash/DashboardPage";
 import Dashboard from './components/Dash/Dashboard'
+import Axios from "axios";
+
 function App() {
+  Axios.defaults.withCredentials = true;
   return (
     <Router>
       <div>

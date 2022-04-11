@@ -2,12 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mysql = require("mysql");
-const multer = require('multer')
-const path = require('path')
+const multer = require("multer");
+const path = require("path");
 const app = express();
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-
 
 const db = mysql.createConnection({
   user: "root",
@@ -27,39 +26,26 @@ app.use(
   })
 );
 
-
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({
+app.use(
+  bodyParser.urlencoded({
     extended: true,
-}));
+  })
+);
 app.use(express.static("./public"));
 app.use(express.json());
 
-app.use(session({
+app.use(
+  session({
     key: "userId",
     secret: "secret",
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 1000 * 60 * 60 * 24,
+      expires: 1000 * 60 * 60 * 24,
     },
-}));
-
-/** check if session exist */
-
-app.get("/login", (req, res) => {
-    if (req.session.user) {
-        res.send({
-            loggedIn: true,
-            firstname: req.session.user[0].firstname,
-            lastname: req.session.user[0].lastname
-        })
-    } else {
-        res.send({
-            loggedIn: false
-        })
-    }
-})
+  })
+);
 
 /** login script */
 
@@ -67,7 +53,7 @@ app.post("/Login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const sqlSelect =
-    "SELECT * FROM admin WHERE `username` = ? and `password` = ?";
+    "SELECT * FROM utilisateur  WHERE `username` = ? and `password` = ?";
   db.query(sqlSelect, [username, password], (err, result) => {
     if (err) {
       res.send({
@@ -75,31 +61,29 @@ app.post("/Login", (req, res) => {
       });
     } else {
       if (result.length == 0) {
-        const sqlSelect1=
-          "SELECT * FROM utilisateur  WHERE `username` = ? and `password` = ?";
-        db.query(sqlSelect1, [username, password], (err, result) => {
-          if (err) {
-            res.send({
-              err: err,
-            });
-          } else {
-            if (result.length == 0) {
-              res.send({
-                message: "Authentication failed",
-              });
-            } else {
-              req.session.user = result;
-              res.send(result);
-            }
-          }
+        res.send({
+          message: "No Rows",
         });
-
       } else {
-        req.user = result;
+        req.session.user = result;
         res.send(result);
       }
     }
   });
+});
+
+/** check if session exist */
+
+app.get("/login", (req, res) => {
+  console.log(req.session.user)
+  if (req.session.user) {
+    
+    console.log(req.session.user[0].lastname);
+    res.send({
+      id: req.session.user[0].id_utilisateur,
+      lastname: req.session.user[0].lastname,
+    });
+  }
 });
 /** Add commande script */
 
@@ -109,18 +93,12 @@ app.post("/addpanier", (req, res) => {
   const produit = req.body.produit;
   const dateRef = req.body.dateRef;
   const quantiteRef = req.body.quantiteRef;
+  const id = req.body.id;
   const sqlSelect =
-    "INSERT INTO `panier` (`id_panier`,`nom_pharmacie`, `adresse_pharmacie`,`id_produit`, `date_commande`, `quantite`) VALUES (NULL,?,?,?,?,?)";
+    "INSERT INTO `panier` (`id_panier`,`nom_pharmacie`, `adresse_pharmacie`,`id_produit`, `date_commande`, `quantite`, `id_utilisateur`) VALUES (NULL,?,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [
-      
-      pharmacieRef,
-      adresseRef,
-      produit,
-      dateRef,
-      quantiteRef,
-    ],
+    [pharmacieRef, adresseRef, produit, dateRef, quantiteRef, id],
     (err, result) => {
       if (err) {
         res.send({
@@ -161,9 +139,11 @@ app.post("/addutilisateur", (req, res) => {
   );
 });
 
-app.get("/produitspanier", (req, res) => {
-  const sqlSelect = "SELECT * FROM `panier` ORDER BY `id_panier` ASC";
-  db.query(sqlSelect, (err, result) => {
+app.post("/produitspanier", (req, res) => {
+  const id = req.body.id
+  const sqlSelect =
+    "SELECT * FROM `panier` inner join produits on panier.id_produit = produits.id_produit inner join categorie on produits.id_categorie = categorie.id_categorie where id_utilisateur = ?";
+  db.query(sqlSelect, [id] ,(err, result) => {
     if (err) {
       res.send({
         err: err,
@@ -180,7 +160,6 @@ app.get("/produitspanier", (req, res) => {
   });
 });
 /**fin script  */
-
 
 app.get("/categories", (req, res) => {
   const sqlSelect = "SELECT * FROM `categorie` ORDER BY `id_categorie` ASC";
@@ -222,9 +201,9 @@ app.get("/produits", (req, res) => {
 });
 
 app.post("/produitsbycategorie", (req, res) => {
-  const id =req.body.id;
+  const id = req.body.id;
   const sqlSelect = "SELECT * FROM `produits` where `id_categorie`=?";
-  db.query(sqlSelect,[id], (err, result) => {
+  db.query(sqlSelect, [id], (err, result) => {
     if (err) {
       res.send({
         err: err,
@@ -241,23 +220,21 @@ app.post("/produitsbycategorie", (req, res) => {
   });
 });
 
-
-
 app.post("/deletePanier", (req, res) => {
   const id = req.body.id;
   const sqlSelect = "DELETE FROM `panier` WHERE `id_panier` = ?";
   db.query(sqlSelect, id, (err) => {
-      if (err) {
-          res.send({
-              err: err
-          })
-      } else {
-          res.send({
-              message: "Operation completed"
-          })
-      }
-  })
-})
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      res.send({
+        message: "Operation completed",
+      });
+    }
+  });
+});
 
 /** fin Add Student script */
 app.listen(3001, () => {
