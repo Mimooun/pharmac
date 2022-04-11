@@ -104,24 +104,21 @@ app.post("/Login", (req, res) => {
 /** Add commande script */
 
 app.post("/addpanier", (req, res) => {
-  const nameRef = req.body.nameRef;
   const pharmacieRef = req.body.pharmacieRef;
   const adresseRef = req.body.adresseRef;
-  const medicamentRef = req.body.medicamentRef;
+  const produit = req.body.produit;
   const dateRef = req.body.dateRef;
   const quantiteRef = req.body.quantiteRef;
-  const situation = "";
   const sqlSelect =
-    "INSERT INTO `panier` (`id_panier`, `nom`, `nom_pharmacie`, `adresse_pharmacie`, `nom_medicament`, `date_commande`, `situation`, `quantite`) VALUES (NULL,?,?,?,?,?,?,?)";
+    "INSERT INTO `panier` (`id_panier`,`nom_pharmacie`, `adresse_pharmacie`,`id_produit`, `date_commande`, `quantite`) VALUES (NULL,?,?,?,?,?)";
   db.query(
     sqlSelect,
     [
-      nameRef,
+      
       pharmacieRef,
       adresseRef,
-      medicamentRef,
+      produit,
       dateRef,
-      situation,
       quantiteRef,
     ],
     (err, result) => {
@@ -206,8 +203,28 @@ app.get("/categories", (req, res) => {
 /* selection de produits */
 
 app.get("/produits", (req, res) => {
-  const sqlSelect = "SELECT * FROM `produits` ORDER BY `id_produit` ASC";
+  const sqlSelect = "SELECT * FROM `produits`";
   db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+});
+
+app.post("/produitsbycategorie", (req, res) => {
+  const id =req.body.id;
+  const sqlSelect = "SELECT * FROM `produits` where `id_categorie`=?";
+  db.query(sqlSelect,[id], (err, result) => {
     if (err) {
       res.send({
         err: err,

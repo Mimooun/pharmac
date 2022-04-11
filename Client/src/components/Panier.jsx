@@ -21,17 +21,15 @@ function Panier() {
 
   useEffect(() => {
     Axios.get("http://localhost:3001/produitspanier").then((response) => {
-      setProduitPanier(response.data)
+      setProduitPanier(response.data);
     });
   });
 
   function deletePanier(id) {
-    console.log('test');
-    Axios.post("http://localhost:3001/deletePanier", { id: id }).then(
-      (response) => {
-        
-      }
-    );
+    console.log("test");
+    Axios.post("http://localhost:3001/deletePanier", {
+      id: id,
+    }).then((response) => {});
   }
 
   /*open and clos */
@@ -85,62 +83,29 @@ function Panier() {
                 </div>
               </div>
               <div className="trash">
-              <Stack direction="row" spacing={3}>
-                  
-                </Stack>
-
-                <Stack direction="row" spacing={3}>
-                  <Button
-                    style={{
-                      backgroundColor: "#3ecfa3",
-                      marginTop: "100px",
-                      display: "block",
-                      margin: "auto",
-                      color: "white",
-                      border: "1px solid #3ecfa3 ",
-                    }}
-                    disableElevation
-                    variant="outlined"
-                    onClick={handleClickOpen}
-                  >
-                    <DeleteForeverIcon></DeleteForeverIcon>
-                  </Button>
-                  <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                  >
-                    <DialogTitle id="alert-dialog-title">
-                      {"Please confirm !"}
-                    </DialogTitle>
-                    <DialogContent>
-                      <DialogContentText id="alert-dialog-description">
-                        Are you sure you want to continue ?
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button
-                        onClick={handleClose}
-                        style={{ color: "#3ecfa3" }}
-                      >
-                        Cancel
-                      </Button>
-                        <Button
-                        onClick={deletePanier()}
-                          
-                          autoFocus
-                          style={{ color: "#3ecfa3" }}
-                        >
-                          Confirm
-                        </Button>
-                    </DialogActions>
-                  </Dialog>
-                </Stack>
+                <Stack direction="row" spacing={3}></Stack>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="button">
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: "#3ECFA3",
+          }}
+        >
+          Valider
+        </Button>
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: "#3ECFA3",
+          }}
+        >
+          Cancel
+        </Button>
       </div>
     </section>
   );
