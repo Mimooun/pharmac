@@ -7,8 +7,8 @@
   font-size: 30px;
   font-weight: 700;
   color: #000;
+  margin-top: 150px;
   font-family: "IBM Plex Sans", sans-serif;
-  margin-top: 30px;
 }
 .liste-product .type{
   display: flex;

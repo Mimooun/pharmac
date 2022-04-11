@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@300&family=Poppins:wght@300&family=Roboto:wght@300;500&display=swap");
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+
+  flex-direction: row;
+  width: 100%;
+  /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+  background-color: white;
+}
+nav .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  padding: 10px;
+  width: 100vw;
+}
+nav .container .usr-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+ nav .container .usr-area .content  {
+   display: flex;
+   align-items: center;
+   padding : 10px ;
+ }
+  nav .container .usr-area .content img {
+    display : block ;
+    width : 20% ;
+    padding : 10px ;
+  }
+  
+nav .container .menu {
+    display: flex;
+    flex-direction: flex-start;
+    width : 100%;
+}
+nav .container .menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav .container .menu ul li {
+  margin-left: 40px;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #3ecfa3;
+  padding: 10px 0px;
+  transition: 0.5s;
+
+}
+nav .container .menu ul li:hover {
+  border-bottom: 1.5px solid #3ecfa3;
+  padding: 10px;
+}
+.navbar .container .search-area {
+    display : flex ;
+    justify-content: center;
+    align-items: center;
+    width : 100% ;
+}
+
+.css-nen11g-MuiStack-root {
+    display : flex ;
+    justify-content: center;
+    width : 60% ;
+    margin: auto;
+    
+}
+.css-16awh2u-MuiAutocomplete-root {
+    margin-bottom: 0px ;
+}
+/*responsive */
+@media (max-width: 600px) {
+  nav {
+    display: none;
+  }
+}
+  /* responsive tablet */ 
+
+  nav .container .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+
+  }
