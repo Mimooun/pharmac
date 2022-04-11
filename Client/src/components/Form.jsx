@@ -175,7 +175,7 @@ export default function FormPropsTextFields() {
                 />
               </div>
               <div className="two">
-                <FormControl style={{ width: "252px" }}>
+                <FormControl style={{ width: "45%"  }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -202,7 +202,7 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl style={{ width: "252px" }}>
+                <FormControl style={{ width: "45%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
