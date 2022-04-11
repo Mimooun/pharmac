@@ -28,7 +28,7 @@
 }
 .textfield-container .two {
   display: flex;
-  gap: 20px;
+  gap: 35px;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -75,5 +75,6 @@
 }
 .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
   height: 35px !important;
-  width: px !important;
 }
+
+

@@ -26,10 +26,9 @@ export default function FormPropsTextFields() {
   const [produit, setproduit] = useState();
   const [produits, setproduits] = useState([""]);
 
-
   const pharmacieRef = useRef();
   const adresseRef = useRef();
-  
+
   const medicamentRef = useRef();
   const dateRef = useRef();
   const quantiteRef = useRef();
@@ -60,7 +59,6 @@ export default function FormPropsTextFields() {
     }
   };
 
- 
   const verifQuantite = () => {
     const reg = new RegExp(/^[0-9]*$/);
     if (reg.test(quantiteRef.current.value) === false) {
@@ -101,8 +99,10 @@ export default function FormPropsTextFields() {
 
   function validate() {
     if (
-      pharmacieRef.current.value !== " " &&!verfNamepharmacie &&
-      adresseRef.current.value !== " " && !verfAdressepharmacie &&
+      pharmacieRef.current.value !== " " &&
+      !verfNamepharmacie &&
+      adresseRef.current.value !== " " &&
+      !verfAdressepharmacie &&
       produit !== "" &&
       dateRef.current.value !== " " &&
       quantiteRef.current.value !== " " &&
@@ -175,8 +175,12 @@ export default function FormPropsTextFields() {
                 />
               </div>
               <div className="two">
-                <FormControl fullWidth>
-                  <InputLabel size="small" id="demo-simple-select-label" >
+                <FormControl style={{ width: "252px" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "4px" }}
+                  >
                     Categorie
                   </InputLabel>
                   <Select
@@ -189,14 +193,21 @@ export default function FormPropsTextFields() {
                     onChange={handleChangecategorie}
                   >
                     {categories.map((categorie) => (
-                      <MenuItem value={categorie.id_categorie}>
+                      <MenuItem
+                        value={categorie.id_categorie}
+
+                      >
                         {categorie.libelle_categorie}
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel size="small" id="demo-simple-select-label">
+                <FormControl style={{ width: "252px" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "4px" }}
+                  >
                     Produits
                   </InputLabel>
                   <Select
