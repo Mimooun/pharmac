@@ -62,11 +62,16 @@ function Panier() {
               <div className="img-area">
                 <img src={doli} />
               </div>
-              <div className="content">
-                <div className="name">{produit.nom} </div>
-                {produit.nom_pharmacie}
-                {produit.libelle_categorie}
-                {produit.libelle_produit}
+              <div
+                className="content"
+              >
+                <div className="name">
+                  {produit.libelle_produit}
+                  {"      "}
+                </div>
+                <div className="dispo">
+                  En stock 
+                </div>
               </div>
               <div className="icon">
                 <div className="counter">

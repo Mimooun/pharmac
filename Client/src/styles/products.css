@@ -72,28 +72,28 @@ margin-top: 30px;
     }
     .products .title {
         text-align: center;
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 700;
         color: #000;
         font-family: "IBM Plex Sans",sans-serif;
         margin-top: 0px;
     }
     .products .prod .content .text{
-    font-size: 26px;
+    font-size: 16px;
     font-weight: 600;
     color: #000;
     font-family: "IBM Plex Sans",sans-serif;
     }
     .products .prod .content .text1{
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 200;
         color: #3ECFA3;
         font-family: "IBM Plex Sans",sans-serif;
         margin-top:20px;
     }
     .products .prod .content .text2{
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 300;
         color: #000;
         font-family: "IBM Plex Sans",sans-serif;

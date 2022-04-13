@@ -9,8 +9,8 @@ function Products() {
             <div className="prod">
                 <div className="content">
                     <div className="text">Products</div>
-                    <div className="text1">We have several product candidates in development that we believe have been significantly de-risked.</div>
-                    <div className="text2">At vero eos et accusam justo duo dolores etea rebuitet clita kasd gubergren nosea takimata sanctus est lorem ipsum dolor consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore magna aliquyam sedam voluptua at vero eos et accusam et justo duo dolores.</div>
+                    <div className="text1">We have several product candidates in development.</div>
+                    <div className="text2">At vero eos et accusam justo duo dolores etea rebuitet clita kasd gubergren nosea takimata sanctus est lorem </div>
                     <div className="button"><button>See All Projects</button></div>
                 </div>
                 <div className="img">
