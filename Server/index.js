@@ -114,16 +114,16 @@ app.post("/addpanier", (req, res) => {
 /** Add commande script */
 
 app.post("/addcommande", (req, res) => {
-  const id_commandeRef = req.body.id_commandeRef;
+  const id_commande = req.body.id_commandeRef;
   const id = req.body.id;
   const quantite = req.body.quantite;
-  const dateRef = req.body.dateRef;
+  const date = req.body.date;
   
   const sqlSelect =
-    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`, `date_commande`,`quantite`, `prix`) VALUES (NULL,?,?,?)";
+    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`, `date_commande`,`quantite`, `prix`) VALUES (NULL,?,?,?,?)";
   db.query(
     sqlSelect,
-    [pharmacieRef, adresseRef, produit, dateRef, quantiteRef, id],
+    [id_commande,id, quantite, date,]
     (err, result) => {
       if (err) {
         res.send({
