@@ -70,7 +70,7 @@ function Panier() {
                   {"      "}
                 </div>
                 <div className="dispo">
-                  En stock 
+                  En stock ! 
                 </div>
               </div>
               <div className="icon">
