@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
 import { useLocation } from "react-router-dom";
+import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
+import DeleteForever from "@mui/icons-material/DeleteForever";
 function Panier() {
   const location = useLocation();
   const [open, setOpen] = React.useState(false);
@@ -23,12 +25,20 @@ function Panier() {
 
   const [id_utilisateur, setId_utilisateur] = useState();
 
+  var today = new Date(),
+    date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       setId_utilisateur(response.data.id);
     });
     Axios.post("http://localhost:3001/produitspanier", {
-      id: location.id,
+      id: 8,
     }).then((response) => {
       setProduitPanier(response.data);
     });
@@ -63,10 +73,10 @@ function Panier() {
                 <img src={doli} />
               </div>
               <div className="content">
-                <div className="name">{produit.nom} </div>
-                {produit.nom_pharmacie}
-                {produit.libelle_categorie}
-                {produit.libelle_produit}
+                {/* /* <div className="name">{produit.nom} </div> */}
+                <div className="categorie">{produit.libelle_categorie}</div>
+                <div className="produit">{produit.libelle_produit}</div>
+                <div className="produit">{produit.quantite}</div>
               </div>
               <div className="icon">
                 <div className="counter">
@@ -91,10 +101,10 @@ function Panier() {
                       +
                     </button>
                   </div>
+                  <div className="btn_suprimer">
+                    <DeleteForever onClick={deletePanier}></DeleteForever>
+                  </div>
                 </div>
-              </div>
-              <div className="trash">
-                <Stack direction="row" spacing={3}></Stack>
               </div>
             </div>
           ))}

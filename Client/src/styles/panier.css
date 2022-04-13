@@ -18,6 +18,8 @@
 }
 .sec .cart .cards {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
   width: 90%;
@@ -59,20 +61,53 @@
 
 .sec .cart .cards .card .icon .counter {
   display: flex;
-  gap  : 20px;
+  gap  : 30px;
   margin: auto;
 }
-.sec .cart .cards .card .trash {
-  display: block;
-  margin: auto;
+
+.sec .cart .card .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .sec .cart .card .content .name{
   font-size: 18px;
-  display: block;
-  margin: auto;
   color:rgb(231, 110, 130);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec .cart .card .content .produit{
+  font-size: 18px;
+  color:rgb(231, 110, 130);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec .cart .card .content .categorie{
+  font-size: 18px;
+  color:rgb(231, 110, 130);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec .cart .card .content .pharmacie{
+  font-size: 18px;
+  color:rgb(231, 110, 130);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sec .button{
   display: flex;
