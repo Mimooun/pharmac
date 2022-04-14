@@ -34,7 +34,7 @@ function Formnav() {
           <div className="content">
             <img src={doctor} />
             <div className="usr-text">
-              <span>{lastname}</span>
+              <span className='utilisateur'>{lastname}</span>
             </div>
           </div>
         </div>

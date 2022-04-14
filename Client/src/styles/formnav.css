@@ -21,10 +21,17 @@ nav .container .usr-area {
   justify-content: flex-start;
   align-items: center;
 }
+nav .container .usr-area .utilisateur {
+  color: #3ecfa3;
+  font-size: 18px;
+  font-weight: 800px;
+  font-family: poppins;
+}
  nav .container .usr-area .content  {
    display: flex;
    align-items: center;
    padding : 10px ;
+   gap: 15px;
  }
   nav .container .usr-area .content img {
     display : block ;
