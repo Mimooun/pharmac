@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Axios from "axios";
 import "../styles/panier.css";
 import doli from "../assets/images/shopping-bag.png";
@@ -15,16 +15,18 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
 import { useLocation } from "react-router-dom";
-import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
-import DeleteForever from "@mui/icons-material/DeleteForever";
 function Panier() {
   const location = useLocation();
-  const [open, setOpen] = React.useState(false);
 
   const [produitPanier, setProduitPanier] = useState([]);
 
   const [id_utilisateur, setId_utilisateur] = useState();
 
+  const idCommandeRef = useRef();
+  const idRef = useRef();
+  const quantiteRef = useRef();
+  const prix = useRef();
+  const [open, setOpen] = React.useState(false);
   var today = new Date(),
     date =
       today.getFullYear() +
@@ -32,23 +34,36 @@ function Panier() {
       (today.getMonth() + 1) +
       "-" +
       today.getDate();
+  console.log(date);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       setId_utilisateur(response.data.id);
     });
     Axios.post("http://localhost:3001/produitspanier", {
-      id: 8,
+      id: 12,
     }).then((response) => {
       setProduitPanier(response.data);
     });
   }, []);
 
-  function deletePanier(id) {
-    console.log("test");
-    Axios.post("http://localhost:3001/deletePanier", {
-      id: id,
-    }).then((response) => {});
+
+  function deleteCommande(id) {
+    Axios.post("http://localhost:3001/deletePanier", { id: id }).then(
+      (response) => {
+        alert("deleted successfully");
+      }
+    );
+  }
+  function addCommande() {
+    Axios.post("http://localhost:3001/addcommande", {
+      id: 8,
+      quantite: 10,
+      date: date,
+      prix: 400,
+    }).then((response) => {
+      alert("added successfully");
+    });
   }
 
   /*open and clos */
@@ -73,10 +88,13 @@ function Panier() {
                 <img src={doli} />
               </div>
               <div className="content">
-                {/* /* <div className="name">{produit.nom} </div> */}
-                <div className="categorie">{produit.libelle_categorie}</div>
-                <div className="produit">{produit.libelle_produit}</div>
-                <div className="produit">{produit.quantite}</div>
+                <div className="name">
+                  {produit.libelle_produit}
+                  {produit.quantite}
+
+                  {"      "}
+                </div>
+                <div className="dispo">En stock !</div>
               </div>
               <div className="icon">
                 <div className="counter">
@@ -101,10 +119,10 @@ function Panier() {
                       +
                     </button>
                   </div>
-                  <div className="btn_suprimer">
-                    <DeleteForever onClick={deletePanier}></DeleteForever>
-                  </div>
                 </div>
+              </div>
+              <div className="trash">
+                <Button variant="outlined" onClick={ ()=>{deleteCommande(produit.id_produit)} }>Outlined</Button>{" "}
               </div>
             </div>
           ))}
@@ -116,6 +134,7 @@ function Panier() {
           style={{
             backgroundColor: "#3ECFA3",
           }}
+          onClick={addCommande}
         >
           Valider
         </Button>
@@ -125,7 +144,7 @@ function Panier() {
             backgroundColor: "#3ECFA3",
           }}
         >
-          Cancel
+          Annuler
         </Button>
       </div>
     </section>
