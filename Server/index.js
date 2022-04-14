@@ -114,17 +114,16 @@ app.post("/addpanier", (req, res) => {
 /** Add commande script */
 
 app.post("/addcommande", (req, res) => {
-  const id_commande = req.body.id_commandeRef;
   const id = req.body.id;
   const quantite = req.body.quantite;
   const date = req.body.date;
   const prix = req.body.prix;
 
   const sqlSelect =
-    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`, `date_commande`,`quantite`, `prix`) VALUES (NULL,?,?,?,?)";
-  db.query(
+"INSERT INTO `commande` (`id_commande`, `date_commande`, `quantite`, `prix`) VALUES (NULL, ?, ?, ?)" ;
+ db.query(
     sqlSelect,
-    [id_commande,id,quantite,date,prix],
+    [date,quantite,prix],
     (err, result) => {
       if (err) {
         res.send({
@@ -247,21 +246,21 @@ app.post("/produitsbycategorie", (req, res) => {
   });
 });
 
-// app.post("/deletePanier", (req, res) => {
-//  const id = req.body.id;
-//   const sqlSelect = "DELETE FROM `panier` WHERE `id_panier` = ?";
-//   db.query(sqlSelect, id, (err) => {
-//     if (err) {
-//       res.send({
-//         err: err,
-//       });
-//     } else {
-//       res.send({
-//         message: "Operation completed",
-//       });
-//     }
-//   });
-// });
+app.post("/deletePanier", (req, res) => {
+ const id = req.body.id;
+  const sqlSelect = "DELETE FROM `panier` WHERE `id_produit` = ?";
+  db.query(sqlSelect, id, (err) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      res.send({
+        message: "Operation completed",
+      });
+    }
+  });
+});
 
 /** fin  script */
 app.listen(3001, () => {

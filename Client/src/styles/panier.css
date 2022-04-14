@@ -53,7 +53,7 @@
 }
 .sec .cart .cards .card .content .dispo {
   display : block ;
-  margin-right: auto;
+  margin: auto;
   color: #058c2e;
   padding : 5px ;
   font-size: 12px;
