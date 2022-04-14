@@ -57,14 +57,14 @@ export default function FormPropsTextFields() {
     }
   };
 
-  const verifAdressepharmacie = () => {
-    const reg = new RegExp(/^[a-zA-Z]*$/);
-    if (reg.test(adresseRef.current.value) === false) {
-      setverfAdressepharmacie(true);
-    } else {
-      setverfAdressepharmacie(false);
-    }
-  };
+  // const verifAdressepharmacie = () => {
+  //   const reg = new RegExp(/^[a-zA-Z]*$/);
+  //   if (reg.test(adresseRef.current.value) === false) {
+  //     setverfAdressepharmacie(true);
+  //   } else {
+  //     setverfAdressepharmacie(false);
+  //   }
+  // };
 
   const verifQuantite = () => {
     const reg = new RegExp(/^[0-9]*$/);
@@ -134,9 +134,9 @@ export default function FormPropsTextFields() {
           if (pharmacieRef.current.value === "") {
             setverfNamepharmacie(true);
           }
-          if (adresseRef.current.value === "") {
-            setverfAdressepharmacie(true);
-          }
+          // if (adresseRef.current.value === "") {
+          //   setverfAdressepharmacie(true);
+          // }
           if (medicamentRef.current.value === "") {
             setverfNamemedicament(true);
           }
@@ -179,8 +179,8 @@ export default function FormPropsTextFields() {
                   id="outlined-required"
                   label="Adresse pharmacie"
                   inputRef={adresseRef}
-                  onChange={verifAdressepharmacie}
-                  error={verfAdressepharmacie}
+                  // onChange={verifAdressepharmacie}
+                  // error={verfAdressepharmacie}
                 />
               </div>
               <div className="two">

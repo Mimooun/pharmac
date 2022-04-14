@@ -13,10 +13,10 @@ import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
 import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
-import DashboardPage from "./components/Dash/DashboardPage";
+
 import Dashboard from './components/Dash/Dashboard'
 import Axios from "axios";
-import Products from "./components/Dash/Products";
+
 
 function App() {
   Axios.defaults.withCredentials = true;
@@ -32,7 +32,6 @@ function App() {
          <Route exact path="/panier" component={Panier} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
          <Route exact path="/Dash" component={Dashboard} />
-         <Route exact path="/Prod" component={Products} />
         </Switch>
       </div>
     </Router>

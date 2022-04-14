@@ -31,8 +31,8 @@ function Sidebar() {
           Dashboard
         </li>
 
-        <Link to="/Prod" style={{listStyle:"none" , textDecoration:"none"}}>
-          <li>
+        <Link to="/Dash/Prod" >
+          <li style={{listStyle:"none" , textDecoration:"none"}}>
             <div className="menu__icon">
               <FaChalkboardTeacher />
             </div>

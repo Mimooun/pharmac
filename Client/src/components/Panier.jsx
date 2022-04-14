@@ -89,10 +89,9 @@ function Panier() {
               </div>
               <div className="content">
                 <div className="name">
-                  {produit.libelle_produit}
-                  {produit.quantite}
+                  {produit.libelle_produit}  
 
-                  {"      "}
+                
                 </div>
                 <div className="dispo">En stock !</div>
               </div>
@@ -122,7 +121,7 @@ function Panier() {
                 </div>
               </div>
               <div className="trash">
-                <Button variant="outlined" onClick={ ()=>{deleteCommande(produit.id_produit)} }>Outlined</Button>{" "}
+                <Button variant="outlined" color="error" onClick={ ()=>{deleteCommande(produit.id_produit)} }>Supprimer</Button>
               </div>
             </div>
           ))}
