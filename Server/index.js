@@ -142,24 +142,28 @@ app.post("/addcommande", (req, res) => {
 /** Add utilisateur script */
 
 app.post("/addutilisateur", (req, res) => {
+
+  console.log(req.body.lastnameRef ,req.body.firstnameRef,req.body.usernameRef,req.body.telephoneRef,req.body.emailRef,req.body.adresseRef,req.body.passwordRef)
   const lastnameRef = req.body.lastnameRef;
-  const firstnameRef = req.body.firstnameRef;
-  const passwordRef = req.body.passwordRef;
+  const firstnameRef = req.body.firstnameRef; 
   const usernameRef = req.body.usernameRef;
+  const passwordRef = req.body.passwordRef;
   const telephoneRef = req.body.telephoneRef;
   const adresseRef = req.body.adresseRef;
   const emailRef = req.body.emailRef;
   const sqlSelect =
-    "INSERT INTO `utilisateur` (`id_utilisateur`,`firstname`,`lastname`,`username`,`email`,`telephone`,`adresse`,`password`) VALUES (NULL,?,?,?,?,?,?,?)";
+    "INSERT INTO `utilisateur` (`id_utilisateur`,`lastname`,`firstname`,`username`,`email`,`telephone`,`adresse`,`password`) VALUES (NULL,?,?,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [lastnameRef, firstnameRef, usernameRef, emailRef , adresseRef , telephoneRef ,passwordRef],
+    [lastnameRef, firstnameRef,usernameRef,emailRef,telephoneRef,adresseRef,passwordRef],
     (err, result) => {
       if (err) {
+        
         res.send({
           err: err,
         });
       } else {
+        console.log(result);
         res.send({
           message: "Operation completed",
         });

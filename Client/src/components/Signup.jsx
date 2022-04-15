@@ -17,27 +17,25 @@ export default function SignupTextFields() {
   const adresseRef = useRef();
   const passwordRef = useRef();
   const confirmationpasswordRef = useRef();
-
   function validate() {
     if (
-      firstnameRef.current.value !== "" &&
       lastnameRef.current.value !== "" &&
+      firstnameRef.current.value !== "" &&
       usernameRef.current.value !== "" &&
       emailRef.current.value !== "" &&
       telephoneRef.current.value !== "" &&
       adresseRef.current.value !== "" &&
-      passwordRef.current.value !== "" &&
-      confirmationpasswordRef.current.value !== ""
-    ) {
+      passwordRef.current.value !== "" 
+    ) { 
+      
       Axios.post("http://localhost:3001/addutilisateur", {
-        firstnameRef: firstnameRef.current.value,
         lastnameRef: lastnameRef.current.value,
+        firstnameRef: firstnameRef.current.value,
         usernameRef: usernameRef.current.value,
-        telephoneRef: telephoneRef.current.value,
         emailRef: emailRef.current.value,
+        telephoneRef: telephoneRef.current.value,
         adresseRef: adresseRef.current.value,
         passwordRef: passwordRef.current.value,
-        confirmationpasswordRef: confirmationpasswordRef.current.value,
       }).then((response) => {
         if (response.data.message === "Operation completed") {
           /** redirect to  list */
@@ -75,14 +73,14 @@ export default function SignupTextFields() {
             size="small"
             label="E-mail"
             variant="outlined"
-            inputRef={emailRef}
+            inputRef={usernameRef}
           />
           <TextField
             fullWidth
             size="small"
             label="Telephone"
             variant="outlined"
-            inputRef={telephoneRef}
+            inputRef={emailRef}
           />
           <TextField
             fullWidth
@@ -90,14 +88,14 @@ export default function SignupTextFields() {
             size="small"
             label="Adresse pharmacie"
             variant="outlined"
-            inputRef={adresseRef}
+            inputRef={telephoneRef}
           />
           <TextField
             fullWidth
             size="small"
             label="Pseudo"
             variant="outlined"
-            inputRef={usernameRef}
+            inputRef={adresseRef}
           />
           <TextField
             fullWidth

@@ -1,0 +1,9 @@
+.addcommande {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    margin-bottom: 30px;
+    padding: 0px 30px ;
+
+}
