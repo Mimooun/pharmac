@@ -146,11 +146,14 @@ app.post("/addutilisateur", (req, res) => {
   const firstnameRef = req.body.firstnameRef;
   const passwordRef = req.body.passwordRef;
   const usernameRef = req.body.usernameRef;
+  const telephoneRef = req.body.telephoneRef;
+  const adresseRef = req.body.adresseRef;
+  const emailRef = req.body.emailRef;
   const sqlSelect =
-    "INSERT INTO `utilisateur` (`id_utilisateur`,`firstname`,`lastname`,`username`,`password`) VALUES (NULL,?,?,?,?)";
+    "INSERT INTO `utilisateur` (`id_utilisateur`,`firstname`,`lastname`,`username`,`email`,`telephone`,`adresse`,`password`) VALUES (NULL,?,?,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [lastnameRef, firstnameRef, usernameRef, passwordRef],
+    [lastnameRef, firstnameRef, usernameRef, emailRef , adresseRef , telephoneRef ,passwordRef],
     (err, result) => {
       if (err) {
         res.send({

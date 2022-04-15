@@ -60,7 +60,6 @@ function Formnav() {
               freeSolo
               id="free-solo-2-demo"
               disableClearable
-              options={categorie.map((option) => option.libelle_categorie)}
               renderInput={(params) => (
                 <TextField
                   {...params}

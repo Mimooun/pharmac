@@ -1,4 +1,4 @@
-import React, { useRef  } from "react";
+import React, { useRef } from "react";
 import Axios from "axios";
 import "../styles/signup.css";
 import TextField from "@mui/material/TextField";
@@ -12,6 +12,9 @@ export default function SignupTextFields() {
   const lastnameRef = useRef();
   const firstnameRef = useRef();
   const usernameRef = useRef();
+  const telephoneRef = useRef();
+  const emailRef = useRef();
+  const adresseRef = useRef();
   const passwordRef = useRef();
   const confirmationpasswordRef = useRef();
 
@@ -20,6 +23,9 @@ export default function SignupTextFields() {
       firstnameRef.current.value !== "" &&
       lastnameRef.current.value !== "" &&
       usernameRef.current.value !== "" &&
+      emailRef.current.value !== "" &&
+      telephoneRef.current.value !== "" &&
+      adresseRef.current.value !== "" &&
       passwordRef.current.value !== "" &&
       confirmationpasswordRef.current.value !== ""
     ) {
@@ -27,6 +33,9 @@ export default function SignupTextFields() {
         firstnameRef: firstnameRef.current.value,
         lastnameRef: lastnameRef.current.value,
         usernameRef: usernameRef.current.value,
+        telephoneRef: telephoneRef.current.value,
+        emailRef: emailRef.current.value,
+        adresseRef: adresseRef.current.value,
         passwordRef: passwordRef.current.value,
         confirmationpasswordRef: confirmationpasswordRef.current.value,
       }).then((response) => {
@@ -35,7 +44,7 @@ export default function SignupTextFields() {
           console.log("Operation Completed");
           history.push({
             pathname: "/Login",
-             })
+          });
         }
       });
     }
@@ -43,29 +52,50 @@ export default function SignupTextFields() {
   return (
     <section className="signUp1">
       <div className="container__form1">
+        <div className="icon-container1">
+          <img src={sos} alt="" />
+        </div>
         <div className="inputz">
-          <div className="icon-container1">
-            <img src={sos} alt="" />
-          </div>
           <TextField
             fullWidth
             size="small"
-            label="Firstname"
+            label="Nom"
             variant="outlined"
             inputRef={lastnameRef}
           />
           <TextField
             fullWidth
-            autoComplete="current-password"
             size="small"
-            label="Lastname"
+            label="Prénom"
             variant="outlined"
             inputRef={firstnameRef}
           />
-           <TextField
+          <TextField
             fullWidth
             size="small"
-            label="Username"
+            label="E-mail"
+            variant="outlined"
+            inputRef={emailRef}
+          />
+          <TextField
+            fullWidth
+            size="small"
+            label="Telephone"
+            variant="outlined"
+            inputRef={telephoneRef}
+          />
+          <TextField
+            fullWidth
+            autoComplete="current-password"
+            size="small"
+            label="Adresse pharmacie"
+            variant="outlined"
+            inputRef={adresseRef}
+          />
+          <TextField
+            fullWidth
+            size="small"
+            label="Pseudo"
             variant="outlined"
             inputRef={usernameRef}
           />
@@ -74,7 +104,7 @@ export default function SignupTextFields() {
             type="password"
             autoComplete="current-password"
             size="small"
-            label="Password"
+            label="Mot de passe"
             variant="outlined"
             inputRef={passwordRef}
           />
@@ -83,7 +113,7 @@ export default function SignupTextFields() {
             type="password"
             autoComplete="current-password"
             size="small"
-            label="Confirm Password"
+            label="Confirmer mot de passe"
             variant="outlined"
             inputRef={confirmationpasswordRef}
           />
@@ -98,7 +128,7 @@ export default function SignupTextFields() {
               variant="contained"
               onClick={() => {
                 validate();
-              }} 
+              }}
             >
               GO !
             </Button>

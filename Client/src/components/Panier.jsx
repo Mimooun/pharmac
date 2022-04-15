@@ -80,7 +80,7 @@ function Panier() {
   return (
     <section className="sec">
       <div className="cart">
-        <div className="title">Your products</div>
+        <div className="title">Vos produits</div>
         <div className="cards">
           {produitPanier.map((produit) => (
             <div className="card">
