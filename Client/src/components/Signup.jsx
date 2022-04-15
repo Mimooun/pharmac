@@ -128,7 +128,7 @@ export default function SignupTextFields() {
                 validate();
               }}
             >
-              GO !
+              GO !!
             </Button>
           </Link>
         </div>
