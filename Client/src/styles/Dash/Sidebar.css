@@ -6,6 +6,11 @@
     color: white;
 }
 
+.sidebar a{
+    text-decoration: none;
+    color: unset;
+}
+
 .sidebar .logo__container {
     display: flex;
     gap: 10px;
@@ -52,11 +57,11 @@
     transition: .5s;
 }
 
-.sidebar .menu li:not(.active):hover {
+.sidebar .menu a:not(.active) li:hover {
     transform: translateX(10px);
 }
 
-.sidebar .menu li.active {
+.sidebar .menu a.active li{
     position: relative;
     background-color: white;
     color: #3ECFA3;
@@ -64,7 +69,7 @@
     border-top-left-radius: 30px;
 }
 
-.sidebar .menu li.active::after {
+.sidebar .menu a.active li::after {
     content: "";
     position: absolute;
     top: -20px;
@@ -75,7 +80,7 @@
     background-size: contain;
 }
 
-.sidebar .menu li.active::before {
+.sidebar .menu a.active li::before {
     content: "";
     position: absolute;
     bottom: -20px;

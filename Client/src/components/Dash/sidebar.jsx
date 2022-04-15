@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/Dash/Sidebar.css";
 import Axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { FaChalkboardTeacher, FaUserGraduate } from "react-icons/fa";
 import { RiMoneyEuroCircleFill } from "react-icons/ri";
@@ -24,21 +24,23 @@ function Sidebar() {
         <img src={logo} alt="" />
       </div>
       <ul className="menu">
-        <li className="active">
-          <div className="menu__icon">
-            <MdDashboard />
-          </div>
-          Dashboard
-        </li>
+        <NavLink to="/Dash/main">
+          <li>
+            <div className="menu__icon">
+              <MdDashboard />
+            </div>
+            Dashboard
+          </li>
+        </NavLink>
 
-        <Link to="/Dash/Prod" >
-          <li style={{listStyle:"none" , textDecoration:"none"}}>
+        <NavLink to="/Dash/Prod">
+          <li style={{ listStyle: "none", textDecoration: "none" }}>
             <div className="menu__icon">
               <FaChalkboardTeacher />
             </div>
             Products
           </li>
-        </Link>
+        </NavLink>
 
         <li>
           <div className="menu__icon">

@@ -21,6 +21,7 @@
     background-position: bottom;
     background-size: cover;
     cursor: pointer;
+    margin-top: 80px;
 }
 
 .dashboard .cards .card:nth-child(1){

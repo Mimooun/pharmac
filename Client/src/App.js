@@ -31,7 +31,7 @@ function App() {
          <Route exact path="/Listep" component={Listep} />
          <Route exact path="/panier" component={Panier} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
-         <Route exact path="/Dash" component={Dashboard} />
+         <Route path="/Dash" component={Dashboard} />
         </Switch>
       </div>
     </Router>
