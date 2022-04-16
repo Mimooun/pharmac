@@ -7,7 +7,7 @@ import sos from "../assets/images/SOSpharma2.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-export default function SignupTextFields() {
+export default function signup() {
   let history = useHistory();
   const lastnameRef = useRef();
   const firstnameRef = useRef();
@@ -16,16 +16,15 @@ export default function SignupTextFields() {
   const emailRef = useRef();
   const adresseRef = useRef();
   const passwordRef = useRef();
-  const confirmationpasswordRef = useRef();
   function validate() {
     if (
-      lastnameRef.current.value !== "" &&
-      firstnameRef.current.value !== "" &&
-      usernameRef.current.value !== "" &&
-      emailRef.current.value !== "" &&
-      telephoneRef.current.value !== "" &&
-      adresseRef.current.value !== "" &&
-      passwordRef.current.value !== "" 
+      lastnameRef.current.value !== " " &&
+      firstnameRef.current.value !== " " &&
+      usernameRef.current.value !== " " &&
+      emailRef.current.value !== " " &&
+      telephoneRef.current.value !== " " &&
+      adresseRef.current.value !== " " &&
+      passwordRef.current.value !== " " 
     ) { 
       
       Axios.post("http://localhost:3001/addutilisateur", {
@@ -73,14 +72,14 @@ export default function SignupTextFields() {
             size="small"
             label="E-mail"
             variant="outlined"
-            inputRef={usernameRef}
+            inputRef={emailRef}
           />
           <TextField
             fullWidth
             size="small"
             label="Telephone"
             variant="outlined"
-            inputRef={emailRef}
+            inputRef={telephoneRef}
           />
           <TextField
             fullWidth
@@ -88,14 +87,14 @@ export default function SignupTextFields() {
             size="small"
             label="Adresse pharmacie"
             variant="outlined"
-            inputRef={telephoneRef}
+            inputRef={adresseRef}
           />
           <TextField
             fullWidth
             size="small"
             label="Pseudo"
             variant="outlined"
-            inputRef={adresseRef}
+            inputRef={usernameRef}
           />
           <TextField
             fullWidth
@@ -106,14 +105,13 @@ export default function SignupTextFields() {
             variant="outlined"
             inputRef={passwordRef}
           />
-          <TextField
+           <TextField
             fullWidth
             type="password"
             autoComplete="current-password"
             size="small"
             label="Confirmer mot de passe"
             variant="outlined"
-            inputRef={confirmationpasswordRef}
           />
         </div>
         <p>Forgot Password ?</p>

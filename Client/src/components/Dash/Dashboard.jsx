@@ -19,6 +19,7 @@ function Dashboard() {
             <Navdash />
             <div className="dashboard-body">
               <Switch>
+              <Route exact path="/Dash" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Prod" component={() => <Prod />}></Route>
               </Switch>
