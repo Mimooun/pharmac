@@ -20,7 +20,7 @@ function Navdash( props) {
     const [firstname, setFirstname] = useState();
     const [lastname, setLastname] = useState();
   return (
-    <nav>
+    <nav className='dash'>
             <div className="title">
                 
                 {props.navTitle}
