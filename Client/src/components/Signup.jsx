@@ -50,24 +50,23 @@ export default function Signup() {
     }
 }
 
-  const verifEmail = () => {
-    const reg = new RegExp(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-    if (reg.test(emailRef.current.value) === false) {
-      setverfEmail(true);
-    } else {
-      setverfEmail(false);
-    }
-  };
+  // const verifEmail = () => {
+  //   const reg = new RegExp( /^(([.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //   );
+  //   if (reg.test(emailRef.current.value) === false) {
+  //     setverfEmail(true);
+  //   } else {
+  //     setverfEmail(false);
+  //   }
+  // };
   function validate() {
     if (
-      lastnameRef.current.value !== " " &&
-      firstnameRef.current.value !== " " &&
+      lastnameRef.current.value !== " " && 
+      firstnameRef.current.value !== " " && 
       usernameRef.current.value !== " " &&
-      emailRef.current.value !== " " && !verfEmail &&
-      telephoneRef.current.value !== " " &&
-      adresseRef.current.value !== " " &&
+      emailRef.current.value !== " " && 
+      telephoneRef.current.value !== " " && 
+      adresseRef.current.value !== " " && 
       passwordRef.current.value !== " "
     ) {
       Axios.post("http://localhost:3001/addutilisateur", {
@@ -134,8 +133,8 @@ export default function Signup() {
             label="E-mail"
             variant="outlined"
             inputRef={emailRef}
-            error={verfEmail}
-            onChange={verifEmail}
+            // error={verfEmail}
+            // onChange={verifEmail}
           />
           <TextField
             fullWidth
