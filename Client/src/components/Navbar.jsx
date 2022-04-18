@@ -16,14 +16,14 @@ function Navbar() {
         </div>
         <div className="menu">
           <ul>
-            <li>Home</li>
-            <li>Shop</li>
+            <li>Présentation</li>
             <Link to="/Listep">
-              <li>Products</li>
+            <li>Produits</li>
             </Link>
+            <li>Nouveautés</li>
+            <li>Actualités</li>
 
-            <li>Pages</li>
-            <li>Blog</li>
+          
           </ul>
         </div>
         <div className="btn">

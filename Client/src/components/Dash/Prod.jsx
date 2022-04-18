@@ -1,7 +1,6 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import Axios from "axios";
 import '../../styles/Dash/prod.css'
-import { Link } from "react-router-dom";
 import MaterialTable from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
@@ -18,17 +17,8 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import { Paper } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import Add from "@material-ui/icons/Add";
-import Delete from "@material-ui/icons/DeleteOutlineRounded";
-import Avatar from "@material-ui/core/Avatar";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import { useHistory } from "react-router-dom";
+
 function Prod() {
   const [Products, setProducts] = useState([]);
 

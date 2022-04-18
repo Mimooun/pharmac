@@ -17,12 +17,10 @@ function HomePage() {
     <div>
       <Navbar />
       <Home />
-      <Oursite />
       <Products />
       <Owlprod />
       <Chose />
       <Experience />
-      <Pipeline />
       <Testimonial />
       <Contact />
       <Footer />

@@ -1,9 +1,11 @@
 import React from 'react'
 import '../styles/home.css';
+import Form from './Form'
 function Home() {
     return (
         <section className="home">
-            <div className="max-width">
+            <Form />
+            {/* <div className="max-width">
                 <div className="container">
                     <div className="text">
                         <div className="text1">We will Help You!</div>
@@ -12,7 +14,7 @@ function Home() {
                     </div>
                     <button className="order"> Discover New</button>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }

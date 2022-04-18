@@ -18,6 +18,8 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import { QuantityPicker } from 'react-qty-picker';
+
 export default function FormPropsTextFields() {
   let history = useHistory();
   const [situation, setSituaion] = useState();
@@ -162,29 +164,7 @@ export default function FormPropsTextFields() {
           <div className="box">
             <div className="textfield-container">
               <div className="one">
-                <TextField
-                  style={{
-                    borderBlockStyle: "red",
-                  }}
-                  inputRef={pharmacieRef}
-                  className="textfield"
-                  required
-                  id="outlined-required"
-                  label="Nom pharmacie"
-                  onChange={verifNamepharmacie}
-                  error={verfNamepharmacie}
-                />
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Adresse pharmacie"
-                  inputRef={adresseRef}
-                  // onChange={verifAdressepharmacie}
-                  // error={verfAdressepharmacie}
-                />
-              </div>
-              <div className="two">
-                <FormControl style={{ width: "45%" }}>
+                <FormControl style={{ width: "65%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -208,7 +188,7 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl style={{ width: "45%" }}>
+                <FormControl style={{ width: "65%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -232,35 +212,77 @@ export default function FormPropsTextFields() {
                   </Select>
                 </FormControl>
               </div>
+              <div className="two">
+                <FormControl style={{ width: "85%" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "4px" }}
+                  >
+                    Forme
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={categorie}
+                    label="categorie"
+                    size="small"
+                    error={verfNamemedicament}
+                    onChange={handleChangecategorie}
+                  >
+                    {categories.map((categorie) => (
+                      <MenuItem value={categorie.id_categorie}>
+                        {categorie.libelle_categorie}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                <FormControl style={{ width: "65%" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "4px" }}
+                  >
+                    Modèle
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={produit}
+                    label="produit"
+                    size="small"
+                    onChange={handleChange}
+                  >
+                    {produits.map((produit) => (
+                      <MenuItem value={produit.id_produit}>
+                        {produit.libelle_produit}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </div>
 
               <div className="three">
-                <TextField
-                  className="textfield"
-                  id="date"
-                  label="Date Commande"
-                  type="date"
-                  inputRef={dateRef}
-                  defaultValue="2017-05-24"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                />
+                <FormControl fullWidth>
+                  <InputLabel size="small" id="demo-simple-select-label">
+                    Gender
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Age"
+                    size="small"
+                  >
+                    <MenuItem value={"Male"}>Male</MenuItem>
+                    <MenuItem value={"Female"}>Female</MenuItem>
+                  </Select>
+                </FormControl>
 
-                <TextField
-                  style={{
-                    backgroundColor: "white",
-                  }}
-                  inputRef={quantiteRef}
-                  onChange={verifQuantite}
-                  error={verfQuantite}
-                  id="filled-number"
-                  label="Quantite"
-                  type="Quantite"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="filled"
-                />
+                <QuantityPicker
+                style={{display:"flex" , flexDirection:"row"}}
+                min={15} />
+
+               
               </div>
               <div className="number"></div>
               <div className="btn-form">

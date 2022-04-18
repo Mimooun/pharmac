@@ -41,19 +41,16 @@ function Formnav() {
         <div className="menu">
           <ul>
             <Link to="/">
-              <li>Home</li>
-            </Link>
-            <Link to="">
-              <li>Shop</li>
+              <li>Présentation</li>
             </Link>
             <Link to="/Listep">
-              <li>Products</li>
+              <li>Produits</li>
             </Link>
             <Link to="">
-              <li>Pages</li>
+              <li>Nouveautés</li>
             </Link>
             <Link to="">
-              <li>Blog</li>
+              <li>Actualités</li>
             </Link>
           </ul>
         </div>

@@ -38,43 +38,21 @@ function Formnav() {
         <div className="menu">
           <ul>
             <Link to="/">
-              <li>Home</li>
-            </Link>
-            <Link to="">
-              <li>Shop</li>
+              <li>Présentation</li>
             </Link>
             <Link to="/Listep">
-              <li>Products</li>
+              <li>Produits</li>
             </Link>
             <Link to="">
-              <li>Pages</li>
+              <li>Nouveatés</li>
             </Link>
             <Link to="">
-              <li>Blog</li>
+              <li>Actualités</li>
             </Link>
+           
           </ul>
         </div>
-        <div className="search-area">
-          <Stack>
-            <Autocomplete
-              freeSolo
-              id="free-solo-2-demo"
-              disableClearable
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="choix catégorie"
-                  InputProps={{
-                    ...params.InputProps,
-                    type: "search",
-                  }}
-                  inputRef={medicamentRef}
-                  onChange={verfNamemedicament}
-                />
-              )}
-            />
-          </Stack>
-        </div>
+       
       </div>
     </nav>
   );

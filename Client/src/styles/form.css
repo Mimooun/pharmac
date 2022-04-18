@@ -40,6 +40,11 @@
   justify-content: center;
   align-items: center;
 }
+.textfield-container .three .quantity-picker {
+  display : flex ;
+  height : 50px ;
+  width : 50% ;
+}
 .textfield-container .number{
   display: flex;
   justify-content: center;

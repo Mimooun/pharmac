@@ -7,7 +7,7 @@ import sos from "../assets/images/SOSpharma2.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-export default function signup() {
+export default function Signup() {
   let history = useHistory();
   const lastnameRef = useRef();
   const firstnameRef = useRef();
