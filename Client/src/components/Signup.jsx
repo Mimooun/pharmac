@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Axios from "axios";
 import "../styles/signup.css";
 import TextField from "@mui/material/TextField";
@@ -16,17 +16,60 @@ export default function Signup() {
   const emailRef = useRef();
   const adresseRef = useRef();
   const passwordRef = useRef();
+
+  /* verification*/
+  const [verfFirstname, setverfFirstname] = useState(false);
+  const [verfLastname, setverfLastname] = useState(false);
+  const [verfEmail, setverfEmail] = useState(false);
+  const [verfPhone, setverfPhone] = useState(false);
+
+  const verifFirstname = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(firstnameRef.current.value) === false) {
+      setverfFirstname(true);
+    } else {
+      setverfFirstname(false);
+    }
+  };
+
+  const verifLastname = () => {
+    const reg = new RegExp(/^[a-zA-Z]*$/);
+    if (reg.test(lastnameRef.current.value) === false) {
+      setverfLastname(true);
+    } else {
+      setverfLastname(false);
+    }
+  };
+
+  const verifPhone = () => {
+    const reg = new RegExp(/^[0-9]*$/);
+    if (reg.test(telephoneRef.current.value) === false) {
+        setverfPhone(true)
+    } else {
+        setverfPhone(false)
+    }
+}
+
+  const verifEmail = () => {
+    const reg = new RegExp(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    if (reg.test(emailRef.current.value) === false) {
+      setverfEmail(true);
+    } else {
+      setverfEmail(false);
+    }
+  };
   function validate() {
     if (
       lastnameRef.current.value !== " " &&
       firstnameRef.current.value !== " " &&
       usernameRef.current.value !== " " &&
-      emailRef.current.value !== " " &&
+      emailRef.current.value !== " " && !verfEmail &&
       telephoneRef.current.value !== " " &&
       adresseRef.current.value !== " " &&
-      passwordRef.current.value !== " " 
-    ) { 
-      
+      passwordRef.current.value !== " "
+    ) {
       Axios.post("http://localhost:3001/addutilisateur", {
         lastnameRef: lastnameRef.current.value,
         firstnameRef: firstnameRef.current.value,
@@ -42,6 +85,20 @@ export default function Signup() {
           history.push({
             pathname: "/Login",
           });
+        } else {
+          if (firstnameRef.current.value === "") {
+            setverfFirstname(true);
+          }
+          if (lastnameRef.current.value === "") {
+            setverfLastname(true);
+          }
+          
+          if (telephoneRef.current.value === '') {
+            setverfPhone(true)
+        }
+        if (emailRef.current.value === "") {
+            setverfEmail(true);
+          }
         }
       });
     }
@@ -59,6 +116,8 @@ export default function Signup() {
             label="Nom"
             variant="outlined"
             inputRef={lastnameRef}
+            error={verfLastname}
+            onChange={verifLastname}
           />
           <TextField
             fullWidth
@@ -66,6 +125,8 @@ export default function Signup() {
             label="Prénom"
             variant="outlined"
             inputRef={firstnameRef}
+            error={verfFirstname}
+            onChange={verifFirstname}
           />
           <TextField
             fullWidth
@@ -73,6 +134,8 @@ export default function Signup() {
             label="E-mail"
             variant="outlined"
             inputRef={emailRef}
+            error={verfEmail}
+            onChange={verifEmail}
           />
           <TextField
             fullWidth
@@ -80,6 +143,8 @@ export default function Signup() {
             label="Telephone"
             variant="outlined"
             inputRef={telephoneRef}
+            error={verfPhone}
+            onChange={verifPhone}
           />
           <TextField
             fullWidth
@@ -105,7 +170,7 @@ export default function Signup() {
             variant="outlined"
             inputRef={passwordRef}
           />
-           <TextField
+          <TextField
             fullWidth
             type="password"
             autoComplete="current-password"

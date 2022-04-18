@@ -270,7 +270,7 @@ export default function FormPropsTextFields() {
                     label="Dosage"
                     size="small"
                   >
-                    <MenuItem value={"Male"}>Male</MenuItem>
+                    <MenuItem value={"Male"}></MenuItem>
                     <MenuItem value={"Female"}>Female</MenuItem>
                   </Select>
                 </FormControl>
