@@ -52,9 +52,8 @@ export default function Signup() {
 
   const verifEmail = () => {
     const reg = new RegExp(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-    if (reg.test(emailRef.current.value) === false) {
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ )
+          if (reg.test(emailRef.current.value) === false) {
       setverfEmail(true);
     } else {
       setverfEmail(false);
@@ -65,7 +64,7 @@ export default function Signup() {
       lastnameRef.current.value !== " " &&
       firstnameRef.current.value !== " " &&
       usernameRef.current.value !== " " &&
-      emailRef.current.value !== " " && !verfEmail &&
+      emailRef.current.value !== " " && 
       telephoneRef.current.value !== " " &&
       adresseRef.current.value !== " " &&
       passwordRef.current.value !== " "
