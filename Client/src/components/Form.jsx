@@ -18,7 +18,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-import { QuantityPicker } from 'react-qty-picker';
+import { QuantityPicker } from "react-qty-picker";
 
 export default function FormPropsTextFields() {
   let history = useHistory();
@@ -163,8 +163,8 @@ export default function FormPropsTextFields() {
           <div className="titre">Commande</div>
           <div className="box">
             <div className="textfield-container">
-              <div className="one">
-                <FormControl style={{ width: "65%" }}>
+              <div className="inp">
+                <FormControl style={{ width: "80%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -188,7 +188,7 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl style={{ width: "65%" }}>
+                <FormControl style={{ width: "80%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -211,9 +211,8 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-              </div>
-              <div className="two">
-                <FormControl style={{ width: "85%" }}>
+
+                <FormControl style={{ width: "80%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -237,7 +236,7 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-                <FormControl style={{ width: "65%" }}>
+                <FormControl style={{ width: "80%" }}>
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
@@ -260,17 +259,15 @@ export default function FormPropsTextFields() {
                     ))}
                   </Select>
                 </FormControl>
-              </div>
 
-              <div className="three">
-                <FormControl fullWidth>
+                <FormControl fullWidth style={{ width: "80%"}}>
                   <InputLabel size="small" id="demo-simple-select-label">
-                    Gender
+                    Dosage
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    label="Age"
+                    label="Dosage"
                     size="small"
                   >
                     <MenuItem value={"Male"}>Male</MenuItem>
@@ -278,13 +275,9 @@ export default function FormPropsTextFields() {
                   </Select>
                 </FormControl>
 
-                <QuantityPicker
-                style={{display:"flex" , flexDirection:"row"}}
-                min={15} />
-
-               
+                <QuantityPicker style={{ width: "80%"}} />
               </div>
-              <div className="number"></div>
+
               <div className="btn-form">
                 <Stack direction="row" spacing={3}>
                   <Button

@@ -20,25 +20,12 @@
   padding : 40px 40px ;
 }
 
-.textfield-container .one {
+.textfield-container .inp {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-}
-.textfield-container .two {
-  display: flex;
-  gap: 35px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.textfield-container .three {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 .textfield-container .three .quantity-picker {
   display : flex ;
