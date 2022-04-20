@@ -212,30 +212,7 @@ export default function FormPropsTextFields() {
                   </Select>
                 </FormControl>
 
-                <FormControl style={{ width: "80%" }}>
-                  <InputLabel
-                    size="small"
-                    id="demo-simple-select-label"
-                    style={{ marginTop: "4px" }}
-                  >
-                    Forme
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={categorie}
-                    label="categorie"
-                    size="small"
-                    error={verfNamemedicament}
-                    onChange={handleChangecategorie}
-                  >
-                    {categories.map((categorie) => (
-                      <MenuItem value={categorie.id_categorie}>
-                        {categorie.libelle_categorie}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
+                
                 <FormControl style={{ width: "80%" }}>
                   <InputLabel
                     size="small"

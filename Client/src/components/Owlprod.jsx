@@ -1,11 +1,11 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel2';
 import "../styles/owlprod.css";
-import img1 from "../assets/images/25.jpg";
-import img2 from "../assets/images/19.jpg";
-import img3 from "../assets/images/23.jpg";
-import img4 from "../assets/images/22.jpg";
-import img5 from "../assets/images/21.jpg";
+import img1 from "../assets/images/migralgine-removebg.png";
+import img2 from "../assets/images/doli-copybg.png";
+import img3 from "../assets/images/aspeg.png";
+import img4 from "../assets/images/sanofi-removebg.png";
+import img5 from "../assets/images/doli-copybg.png";
 
 
 function Owlprod() {
@@ -29,7 +29,7 @@ function Owlprod() {
   };
 
   return (
-    <section className="owlprod">
+    <section id="test" className="owlprod">
       <div className="overlay">
         <div className="max-width">
           <div className="container">

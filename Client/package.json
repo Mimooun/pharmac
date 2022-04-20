@@ -19,7 +19,7 @@
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
-    "material-table": "^2.0.3",
+    "material-table": "^1.69.3",
     "mui-image": "^1.0.4",
     "nodemon": "^2.0.15",
     "owl.carousel2": "^2.2.2",

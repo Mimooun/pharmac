@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import Axios from "axios";
-import '../../styles/Dash/prod.css'
+import "../../styles/Dash/prod.css";
 import MaterialTable from "material-table";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
@@ -18,6 +18,8 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import Button from "@material-ui/core/Button";
+import {Link} from 'react-router-dom'
+
 
 function Prod() {
   const [Products, setProducts] = useState([]);
@@ -58,17 +60,19 @@ function Prod() {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   };
   return (
-    <div style={{ marginTop: "200px" }}>
+    <div style={{ marginTop: "150px" }}>
       <div className="addcommande">
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#3ecfa3",
-            color:"white",
-          }}
-        >
-          Add commande
-        </Button>
+        <Link to="/Formi">
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "#3ecfa3",
+              color: "white",
+            }}
+          >
+            Add commande
+          </Button>
+        </Link>
       </div>
       <MaterialTable
         icons={tableIcons}

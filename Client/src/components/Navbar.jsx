@@ -1,6 +1,6 @@
 import "../styles/navbar.css";
 import logo from "../assets/images/SOSpharma2.png";
-import React, { useState } from "react";
+import React, { useState , useRef } from "react";
 import "../styles/login.css";
 import sos from "../assets/images/SOSpharma2.png";
 import TextField from "@material-ui/core/TextField";
@@ -15,7 +15,18 @@ function Navbar() {
   const [password, SetPassword] = useState("");
   const [authfailed, SetAuthFailed] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
-
+  function scrollToTestDiv(){
+    const divElement = document.getElementById('test');
+    divElement.scrollIntoView({ behavior: 'smooth' , block :'start'});
+  }
+  function scrollToTestDiv2(){
+    const divElement = document.getElementById('test2');
+    divElement.scrollIntoView({ behavior: 'smooth' , block :'start'});
+  }
+  function scrollToTestDiv3(){
+    const divElement = document.getElementById('test3');
+    divElement.scrollIntoView({ behavior: 'smooth' , block :'start'});
+  }
   function show() {
     if (showSignIn) {
       setShowSignIn(false);
@@ -43,23 +54,23 @@ function Navbar() {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <Link to="/home">
+          <Link to="/">
             <img src={logo} alt="" />
           </Link>
         </div>
         <div className="menu">
           <ul>
-            <li>Présentation</li>
+          <a className="nav-link3" onClick={scrollToTestDiv3}> <li>Nouveautés</li>   </a>
             <Link to="/Listep">
               <li>Produits</li>
             </Link>
-            <li>Nouveautés</li>
-            <li>Actualités</li>
+           <a className="nav-link" onClick={scrollToTestDiv}> <li>Nouveautés</li>   </a>
+           <a className="nav-link2" onClick={scrollToTestDiv2}> <li>Actualités</li>   </a>
           </ul>
         </div>
         <div className="btn">
           <button
-          onClick={show}
+            onClick={show}
             style={{ display: "block", margin: "auto" }}
             className="button"
           >

@@ -7,7 +7,7 @@ import img4 from "../assets/images/price-tag.png";
 import img5 from "../assets/images/creative.png";
 function Chose() {
   return (
-    <section className="chose">
+    <section id ="test2" className="chose">
       <div className="max-width">
         <div className="container">
           <div className="tit">Why choose us</div>
