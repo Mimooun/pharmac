@@ -85,17 +85,18 @@ app.get("/login", (req, res) => {
 /** Add commande script */
 
 app.post("/addpanier", (req, res) => {
-  const pharmacieRef = req.body.pharmacieRef;
-  const adresseRef = req.body.adresseRef;
+  console.log(req.body.produit,req.body.categorie,req.body.forme,req.body.dosage)
   const produit = req.body.produit;
-  const dateRef = req.body.dateRef;
-  const quantiteRef = req.body.quantiteRef;
+  const categorie = req.body.categorie;
+  const formes = req.body.forme;
+  const dosage = req.body.dosage;
+  /*const quantite = req.body.quantite;*/
   const id = req.body.id;
   const sqlSelect =
-    "INSERT INTO `panier` (`id_panier`,`nom_pharmacie`, `adresse_pharmacie`,`id_produit`, `date_commande`, `quantite`, `id_utilisateur`) VALUES (NULL,?,?,?,?,?,?)";
+    "INSERT INTO `panier` (`id_panier`,`id_utilisateur`,`id_produit`,`forme`,`dosage`) VALUES (NULL,?,?,?,?)";
   db.query(
     sqlSelect,
-    [pharmacieRef, adresseRef, produit, dateRef, quantiteRef, id],
+    [ id, produit, formes, dosage],
     (err, result) => {
       if (err) {
         res.send({
@@ -143,7 +144,7 @@ app.post("/addcommande", (req, res) => {
 
 app.post("/addutilisateur", (req, res) => {
 
-  console.log(req.body.lastnameRef ,req.body.firstnameRef,req.body.usernameRef,req.body.emailRef,req.body.telephoneRef,req.body.adresseRef,req.body.passwordRef)
+ /* console.log(req.body.lastnameRef ,req.body.firstnameRef,req.body.usernameRef,req.body.emailRef,req.body.telephoneRef,req.body.adresseRef,req.body.passwordRef)*/
   const lastnameRef = req.body.lastnameRef;
   const firstnameRef = req.body.firstnameRef; 
   const usernameRef = req.body.usernameRef;
@@ -216,6 +217,29 @@ app.get("/categories", (req, res) => {
 app.get("/produits", (req, res) => {
   const sqlSelect = "SELECT * FROM `produits`";
   db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+});
+
+
+/*details produits affichage dosage*/
+
+app.post("/detailsproduits", (req, res) => {
+  const id = req.body.id;
+  const sqlSelect = "SELECT * FROM `details_produits` WHERE id_produit = ?";
+  db.query(sqlSelect, [id], (err, result) => {
     if (err) {
       res.send({
         err: err,

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import Axios from "axios";
 import "../styles/panier.css";
@@ -15,6 +16,8 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import { borderRadius } from "@mui/system";
 import { useLocation } from "react-router-dom";
+import { QuantityPicker } from "react-qty-picker";
+
 function Panier() {
   const location = useLocation();
 
@@ -41,7 +44,7 @@ function Panier() {
       setId_utilisateur(response.data.id);
     });
     Axios.post("http://localhost:3001/produitspanier", {
-      id: 12,
+      id: 1,
     }).then((response) => {
       setProduitPanier(response.data);
     });
@@ -95,31 +98,8 @@ function Panier() {
                 </div>
                 <div className="dispo">En stock !</div>
               </div>
-              <div className="icon">
-                <div className="counter">
-                  <div className="primary-btn">
-                    <button
-                      onClick={() => {
-                        quantity > 1
-                          ? setQuantity(quantity - 1)
-                          : setQuantity(quantity);
-                      }}
-                    >
-                      -
-                    </button>
-                  </div>
-                  <div className="count"> {quantity} </div>
-                  <div className="primary-btn">
-                    <button
-                      onClick={() => {
-                        setQuantity(quantity + 1);
-                      }}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <QuantityPicker style={{width : "40%"}} value={1} smooth/>
+
               <div className="trash">
                 <Button variant="outlined" color="error" onClick={ ()=>{deleteCommande(produit.id_produit)} }>Supprimer</Button>
               </div>

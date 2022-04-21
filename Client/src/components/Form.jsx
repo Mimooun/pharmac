@@ -27,12 +27,15 @@ export default function FormPropsTextFields() {
   const [categorie, setcategorie] = useState();
   const [produit, setproduit] = useState();
   const [produits, setproduits] = useState([""]);
+  const [dosages, setdosages] = useState([""]);
+  const [dosage, setdosage] = useState([""]);
+  const [formes, setformes] = useState([""]);
+  const [quantite, setquantite] = useState([""]);
 
-  const pharmacieRef = useRef();
-  const adresseRef = useRef();
-
-  const medicamentRef = useRef();
-  const dateRef = useRef();
+  const categorieRef = useRef();
+  const produitRef = useRef();
+  const forme = useRef();
+  const doseRef = useRef();
   const quantiteRef = useRef();
   const [open, setOpen] = React.useState(false);
 
@@ -42,22 +45,24 @@ export default function FormPropsTextFields() {
   const [verfNamemedicament, setverfNamemedicament] = useState(false);
   const [verfQuantite, setverfQuantite] = useState(false);
   const [selectedid, setselectedid] = useState(false);
-
   const [id_utilisateur, setId_utilisateur] = useState();
+  const getPickerValue = (value) =>{
+    console.log(value) // Here you can get the value of the Quantity picker
+}
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       setId_utilisateur(response.data.id);
     });
   }, []);
 
-  const verifNamepharmacie = () => {
-    const reg = new RegExp(/^[a-zA-Z]*$/);
-    if (reg.test(pharmacieRef.current.value) === false) {
-      setverfNamepharmacie(true);
-    } else {
-      setverfNamepharmacie(false);
-    }
-  };
+  // const verifNamepharmacie = () => {
+  //   const reg = new RegExp(/^[a-zA-Z]*$/);
+  //   if (reg.test(pharmacieRef.current.value) === false) {
+  //     setverfNamepharmacie(true);
+  //   } else {
+  //     setverfNamepharmacie(false);
+  //   }
+  // };
 
   // const verifAdressepharmacie = () => {
   //   const reg = new RegExp(/^[a-zA-Z]*$/);
@@ -68,14 +73,14 @@ export default function FormPropsTextFields() {
   //   }
   // };
 
-  const verifQuantite = () => {
-    const reg = new RegExp(/^[0-9]*$/);
-    if (reg.test(quantiteRef.current.value) === false) {
-      setverfQuantite(true);
-    } else {
-      setverfQuantite(false);
-    }
-  };
+  // const verifQuantite = () => {
+  //   const reg = new RegExp(/^[0-9]*$/);
+  //   if (reg.test(quantiteRef.current.value) === false) {
+  //     setverfQuantite(true);
+  //   } else {
+  //     setverfQuantite(false);
+  //   }
+  // };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -95,6 +100,7 @@ export default function FormPropsTextFields() {
 
   const handleChange = (event) => {
     setproduit(event.target.value);
+    getSondage(event.target.value);
   };
 
   const handleChangecategorie = (event) => {
@@ -106,45 +112,44 @@ export default function FormPropsTextFields() {
     });
   };
 
+  function getSondage(id) {
+    Axios.post("http://localhost:3001/detailsproduits", {
+      id: id,
+    }).then((response) => {
+      setdosages(response.data);
+    });
+  }
+
+  const handleChangedosage = (event) => {
+    setdosage(event.target.value);
+  };
+  const handleChangeformes = (event) => {
+    setformes(event.target.value);
+  };
+
   function validate() {
     if (
-      pharmacieRef.current.value !== " " &&
-      !verfNamepharmacie &&
-      adresseRef.current.value !== " " &&
-      !verfAdressepharmacie &&
       produit !== "" &&
-      dateRef.current.value !== " " &&
-      quantiteRef.current.value !== " " &&
-      !verfQuantite
+      categorie !== "" &&
+      formes !== "" &&
+      dosage !== "" 
+     /* quantite !== ""*/
     ) {
       Axios.post("http://localhost:3001/addpanier", {
-        pharmacieRef: pharmacieRef.current.value,
-        adresseRef: adresseRef.current.value,
         produit: produit,
-        dateRef: dateRef.current.value,
-        quantiteRef: quantiteRef.current.value,
+        categorie : categorie ,
+        forme : formes,
+        dosage : dosage,
+        /*quantite : quantite,*/
         id: id_utilisateur,
       }).then((response) => {
         if (response.data.message === "Operation completed") {
-          /** redirect to students list */
           console.log("Operation Completed");
           history.push({
             pathname: "/Panier",
             id: id_utilisateur,
           });
         } else {
-          if (pharmacieRef.current.value === "") {
-            setverfNamepharmacie(true);
-          }
-          // if (adresseRef.current.value === "") {
-          //   setverfAdressepharmacie(true);
-          // }
-          if (medicamentRef.current.value === "") {
-            setverfNamemedicament(true);
-          }
-          if (quantiteRef.current.value === "") {
-            setverfQuantite(true);
-          }
         }
       });
     }
@@ -168,7 +173,7 @@ export default function FormPropsTextFields() {
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
-                    style={{ marginTop: "4px" }}
+                    style={{ marginTop: "2px" }}
                   >
                     Categorie
                   </InputLabel>
@@ -192,7 +197,7 @@ export default function FormPropsTextFields() {
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
-                    style={{ marginTop: "4px" }}
+                    style={{ marginTop: "2px" }}
                   >
                     Produits
                   </InputLabel>
@@ -200,59 +205,68 @@ export default function FormPropsTextFields() {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={produit}
-                    label="produit"
+                    label="Produit"
                     size="small"
                     onChange={handleChange}
                   >
                     {produits.map((produit) => (
                       <MenuItem value={produit.id_produit}>
                         {produit.libelle_produit}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+
+                <FormControl style={{ width: "80%" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "2px" }}
+                  >
+                    Forme
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="categorie"
+                    size="small"
+                    error={verfNamemedicament}
+                    onChange={handleChangeformes}
+                  >
+                    <MenuItem value={"Small"}>Small</MenuItem>
+                    <MenuItem value={"Meduim"}>Meduim</MenuItem>
+                    <MenuItem value={"Large"}>Large</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <FormControl style={{ width: "80%" }}>
+                  <InputLabel
+                    size="small"
+                    id="demo-simple-select-label"
+                    style={{ marginTop: "2px" }}
+                  >
+                    Dose
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={dosage}
+                    label="Dose"
+                    size="small"
+                    onChange={handleChangedosage}
+                  >
+                    {dosages.map((dosag) => (
+                      <MenuItem value={dosag.id_details_produits}>
+                        {dosag.dose}
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
 
                 
-                <FormControl style={{ width: "80%" }}>
-                  <InputLabel
-                    size="small"
-                    id="demo-simple-select-label"
-                    style={{ marginTop: "4px" }}
-                  >
-                    Modèle
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={produit}
-                    label="produit"
-                    size="small"
-                    onChange={handleChange}
-                  >
-                    {produits.map((produit) => (
-                      <MenuItem value={produit.id_produit}>
-                        {produit.libelle_produit}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
 
-                <FormControl fullWidth style={{ width: "80%"}}>
-                  <InputLabel size="small" id="demo-simple-select-label">
-                    Dosage
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Dosage"
-                    size="small"
-                  >
-                    <MenuItem value={"Male"}></MenuItem>
-                    <MenuItem value={"Female"}>Female</MenuItem>
-                  </Select>
-                </FormControl>
-
-                <QuantityPicker style={{ width: "80%"}} />
+                <QuantityPicker  value={1} style={{ width: "80%" }}  />
+                <QuantityPicker value={1} smooth/>
               </div>
 
               <div className="btn-form">
