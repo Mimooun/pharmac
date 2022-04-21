@@ -65,9 +65,9 @@
 .css-cio0x1-MuiInputBase-root-MuiFilledInput-root {
   background-color: none  !important ;
 }
-.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+/* .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
   height: 35px !important;
-}
+} */
 
 
 /*.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
@@ -75,6 +75,6 @@
 }*/
 
 
-.MuiSelect-select .MuiSelect-outlined .MuiOutlinedInput-input .MuiInputBase-input .MuiInputBase-inputSizeSmall .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+/* .MuiSelect-select .MuiSelect-outlined .MuiOutlinedInput-input .MuiInputBase-input .MuiInputBase-inputSizeSmall .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
 text-align: center !important;
-}
+} */

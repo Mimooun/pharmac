@@ -6,6 +6,7 @@ import { IoNotificationsOutline } from 'react-icons/io5'
 import IconButton from '@material-ui/core/IconButton'
 import { HiChevronLeft } from 'react-icons/hi'
 import Axios from 'axios'
+import image from '../../assets/images/admin.jpeg'
 
 function Navdash( props) {
     useEffect(() => {
@@ -43,7 +44,7 @@ function Navdash( props) {
                         <div className="text1">Good morning</div>
                         <div className="text2">{firstname} {lastname}</div>
                     </div>
-                    <Avatar src={picture} />
+                    <Avatar src={image} />
                 </div>
             </div>
         </nav>
