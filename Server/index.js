@@ -90,13 +90,13 @@ app.post("/addpanier", (req, res) => {
   const categorie = req.body.categorie;
   const formes = req.body.forme;
   const dosage = req.body.dosage;
-  /*const quantite = req.body.quantite;*/
+  const quantite = req.body.quantite;
   const id = req.body.id;
   const sqlSelect =
-    "INSERT INTO `panier` (`id_panier`,`id_utilisateur`,`id_produit`,`forme`,`dosage`) VALUES (NULL,?,?,?,?)";
+    "INSERT INTO `panier` (`id_panier`,`id_utilisateur`,`id_produit`,`forme`,`dosage`,`quantite`) VALUES (NULL,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [ id, produit, formes, dosage],
+    [ id, produit, formes, dosage,quantite],
     (err, result) => {
       if (err) {
         res.send({
@@ -116,15 +116,13 @@ app.post("/addpanier", (req, res) => {
 
 app.post("/addcommande", (req, res) => {
   const id = req.body.id;
-  const quantite = req.body.quantite;
   const date = req.body.date;
-  const prix = req.body.prix;
 
   const sqlSelect =
-"INSERT INTO `commande` (`id_commande`, `date_commande`, `quantite`, `prix`) VALUES (NULL, ?, ?, ?)" ;
+"INSERT INTO `commande` (`id_commande`,`id_utilisateur`,`date_commande`) VALUES (NULL, ?, ?)" ;
  db.query(
     sqlSelect,
-    [date,quantite,prix],
+    [id,date],
     (err, result) => {
       if (err) {
         res.send({

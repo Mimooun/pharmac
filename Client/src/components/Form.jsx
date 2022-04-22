@@ -46,14 +46,17 @@ export default function FormPropsTextFields() {
   const [verfQuantite, setverfQuantite] = useState(false);
   const [selectedid, setselectedid] = useState(false);
   const [id_utilisateur, setId_utilisateur] = useState();
-  const getPickerValue = (value) =>{
-    console.log(value) // Here you can get the value of the Quantity picker
-}
+
+
+  const getPickerValue = (value) => {
+    setquantite(value) // Here you can get the value of the Quantity picker
+  };
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       setId_utilisateur(response.data.id);
     });
   }, []);
+
 
   // const verifNamepharmacie = () => {
   //   const reg = new RegExp(/^[a-zA-Z]*$/);
@@ -132,15 +135,15 @@ export default function FormPropsTextFields() {
       produit !== "" &&
       categorie !== "" &&
       formes !== "" &&
-      dosage !== "" 
-     /* quantite !== ""*/
+      dosage !== "" &&
+      quantite !== ""
     ) {
       Axios.post("http://localhost:3001/addpanier", {
         produit: produit,
-        categorie : categorie ,
-        forme : formes,
-        dosage : dosage,
-        /*quantite : quantite,*/
+        categorie: categorie,
+        forme: formes,
+        dosage: dosage,
+        quantite: quantite,
         id: id_utilisateur,
       }).then((response) => {
         if (response.data.message === "Operation completed") {
@@ -263,10 +266,7 @@ export default function FormPropsTextFields() {
                   </Select>
                 </FormControl>
 
-                
-
-                <QuantityPicker  value={1} style={{ width: "80%" }}  />
-                <QuantityPicker value={1} smooth/>
+                <QuantityPicker onChange={getPickerValue} value={1} style={{ width: "80%" }} />
               </div>
 
               <div className="btn-form">

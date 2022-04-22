@@ -82,7 +82,7 @@ export default function Signup() {
           /** redirect to  list */
           console.log("Operation Completed");
           history.push({
-            pathname: "/Login",
+            pathname: "/login",
           });
         } else {
           if (firstnameRef.current.value === "") {
