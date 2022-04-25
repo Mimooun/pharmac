@@ -18,6 +18,8 @@
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   border-radius: 15px;
   padding : 40px 40px ;
+  border : 1px solid #3ECFA3;
+  
 }
 
 .textfield-container .inp {

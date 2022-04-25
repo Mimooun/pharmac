@@ -87,7 +87,7 @@ function Panier() {
               </div>
               <div className="content">
                 <div className="name">{produit.libelle_produit} </div>
-                <div className="name">{produit.prix}</div>
+                <div className="name2">{produit.prix}DH</div>
                 <div className="dispo">En stock !</div>
               </div>
               <QuantityPicker
@@ -115,8 +115,8 @@ function Panier() {
                       }).then((result) => {
                         if (result.isConfirmed) {
                           Swal.fire(
-                            "Deleted!",
-                            "êtes-vous sûr de vouloir supprimer.",
+                            "Supprimé!",
+                            "Votre produit a été supprimé.",
                             "success"
                           );
                         }
@@ -172,6 +172,24 @@ function Panier() {
           >
             Cancel
           </Button>
+          <Link to="/Form">
+          <Button
+            style={{
+              backgroundColor: "#3ecfa3",
+              marginTop: "100px",
+              display: "block",
+              margin: "auto",
+              color: "white",
+              border: "1px solid #3ecfa3 ",
+            }}
+            disableElevation
+            variant="contained"
+            onClick={handleClickOpen}
+          >
+            Ajouter un autre produit 
+            </Button>
+          </Link>
+          
           <Dialog
             open={open}
             onClose={handleClose}

@@ -67,6 +67,14 @@
   color: black;
   font-family: "Roboto", sans-serif;
 }
+.sec .cart .cards .card .content .name2 {
+  display: block;
+  margin : auto;
+  font-weight: 900;
+  color: #3ECFA3;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
 .sec .cart .cards .card .icon {
   display: flex;
   margin: auto;
