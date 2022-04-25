@@ -13,7 +13,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
-import { borderRadius } from "@mui/system";
+import { border, borderRadius } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import { QuantityPicker } from "react-qty-picker";
 import Alert from "@mui/material/Alert";
@@ -23,7 +23,7 @@ function Panier() {
   const [categorie, setcategorie] = useState();
   const [produit, setproduit] = useState();
   const [produits, setproduits] = useState([""]);
-  
+
   const location = useLocation();
 
   const [produitPanier, setProduitPanier] = useState([]);
@@ -37,7 +37,7 @@ function Panier() {
       (today.getMonth() + 1) +
       "-" +
       today.getDate();
-       console.log(date);
+  console.log(date);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
@@ -60,7 +60,7 @@ function Panier() {
       id: id_utilisateur,
       date: date,
     }).then((response) => {
-      alert("added successfully");
+      
     });
   }
 
@@ -116,7 +116,7 @@ function Panier() {
                         if (result.isConfirmed) {
                           Swal.fire(
                             "Deleted!",
-                            "êtes-vous sûr devouloirsupprimer.",
+                            "êtes-vous sûr de vouloir supprimer.",
                             "success"
                           );
                         }
@@ -133,11 +133,25 @@ function Panier() {
       </div>
       <div className="button">
         <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#3ECFA3",
+          variant="outlined"
+          
+          style ={{
+            background:"#3ECFA3",
+            color:"white",
+            border :"1px solid #3ECFA3"
           }}
-          onClick={addCommande}
+          onClick={() => {
+           addCommande();
+           Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'votre commande a bien été enregistrée',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+            
+          }}
         >
           Valider
         </Button>
