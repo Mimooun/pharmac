@@ -156,6 +156,23 @@ function Panier() {
         >
           Valider
         </Button>
+        <Link to="/Form">
+          <Button
+            style={{
+              backgroundColor: "#3ecfa3",
+              marginTop: "100px",
+              display: "block",
+              margin: "auto",
+              color: "white",
+              border: "1px solid #3ecfa3 ",
+            }}
+            disableElevation
+            variant="contained"
+            onClick={handleClickOpen}
+          >
+            Ajouter un autre produit 
+            </Button>
+          </Link>
 
         <Stack direction="row" spacing={3}>
           <Button
@@ -173,23 +190,7 @@ function Panier() {
           >
             Cancel
           </Button>
-          <Link to="/Form">
-          <Button
-            style={{
-              backgroundColor: "#3ecfa3",
-              marginTop: "100px",
-              display: "block",
-              margin: "auto",
-              color: "white",
-              border: "1px solid #3ecfa3 ",
-            }}
-            disableElevation
-            variant="contained"
-            onClick={handleClickOpen}
-          >
-            Ajouter un autre produit 
-            </Button>
-          </Link>
+         
           
           <Dialog
             open={open}
