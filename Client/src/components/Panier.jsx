@@ -77,8 +77,8 @@ function Panier() {
   const [quantity, setQuantity] = useState(1);
   return (
     <section className="sec">
+      <div className="title">Vos produits</div>
       <div className="cart">
-        <div className="title">Vos produits</div>
         <div className="cards">
           {produitPanier.map((produit) => (
             <div className="card">

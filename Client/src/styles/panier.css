@@ -14,10 +14,11 @@
   margin: auto;
   border : 2px solid #028090;
 } 
-.sec .cart .title {
+.sec .title {
   text-align: center;
   font-size: 30px;
   font-weight: 800;
+  margin-bottom: 30px;
 }
 .sec .cart .cards {
   display: flex;
