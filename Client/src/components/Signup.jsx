@@ -50,15 +50,14 @@ export default function Signup() {
     }
 }
 
-  // const verifEmail = () => {
-  //   const reg = new RegExp( /^(([.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  //   );
-  //   if (reg.test(emailRef.current.value) === false) {
-  //     setverfEmail(true);
-  //   } else {
-  //     setverfEmail(false);
-  //   }
-  // };
+   const verifEmail = () => {
+  const reg = new RegExp( /^(([.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ );
+     if (reg.test(emailRef.current.value) === false) {
+  setverfEmail(true);
+    } else {
+     setverfEmail(false);
+   }
+   };
   function validate() {
     if (
       lastnameRef.current.value !== " " && 
@@ -133,8 +132,8 @@ export default function Signup() {
             label="E-mail"
             variant="outlined"
             inputRef={emailRef}
-            // error={verfEmail}
-            // onChange={verifEmail}
+             error={verfEmail}
+             onBlur={verifEmail}
           />
           <TextField
             fullWidth

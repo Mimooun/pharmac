@@ -18,6 +18,8 @@ import { useLocation } from "react-router-dom";
 import { QuantityPicker } from "react-qty-picker";
 import Alert from "@mui/material/Alert";
 import Swal from "sweetalert2";
+import DeleteIcon from "@mui/icons-material/Delete";
+import axios from "axios";
 function Panier() {
   const [categories, setcategories] = useState([""]);
   const [categorie, setcategorie] = useState();
@@ -59,9 +61,7 @@ function Panier() {
     Axios.post("http://localhost:3001/addcommande", {
       id: id_utilisateur,
       date: date,
-    }).then((response) => {
-      
-    });
+    }).then((response) => {});
   }
 
   /*open and clos */
@@ -95,11 +95,15 @@ function Panier() {
                 value={produit.quantite}
                 min={1}
                 smooth
+                onChange={(value) => {
+                  
+                }}
               />
-
+            
               <div className="trash">
                 <div className="trash">
                   <Button
+                    startIcon={<DeleteIcon />}
                     variant="outlined"
                     color="error"
                     onClick={() => {
@@ -134,23 +138,20 @@ function Panier() {
       <div className="button">
         <Button
           variant="outlined"
-          
-          style ={{
-            background:"#3ECFA3",
-            color:"white",
-            border :"1px solid #3ECFA3"
+          style={{
+            background: "#3ECFA3",
+            color: "white",
+            border: "1px solid #3ECFA3",
           }}
           onClick={() => {
-           addCommande();
-           Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'votre commande a bien été enregistrée',
-            showConfirmButton: false,
-            timer: 1500
-          })
-
-            
+            addCommande();
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "votre commande a bien été enregistrée",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           }}
         >
           Valider

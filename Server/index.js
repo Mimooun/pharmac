@@ -290,6 +290,24 @@ app.post("/deletePanier", (req, res) => {
   });
 });
 
+/** update quantite fro panier */
+app.post("/updatePanier", (req, res) => {
+  const id = req.body.id;
+   const sqlSelect = "UPDATE  FROM `panier` WHERE `id_produit` = ?";
+   db.query(sqlSelect, id, (err) => {
+     if (err) {
+       res.send({
+         err: err,
+       });
+     } else {
+       res.send({
+         message: "Operation completed",
+       });
+     }
+   });
+ });
+
+
 /** fin  script */
 app.listen(3001, () => {
   console.log("running");
