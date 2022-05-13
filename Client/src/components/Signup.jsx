@@ -50,24 +50,25 @@ export default function Signup() {
     }
 }
 
-   const verifEmail = () => {
-  const reg = new RegExp( /^(([.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ );
-     if (reg.test(emailRef.current.value) === false) {
-  setverfEmail(true);
-    } else {
-     setverfEmail(false);
-   }
-   };
+  //  const verifEmail = () => {
+  // const reg = new RegExp( /^(([.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ );
+  //    if (reg.test(emailRef.current.value) === false) {
+  // setverfEmail(true);
+  //   } else {
+  //    setverfEmail(false);
+  //  }
+  //  };
   function validate() {
     if (
-      lastnameRef.current.value !== " " && 
-      firstnameRef.current.value !== " " && 
-      usernameRef.current.value !== " " &&
-      emailRef.current.value !== " " && 
-      telephoneRef.current.value !== " " && 
-      adresseRef.current.value !== " " && 
-      passwordRef.current.value !== " "
+      lastnameRef.current.value !== "" && !verfLastname &&
+      firstnameRef.current.value !== "" && !verfFirstname &&
+      usernameRef.current.value !== "" &&  
+      emailRef.current.value !== "" && 
+      telephoneRef.current.value !== "" && 
+      adresseRef.current.value !== "" && 
+      passwordRef.current.value !== ""
     ) {
+      
       Axios.post("http://localhost:3001/addutilisateur", {
         lastnameRef: lastnameRef.current.value,
         firstnameRef: firstnameRef.current.value,
@@ -81,17 +82,17 @@ export default function Signup() {
           /** redirect to  list */
           console.log("Operation Completed");
           history.push({
-            pathname: "/login",
+            //pathname: "/login",
           });
         } else {
-          if (firstnameRef.current.value === "") {
+           if (firstnameRef.current.value === "") {
             setverfFirstname(true);
           }
           if (lastnameRef.current.value === "") {
             setverfLastname(true);
           }
           
-          if (telephoneRef.current.value === '') {
+           if (telephoneRef.curent.value === "") {
             setverfPhone(true)
         }
         if (emailRef.current.value === "") {
@@ -132,8 +133,8 @@ export default function Signup() {
             label="E-mail"
             variant="outlined"
             inputRef={emailRef}
-             error={verfEmail}
-             onBlur={verifEmail}
+            //  error={verfEmail}
+            //  onBlur={verifEmail}
           />
           <TextField
             fullWidth
@@ -179,14 +180,14 @@ export default function Signup() {
         </div>
         <p>Forgot Password ?</p>
         <div className="btn1">
-          <Link to="/Login">
+          <Link to="/">
             <Button
               style={{ textDecoration: "none", listStyle: "none" }}
               fullWidth
               disableElevation
               variant="contained"
               onClick={() => {
-                validate();
+                validate()
               }}
             >
               GO !!

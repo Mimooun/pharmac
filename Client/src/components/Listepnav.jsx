@@ -31,7 +31,6 @@ function Formnav() {
           <div className="content">
             <img src={doctor} />
             <div className="usr-text">
-              <span>zaki</span>
             </div>
           </div>
         </div>

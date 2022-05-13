@@ -98,6 +98,22 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
+.sec .total {
+  display: flex;
+  justify-content: end;
+  right: 20px;
+  margin-top: 0px;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.sec .total{
+  color: #3ECFA3;
+  margin-right: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .sec .button {
   display: flex;
   justify-content: center;

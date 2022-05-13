@@ -29,8 +29,11 @@ function Panier() {
   const location = useLocation();
 
   const [produitPanier, setProduitPanier] = useState([]);
+  const [TotalPanier, setTotalPanier] = useState([""]);
 
   const [id_utilisateur, setId_utilisateur] = useState();
+  const [id_commande, setId_commande] = useState();
+  const [id_produit, setId_produit ]= useState();
   const [open, setOpen] = React.useState(false);
   var today = new Date(),
     date =
@@ -50,7 +53,15 @@ function Panier() {
     }).then((response) => {
       setProduitPanier(response.data);
     });
+    Axios.post("http://localhost:3001/totalPanier",{
+      idClient : 1,
+    }).then((response) => {
+      setTotalPanier(response.data);
+    });
   }, []);
+
+
+    
 
   function deleteCommande(id) {
     Axios.post("http://localhost:3001/deletePanier", {
@@ -61,6 +72,9 @@ function Panier() {
     Axios.post("http://localhost:3001/addcommande", {
       id: id_utilisateur,
       date: date,
+      id_commande : id_commande,
+      id_produit : id_produit,
+      TotalPanier : TotalPanier,
     }).then((response) => {});
   }
 
@@ -75,6 +89,18 @@ function Panier() {
   /* fin script*/
 
   const [quantity, setQuantity] = useState(1);
+  function updatequantite(id_panier, quantite) {
+    Axios.post("http://localhost:3001/updatePanier", {
+      id_panier: id_panier,
+      quantite: quantite,
+    }).then((response) => {
+      Axios.post("http://localhost:3001/produitspanier", {
+        id: 1,
+      }).then((response) => {
+        setProduitPanier(response.data);
+      });
+    });
+  }
   return (
     <section className="sec">
       <div className="title">Vos produits</div>
@@ -87,7 +113,7 @@ function Panier() {
               </div>
               <div className="content">
                 <div className="name">{produit.libelle_produit} </div>
-                <div className="name2">{produit.prix}DH</div>
+                <div className="name2">{produit.prix * produit.quantite}DH</div>
                 <div className="dispo">En stock !</div>
               </div>
               <QuantityPicker
@@ -96,10 +122,10 @@ function Panier() {
                 min={1}
                 smooth
                 onChange={(value) => {
-                  
+                  updatequantite(produit.id_panier, value);
                 }}
               />
-            
+
               <div className="trash">
                 <div className="trash">
                   <Button
@@ -133,6 +159,9 @@ function Panier() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="total">
+         <span className="total" >Total : </span> {TotalPanier[0].total}
         </div>
       </div>
       <div className="button">
@@ -170,9 +199,9 @@ function Panier() {
             variant="contained"
             onClick={handleClickOpen}
           >
-            Ajouter un autre produit 
-            </Button>
-          </Link>
+            Ajouter un autre produit
+          </Button>
+        </Link>
 
         <Stack direction="row" spacing={3}>
           <Button
@@ -190,8 +219,7 @@ function Panier() {
           >
             Cancel
           </Button>
-         
-          
+
           <Dialog
             open={open}
             onClose={handleClose}

@@ -13,7 +13,6 @@ import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
 import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
-
 import Dashboard from './components/Dash/Dashboard'
 import Axios from "axios";
 

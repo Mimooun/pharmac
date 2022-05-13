@@ -7,6 +7,7 @@ const path = require("path");
 const app = express();
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const bcrypt = require("bcrypt");
 
 const db = mysql.createConnection({
   user: "root",
@@ -52,9 +53,8 @@ app.use(
 app.post("/Login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  const sqlSelect =
-    "SELECT * FROM utilisateur  WHERE `username` = ? and `password` = ?";
-  db.query(sqlSelect, [username, password], (err, result) => {
+  const sqlSelect = "SELECT * FROM utilisateur WHERE `username` = ?";
+  db.query(sqlSelect, [username], (err, result) => {
     if (err) {
       res.send({
         err: err,
@@ -62,11 +62,17 @@ app.post("/Login", (req, res) => {
     } else {
       if (result.length == 0) {
         res.send({
-          message: "No Rows",
+          message: "Authentication failed",
         });
       } else {
-        req.session.user = result;
-        res.send(result);
+        if (bcrypt.compareSync(password, result[0].password)) {
+          req.session.user = result;
+          res.send(result);
+        } else {
+          res.send({
+            message: "Authentication failed",
+          });
+        }
       }
     }
   });
@@ -85,7 +91,6 @@ app.get("/login", (req, res) => {
 /** Add commande script */
 
 app.post("/addpanier", (req, res) => {
-  console.log(req.body.produit,req.body.categorie,req.body.forme,req.body.dosage)
   const produit = req.body.produit;
   const categorie = req.body.categorie;
   const formes = req.body.forme;
@@ -96,7 +101,7 @@ app.post("/addpanier", (req, res) => {
     "INSERT INTO `panier` (`id_panier`,`id_utilisateur`,`id_produit`,`forme`,`dosage`,`quantite`) VALUES (NULL,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [ id, produit, formes, dosage,quantite],
+    [id, produit, formes, dosage, quantite],
     (err, result) => {
       if (err) {
         res.send({
@@ -110,53 +115,69 @@ app.post("/addpanier", (req, res) => {
     }
   );
 });
-
 
 /** Add commande script */
 
 app.post("/addcommande", (req, res) => {
   const id = req.body.id;
   const date = req.body.date;
+  const id_commande =req.body.id_commande;
+  const id_produit=req.body.id_produit;
+  const totalPanier =req.body.totalPanier;
 
   const sqlSelect =
-"INSERT INTO `commande` (`id_commande`,`id_utilisateur`,`date_commande`) VALUES (NULL, ?, ?)" ;
- db.query(
-    sqlSelect,
-    [id,date],
-    (err, result) => {
-      if (err) {
-        res.send({
-          err: err,
-        });
-      } else {
-        res.send({
-          message: "Operation completed",
-        });
-      }
-    }
-  );
-});
+    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`,`date_commande`) VALUES (NULL, ?, ?)";
+  db.query(sqlSelect, [id, date], (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    }  else {
+      const sqlselect2 = "INSERT INTO `details_commande`(`id_details_commande`, `id_utilisateur`, `id_commande`, `id_produit`) VALUES (null,?,?,?)";
+      db.query(sqlselect2, [id, id_commande, id_produit], (err2, result2) => {
+          if (err2) {
+              res.send({
+                  err2: err2
+              })
+          } else {
+              res.send({
+                  message: "Operation completed"
+              })
+          }
+      })
 
+  }
+});
+});
 
 /** Add utilisateur script */
 
 app.post("/addutilisateur", (req, res) => {
-
- /* console.log(req.body.lastnameRef ,req.body.firstnameRef,req.body.usernameRef,req.body.emailRef,req.body.telephoneRef,req.body.adresseRef,req.body.passwordRef)*/
+  /* console.log(req.body.lastnameRef ,req.body.firstnameRef,req.body.usernameRef,req.body.emailRef,req.body.telephoneRef,req.body.adresseRef,req.body.passwordRef)*/
   const lastnameRef = req.body.lastnameRef;
-  const firstnameRef = req.body.firstnameRef; 
+  const firstnameRef = req.body.firstnameRef;
   const usernameRef = req.body.usernameRef;
-   const emailRef = req.body.emailRef;
+  const emailRef = req.body.emailRef;
   const telephoneRef = req.body.telephoneRef;
   const adresseRef = req.body.adresseRef;
   const passwordRef = req.body.passwordRef;
-  const sqlSelect ="insert INTO `utilisateur` (`id_utilisateur`,`lastname`,`firstname`,`username`,`email`,`telephone`,`adresse`,`password`) VALUES (NULL,?,?,?,?,?,?,?)";
+  let salt = bcrypt.genSaltSync(10);
+  let hash = bcrypt.hashSync(passwordRef, salt);
+  const sqlSelect =
+    "insert INTO `utilisateur` (`id_utilisateur`,`lastname`,`firstname`,`username`,`email`,`telephone`,`adresse`,`password`) VALUES (NULL,?,?,?,?,?,?,?)";
   db.query(
     sqlSelect,
-    [lastnameRef,firstnameRef,usernameRef,emailRef,telephoneRef,adresseRef,passwordRef],
+    [
+      lastnameRef,
+      firstnameRef,
+      usernameRef,
+      emailRef,
+      telephoneRef,
+      adresseRef,
+      hash,
+    ],
     (err, result) => {
       if (err) {
-        
         res.send({
           err: err,
         });
@@ -231,7 +252,6 @@ app.get("/produits", (req, res) => {
   });
 });
 
-
 /*details produits affichage dosage*/
 
 app.post("/detailsproduits", (req, res) => {
@@ -275,7 +295,7 @@ app.post("/produitsbycategorie", (req, res) => {
 });
 
 app.post("/deletePanier", (req, res) => {
- const id = req.body.id;
+  const id = req.body.id;
   const sqlSelect = "DELETE FROM `panier` WHERE `id_produit` = ?";
   db.query(sqlSelect, id, (err) => {
     if (err) {
@@ -292,21 +312,45 @@ app.post("/deletePanier", (req, res) => {
 
 /** update quantite fro panier */
 app.post("/updatePanier", (req, res) => {
-  const id = req.body.id;
-   const sqlSelect = "UPDATE  FROM `panier` WHERE `id_produit` = ?";
-   db.query(sqlSelect, id, (err) => {
-     if (err) {
-       res.send({
-         err: err,
-       });
-     } else {
-       res.send({
-         message: "Operation completed",
-       });
-     }
-   });
- });
+  const id_panier = req.body.id_panier;
+  const quantite = req.body.quantite;
+  const sqlSelect = "UPDATE `panier` set quantite= ? WHERE `id_panier` = ?";
+  db.query(sqlSelect, [quantite, id_panier], (err) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      res.send({
+        message: "Operation completed",
+      });
+    }
+  });
+});
 
+/* total panier script */
+
+app.post("/totalPanier", (req, res) => {
+  const idClient = req.body.idClient;
+  const sqlSelect = "select sum(produits.prix * panier.quantite) as total from panier inner join produits on panier.id_produit = produits.id_produit where id_utilisateur = ?";
+  db.query(sqlSelect, [idClient], (err, result) => {
+      if (err) {
+          res.send({
+              err: err
+          })
+      } else {
+          if (result.length == 0) {
+              res.send({
+                  message: "No Rows"
+              })
+          } else {
+              res.send(result);
+          }
+      }
+  });
+})
+
+/* fin total panier script */
 
 /** fin  script */
 app.listen(3001, () => {
