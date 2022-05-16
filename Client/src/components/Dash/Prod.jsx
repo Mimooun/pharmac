@@ -18,24 +18,19 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import Button from "@material-ui/core/Button";
-import Delete from '@material-ui/icons/Delete';
-import Refresh from '@material-ui/icons/Refresh';
-import Save from '@material-ui/icons/Save';
-import EditIcon from '@mui/icons-material/Edit';
-import {Link} from 'react-router-dom'
-
+import Delete from "@material-ui/icons/Delete";
+import Refresh from "@material-ui/icons/Refresh";
+import Save from "@material-ui/icons/Save";
+import EditIcon from "@mui/icons-material/Edit";
+import { Link } from "react-router-dom";
 
 function Prod() {
-
   const [Products, setProducts] = useState([]);
 
   const [open, setOpen] = useState(false);
 
   const [data, setData] = useState();
   const [Produit, setProduit] = useState();
-
-  
-  
 
   useEffect(() => {
     Axios.get("http://localhost:3001/produits").then((response) => {
@@ -70,25 +65,30 @@ function Prod() {
 
   const actions = [
     {
-        icon: Edit,
-        tooltip: 'Edit User',
-        position: 'row',
-        onClick: (event, rowData) => {
-            // history.push({
-            //     pathname: "/home/students/updateStudents",
-            //     Student: rowData
-            // })
-        }
+      icon: Edit,
+      tooltip: "Edit User",
+      position: "row",
+      onClick: (event, rowData) => {
+        // history.push({
+        //     pathname: "/home/students/updateStudents",
+        //     Student: rowData
+        // })
+      },
     },
     {
-        icon: Delete,
-        tooltip: 'Delete User',
-        position: 'row',
-        onClick: (event, rowData) => {
-            
-        }
-    }
-];
+      icon: Delete,
+      tooltip: "Delete Produit",
+      position: "row",
+      onClick: (event, rowData) => {
+        Axios.post("http://localhost:3001/deletepro", {
+          id_pr: rowData.id_produit,
+        }).then((response) => {});
+        Axios.get("http://localhost:3001/produits").then((response) => {
+          setProduit(response.data);
+        });
+      },
+    },
+  ];
   return (
     <div style={{ marginTop: "150px" }}>
       <div className="addcommande">
@@ -115,17 +115,13 @@ function Prod() {
             title: "Price",
             field: "prix",
           },
-         
         ]}
         data={Produit}
         actions={actions}
         options={{
-          actionsColumnIndex:-1,
-          selection:true,
-         
+          actionsColumnIndex: -1,
+          selection: true,
         }}
-        
-        
       />
     </div>
   );

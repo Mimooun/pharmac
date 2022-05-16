@@ -373,11 +373,27 @@ app.post("/totalPanier", (req, res) => {
 
 /* fin total panier script */
 
+/*delete commande dash*/ 
+app.post("/deletecmd", (req, res) => {
+  const cmd = req.body.cmd;
+  const sqlSelect = "DELETE FROM `commande` WHERE `id_commande` = ?";
+  db.query(sqlSelect, [cmd], (err, result) => {
+      if (err) {
+          res.send({
+              err: err
+          })
+      } else {
+          res.send({
+              message: "Operation completed"
+          })
+      }
+  })
+})
 /*delete produits dash*/ 
 app.post("/deletepro", (req, res) => {
-  const pro = req.body.pro;
+  const id_pr = req.body.id_pr;
   const sqlSelect = "DELETE FROM `produits` WHERE `id_produit` = ?";
-  db.query(sqlSelect, student, (err, result) => {
+  db.query(sqlSelect, [id_pr], (err, result) => {
       if (err) {
           res.send({
               err: err
