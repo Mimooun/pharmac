@@ -121,7 +121,6 @@ app.post("/addpanier", (req, res) => {
 app.post("/addcommande", (req, res) => {
   const id = req.body.id;
   const date = req.body.date;
-  const id_commande =req.body.id_commande;
   const id_produit=req.body.id_produit;
   const totalPanier =req.body.totalPanier;
 
@@ -133,8 +132,8 @@ app.post("/addcommande", (req, res) => {
         err: err,
       });
     }  else {
-      const sqlselect2 = "INSERT INTO `details_commande`(`id_details_commande`, `id_utilisateur`, `id_commande`, `id_produit`) VALUES (null,?,?,?)";
-      db.query(sqlselect2, [id, id_commande, id_produit], (err2, result2) => {
+      const sqlselect2 = "INSERT INTO `details_commande`(`id_details_commande`, `id_utilisateur`, `id_commande`) VALUES (null,?,?)";
+      db.query(sqlselect2, [id, result.insertId, id_produit], (err2, result2) => {
           if (err2) {
               res.send({
                   err2: err2
@@ -252,6 +251,28 @@ app.get("/produits", (req, res) => {
   });
 });
 
+
+/* selection de commande */
+
+app.get("/commande", (req, res) => {
+  const sqlSelect = "SELECT * FROM `commande`";
+  db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+})
+
 /*details produits affichage dosage*/
 
 app.post("/detailsproduits", (req, res) => {
@@ -351,6 +372,23 @@ app.post("/totalPanier", (req, res) => {
 })
 
 /* fin total panier script */
+
+/*delete produits dash*/ 
+app.post("/deletepro", (req, res) => {
+  const pro = req.body.pro;
+  const sqlSelect = "DELETE FROM `produits` WHERE `id_produit` = ?";
+  db.query(sqlSelect, student, (err, result) => {
+      if (err) {
+          res.send({
+              err: err
+          })
+      } else {
+          res.send({
+              message: "Operation completed"
+          })
+      }
+  })
+})
 
 /** fin  script */
 app.listen(3001, () => {

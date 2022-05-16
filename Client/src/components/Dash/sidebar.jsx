@@ -1,14 +1,15 @@
 import React from "react";
 import "../../styles/Dash/sidebar.css";
 import Axios from "axios";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
-import { FaChalkboardTeacher, FaUserGraduate } from "react-icons/fa";
+import { FaFileSignature, FaShoppingBag } from "react-icons/fa";
 import { RiMoneyEuroCircleFill } from "react-icons/ri";
 import { GoSettings } from "react-icons/go";
+
 import { CgLogOut } from "react-icons/cg";
 import logo from "../../assets/images/soswhite.png";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   let history = useHistory();
@@ -36,24 +37,28 @@ function Sidebar() {
         <NavLink to="/Dash/Prod">
           <li style={{ listStyle: "none", textDecoration: "none" }}>
             <div className="menu__icon">
-              <FaChalkboardTeacher />
+              <FaShoppingBag />
             </div>
             Products
           </li>
         </NavLink>
+        <NavLink to="/Dash/Cmd">
+          <li>
+            <div className="menu__icon">
+              <FaFileSignature />
+            </div>
+            Commande
+          </li>
+        </NavLink>
 
-        <li>
-          <div className="menu__icon">
-            <FaUserGraduate />
-          </div>
-          Students
-        </li>
-        <li>
-          <div className="menu__icon">
-            <RiMoneyEuroCircleFill />
-          </div>
-          Payment
-        </li>
+        <NavLink to="/Dash/Pay">
+          <li>
+            <div className="menu__icon">
+              <RiMoneyEuroCircleFill />
+            </div>
+            Payment
+          </li>
+        </NavLink>
         <li>
           <div className="menu__icon">
             <GoSettings />

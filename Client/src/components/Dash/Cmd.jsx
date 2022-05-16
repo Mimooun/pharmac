@@ -2,30 +2,30 @@ import React, { forwardRef, useEffect, useState } from "react";
 import Axios from "axios";
 import "../../styles/Dash/prod.css";
 import MaterialTable from "material-table";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
-import Button from "@material-ui/core/Button";
-import Delete from '@material-ui/icons/Delete';
-import Refresh from '@material-ui/icons/Refresh';
-import Save from '@material-ui/icons/Save';
-import EditIcon from '@mui/icons-material/Edit';
-import {Link} from 'react-router-dom'
+import AddBox from '@material-ui/icons/AddBox';
+import ArrowDownward from '@material-ui/icons/ArrowDownward';
+import Check from '@material-ui/icons/Check';
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import Clear from '@material-ui/icons/Clear';
+import DeleteOutline from '@material-ui/icons/DeleteOutline';
+import Edit from '@material-ui/icons/Edit';
+import FilterList from '@material-ui/icons/FilterList';
+import FirstPage from '@material-ui/icons/FirstPage';
+import LastPage from '@material-ui/icons/LastPage';
+import Remove from '@material-ui/icons/Remove';
+import SaveAlt from '@material-ui/icons/SaveAlt';
+import Search from '@material-ui/icons/Search';
+import ViewColumn from '@material-ui/icons/ViewColumn';
+import Delete from '@material-ui/icons/DeleteOutlineRounded';
+import DoneIcon from '@mui/icons-material/Done';
+import Swal from "sweetalert2";
 
 
-function Prod() {
+
+
+function Cmd() {
+  
 
   const [Products, setProducts] = useState([]);
 
@@ -33,12 +33,11 @@ function Prod() {
 
   const [data, setData] = useState();
   const [Produit, setProduit] = useState();
-
-  
+  const [selectedRow, setSelectedRow] = React.useState(null);
   
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/produits").then((response) => {
+    Axios.get("http://localhost:3001/commande").then((response) => {
       setProduit(response.data);
     });
   }, []);
@@ -67,17 +66,19 @@ function Prod() {
     )),
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   };
-
   const actions = [
     {
-        icon: Edit,
-        tooltip: 'Edit User',
+        icon: DoneIcon,
+        tooltip: 'Validation',
         position: 'row',
         onClick: (event, rowData) => {
-            // history.push({
-            //     pathname: "/home/students/updateStudents",
-            //     Student: rowData
-            // })
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "votre commande a bien été enregistrée",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
     },
     {
@@ -89,46 +90,29 @@ function Prod() {
         }
     }
 ];
+  
   return (
+    
     <div style={{ marginTop: "150px" }}>
-      <div className="addcommande">
-        <Link to="/Formi">
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "#3ecfa3",
-              color: "white",
-            }}
-          >
-            Ajouter Produit
-          </Button>
-        </Link>
-      </div>
       <MaterialTable
         icons={tableIcons}
-        title="Products"
+        title="Commande"
         columns={[
-          { title: "ID Products", field: "id_produit" },
-          { title: "Libelle Products", field: "libelle_produit" },
-          { title: "Quantite", field: "qantite" },
-          {
-            title: "Price",
-            field: "prix",
-          },
-         
+          { title: "ID Commande", field: "id_commande" },
+          { title: "Utilisateur", field: "id_utilisateur" },
+          { title: "Date Commande", field: "date_commande" }, 
         ]}
         data={Produit}
         actions={actions}
         options={{
-          actionsColumnIndex:-1,
+          actionsColumnIndex: -1,
+          exportButton:true,
           selection:true,
-         
+
         }}
-        
-        
       />
     </div>
   );
 }
 
-export default Prod;
+export default Cmd;

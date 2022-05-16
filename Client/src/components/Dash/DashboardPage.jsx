@@ -4,8 +4,8 @@ import Graph1 from './Graph1'
 import Graph2 from './Graph2'
 import NewReg from './NewReg'
 import { MdAppRegistration } from 'react-icons/md'
-import { FiUsers } from 'react-icons/fi'
-import { FaChalkboardTeacher } from 'react-icons/fa'
+import { FiUsers , FiShoppingBag } from 'react-icons/fi'
+import {  FaBriefcaseMedical , FaArchive} from 'react-icons/fa'
 import { MdAttachMoney } from 'react-icons/md'
 
 function DashboardPage() {
@@ -26,24 +26,24 @@ function DashboardPage() {
                 <div className="card">
                     <div className="card-info">
                         <div className="number">
-                            351
+                            35
                         </div>
                         <div className="title">
-                            Students
+                            Commande
                         </div>
                     </div>
-                    <FiUsers />
+                    <FiShoppingBag />
                 </div>
                 <div className="card">
                     <div className="card-info">
                         <div className="number">
-                            23
+                            356
                         </div>
                         <div className="title">
-                            Teachers
+                            Product
                         </div>
                     </div>
-                    <FaChalkboardTeacher />
+                    <FaBriefcaseMedical />
                 </div>
                 <div className="card">
                     <div className="card-info">

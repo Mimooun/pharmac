@@ -7,3 +7,13 @@
     padding: 0px 30px ;
 
 }
+.MTableToolbar-highlight-6 {
+    color: yellow !important;
+  }
+.MuiCheckbox-colorSecondary.Mui-checked {
+    color: black !important;
+  }
+
+  .MTableToolbar-highlight-6 {
+    background-color: white !important;
+  }

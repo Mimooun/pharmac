@@ -7,7 +7,8 @@ import Sidebar from "./Sidebar";
 import DashboardPage from "./DashboardPage";
 import Navdash from "./Navdash";
 import Prod from "./Prod";
-import Formi from "./Formi";
+import Cmd from "./Cmd";
+import Pay from "./Pay";
 
 
 function Dashboard() {
@@ -23,7 +24,9 @@ function Dashboard() {
                 <Route exact path="/Dash" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Prod" component={() => <Prod />}></Route>
-                <Route exact path="/Formi" component={() => <Formi />} ></Route>
+                <Route exact path="/Dash/Cmd" component={() => <Cmd />}></Route>
+                <Route exact path="/Dash/Pay" component={() => <Pay />}></Route>
+                
               </Switch>
             </div>
           </div>
