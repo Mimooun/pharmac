@@ -65,8 +65,7 @@ function Panier() {
 
   function deleteCommande(id) {
     Axios.post("http://localhost:3001/deletePanier", {
-      id: id,
-    }).then((response) => {});
+      id: id, }).then((response) => {});
   }
   function addCommande() {
     Axios.post("http://localhost:3001/addcommande", {

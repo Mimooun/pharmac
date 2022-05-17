@@ -1,0 +1,37 @@
+.down{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin-top: 100px;
+}
+.down .container{
+    width:  150mm;
+    height: 160mm;
+    border: 0.5px solid #30B99E;
+}
+.down .container .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+ .down .container span {
+    color: #3ECFA3;
+    font-size: 16px;
+}
+.down .container .title_factue{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #30B99E;
+}
+.down .container .donnes{
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.down .container .perso{
+    margin-right: 20px;
+}

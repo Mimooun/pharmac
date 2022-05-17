@@ -19,9 +19,13 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import Delete from "@material-ui/icons/DeleteOutlineRounded";
 import DoneIcon from "@mui/icons-material/Done";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { useHistory } from 'react-router-dom'
+
 import Swal from "sweetalert2";
 
 function Cmd() {
+  let history = useHistory();
   const [Products, setProducts] = useState([]);
 
   const [open, setOpen] = useState(false);
@@ -91,6 +95,17 @@ function Cmd() {
           });
         });
       },
+    },
+    {
+      icon: ArrowDownwardIcon,
+      tooltip: "Dowlande",
+      position: "row",
+      onClick: (event, rowData) => {
+        history.push({
+            pathname: "/Dash/Down",
+            
+        })
+    }
     },
   ];
 

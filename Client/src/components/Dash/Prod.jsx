@@ -75,7 +75,7 @@ function Prod() {
         // })
       },
     },
-    {
+    /*{
       icon: Delete,
       tooltip: "Delete Produit",
       position: "row",
@@ -87,7 +87,7 @@ function Prod() {
           setProduit(response.data);
         });
       },
-    },
+    },*/
   ];
   return (
     <div style={{ marginTop: "150px" }}>

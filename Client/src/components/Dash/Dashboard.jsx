@@ -9,6 +9,7 @@ import Navdash from "./Navdash";
 import Prod from "./Prod";
 import Cmd from "./Cmd";
 import Pay from "./Pay";
+import Down from "./Down";
 
 
 function Dashboard() {
@@ -25,6 +26,7 @@ function Dashboard() {
                 <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Prod" component={() => <Prod />}></Route>
                 <Route exact path="/Dash/Cmd" component={() => <Cmd />}></Route>
+                <Route exact path="/Dash/Down" component={() => <Down/>}></Route>
                 <Route exact path="/Dash/Pay" component={() => <Pay />}></Route>
                 
               </Switch>
