@@ -17,7 +17,7 @@ function Contact() {
         noValidate
         autoComplete="off"
       ></Box>
-      <div className="title">Contact Us</div>
+      <div className="title">Contactez nous</div>
       <div className="cnt">
         <div className="left">
           <img src={contct} alt="" />

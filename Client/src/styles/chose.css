@@ -24,10 +24,11 @@
     justify-content: center;
     margin: auto;
     align-items: center;
-    background-color: #3ECFA3;
+    background-color: transparent;
     padding: 18px 15px;
     width: 42%;
     border-radius: 10px;
+    border : 2px solid #3ECFA3 ;    
 
 }
 .chose .card:hover img {

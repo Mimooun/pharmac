@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/chose.css";
-import img1 from "../assets/images/diamant.png";
-import img2 from "../assets/images/cloud.png";
-import img3 from "../assets/images/satisfaction.png";
+import img1 from "../assets/images/fast-delivery.png";
+import img2 from "../assets/images/trust.png";
+import img3 from "../assets/images/available.png";
 import img4 from "../assets/images/price-tag.png";
 import img5 from "../assets/images/creative.png";
 function Chose() {
@@ -10,7 +10,7 @@ function Chose() {
     <section id ="test2" className="chose">
       <div className="max-width">
         <div className="container">
-          <div className="tit">Why choose us</div>
+          <div className="tit">Pourquoi nous ?</div>
         </div>
         <div className="cards">
           <div className="card">
@@ -18,7 +18,7 @@ function Chose() {
               <img src={img1} alt="" />
             </div>
             <div className="text">
-              <div className="title"> Newest Technologies </div>
+              <div className="title"> Service le plus rapide </div>
               <div className="txt">
                 {" "}
                 Consetetur sadipscing elitr diam nonumy eirmod tempor invidunt.{" "}
@@ -30,10 +30,10 @@ function Chose() {
               <img src={img2} alt="" />
             </div>
             <div className="text">
-              <div className="title">Taking Care of Nature </div>
+              <div className="title">Haute fiabilité </div>
               <div className="txt">
                 {" "}
-                Ut labore et dolore magna aliquyam erat sed diam voluptua{" "}
+                La confiance des clients est notre priorité pour offrir les meilleures services possibles {" "}
               </div>
             </div>
           </div>
@@ -42,52 +42,15 @@ function Chose() {
               <img src={img3} alt="" />
             </div>
             <div className="text">
-              <div className="title">Fair Prices</div>
+              <div className="title">Meilleur catalogue</div>
               <div className="txt">
                 {" "}
-                At vero eos et accusam ejusto duo dolores et ea rebum clita
-                gubergren.
+               La disponibilité des médicaments est notre point fort 
               </div>
             </div>
           </div>
-          <div className="card">
-            <div className="img">
-              <img src={img4} alt="" />
-            </div>
-            <div className="text">
-              <div className="title"> High Satisfaction </div>
-              <div className="txt">
-                {" "}
-                Nosea takimata sanctus est lorem ipsum dolor sit amet.{" "}
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="img">
-              <img src={img1} alt="" />
-            </div>
-            <div className="text">
-              <div className="title"> Company founded </div>
-              <div className="txt">
-                {" "}
-                Lorem ipsum dolor, sit amet consectetur adipisicing
-                elit.Laboriosam.{" "}
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="img">
-              <img src={img5} alt="" />
-            </div>
-            <div className="text">
-              <div className="title"> Creativity</div>
-              <div className="txt">
-                {" "}
-                Lorem ipsum dolor, sit amet consectetur adipisicing
-                elit.Laboriosam.{" "}
-              </div>
-            </div>
-          </div>
+       
+        
         </div>
       </div>
     </section>

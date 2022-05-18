@@ -6,24 +6,24 @@ function Experience() {
         
            <div className="container">
                <div className="content">
-                   <div className="number">25</div>
-                   <div className="text">Years Experience </div>
+                   <div className="number">+ 500</div>
+                   <div className="text">Clients satisfaits </div>
                </div>
                <div className="content">
-                   <div className="number">893</div>
-                   <div className="text">Medicament Invented  </div>
+                   <div className="number">+200</div>
+                   <div className="text">Commandes livrées par jour  </div>
                </div>
                <div className="content">
-                   <div className="number">75</div>
-                   <div className="text">Awards Winned  </div>
+                   <div className="number">4</div>
+                   <div className="text">Local partout au pays </div>
                </div>
                <div className="content">
-                   <div className="number">673K</div>
-                   <div className="text">Happy Clients  </div>
+                   <div className="number">+ 500k</div>
+                   <div className="text">Produits vendus en 2021  </div>
                </div>
                <div className="content">
-                   <div className="number">751</div>
-                   <div className="text">Happy Clients  </div>
+                   <div className="number">34</div>
+                   <div className="text">Partenaires internationaux  </div>
                </div>
            </div>
         
