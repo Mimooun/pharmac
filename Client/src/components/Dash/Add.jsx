@@ -20,6 +20,34 @@ import "../../styles/Dash/add.css";
 
 
 export default function BasicTextFields() {
+  function validate() {
+    if (
+      CategorieRef.current.value !== "" && 
+      NomproduitRef.current.value !== "" && 
+      CodeproduitRef.current.value !== "" &&  
+      QuantiteproduitRef.current.value !== "" && 
+      PrixproduitRef.current.value !== "" 
+    ) {
+      
+      Axios.post("http://localhost:3001/addproduitdash", {
+        CategorieRef: CategorieRef.current.value,
+        NomproduitRef: NomproduitRef.current.value,
+        CodeproduitRef: CodeproduitRef.current.value,
+        QuantiteproduitRef: QuantiteproduitRef.current.value,
+        PrixproduitRef: PrixproduitRef.current.value,
+      }).then((response) => {
+        if (response.data.message === "Operation completed") {
+          /** redirect to  list */
+          console.log("Operation Completed");
+          history.push({
+            //pathname: "/login",
+          });
+        } else {
+          
+        }
+      });
+    }
+  }
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -46,7 +74,7 @@ export default function BasicTextFields() {
   }, []);
 
   let history = useHistory();
-  const categorieRef = useRef();
+  const CategorieRef = useRef();
   const NomproduitRef = useRef();
   const CodeproduitRef = useRef();
   const QuantiteproduitRef = useRef();

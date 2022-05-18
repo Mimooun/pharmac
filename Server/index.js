@@ -331,7 +331,7 @@ app.post("/deletePanier", (req, res) => {
   });
 });
 
-/** update quantite fro panier */
+/** update quantite from panier */
 app.post("/updatePanier", (req, res) => {
   const id_panier = req.body.id_panier;
   const quantite = req.body.quantite;
@@ -424,6 +424,42 @@ app.get("/utilisateur", (req, res) => {
       }
     }
   });
+});
+
+
+/** Add produit dash script */
+
+app.post("/addproduit", (req, res) => {
+  const CategorieRefRef = req.body.CategorieRefRef;
+  const NomproduitRef = req.body.NomproduitRef;
+  const  CodeproduitRef= req.body.CodeproduitRef;
+  const  QuantiteproduitRef= req.body.QuantiteproduitRef;
+  const  PrixproduitRef= req.body.PrixproduitRef;
+  
+  const sqlSelect =
+    "insert INTO `produits` (`id_produit `,`id_categorie`,`libelle_produit`,`code_produit `,`qantite`,`prix`) VALUES (NULL,?,?,?,?,?)";
+  db.query(
+    sqlSelect,
+    [
+      CategorieRefRef,
+      NomproduitRef,
+      CodeproduitRef,
+      QuantiteproduitRef,
+      PrixproduitRef,
+    ],
+    (err, result) => {
+      if (err) {
+        res.send({
+          err: err,
+        });
+      } else {
+        console.log(result);
+        res.send({
+          message: "Operation completed",
+        });
+      }
+    }
+  );
 });
 
 /** fin  script */
