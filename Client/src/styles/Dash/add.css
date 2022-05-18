@@ -1,0 +1,12 @@
+.add {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.add .title {
+    text-align: center;
+    color: #3ECFA3;
+    margin-top: 15px;
+}

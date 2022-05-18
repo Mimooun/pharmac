@@ -92,7 +92,7 @@ function Prod() {
   return (
     <div style={{ marginTop: "150px" }}>
       <div className="addcommande">
-        <Link to="/Formi">
+        <Link to="/Dash/Add">
           <Button
             variant="contained"
             style={{

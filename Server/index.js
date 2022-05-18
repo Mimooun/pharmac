@@ -407,7 +407,7 @@ app.post("/deletepro", (req, res) => {
 })
 /* selection de utilisateur dash */
 
-app.get("/produits", (req, res) => {
+app.get("/utilisateur", (req, res) => {
   const sqlSelect = "SELECT * FROM `utilisateur`  WHERE `id_utilisateur` = ? ";
   db.query(sqlSelect, (err, result) => {
     if (err) {

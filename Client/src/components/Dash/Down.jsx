@@ -2,8 +2,10 @@ import { exportComponentAsJPEG, exportComponentAsPDF, exportComponentAsPNG } fro
 import React ,  { useEffect, useState, useRef } from 'react';
 import logo from "../Dash/assets/SOSpharma2.png";
 import "../../styles/Dash/down.css";
+import Axios from "axios";
 
 class ComponentToPrint extends React.Component {
+  
   render() {
     return   <section className='down'>
     <div className='container' >
@@ -30,31 +32,33 @@ class ComponentToPrint extends React.Component {
         </div>
         
     </div>
-</section>;
+</section>
   }
  }
- 
  export default class MyComponent extends React.Component {
-   
+  
   constructor(props) {
     super(props);
     this.componentRef = React.createRef();
   }
 
   render() {
+    // const [utilisateur, setutilisateur] = useState([""]);
+
+    // useEffect(() => {
+    //   Axios.get("http://localhost:3001/login").then((response) => {
+    //     setutilisateur(response.data.id);
+    //   });
+     
+    // }, []);
     return (
       <React.Fragment >
         <ComponentToPrint ref={this.componentRef} />
         <div className='btn'>
-          <button  style={{marginTop:"250px"}} onClick={() => exportComponentAsJPEG(this.componentRef)}>
+          <button  style={{marginTop:"2px" , display :"block" , margin:"auto"}} onClick={() => exportComponentAsJPEG(this.componentRef)}>
             Export As JPEG
           </button>
-          <button  style={{marginTop:"250px"}} onClick={() => exportComponentAsPDF(this.componentRef)}>
-            Export As PDF
-          </button> 
-          <button className='export'  style={{marginTop:"250px"}}   onClick={() => exportComponentAsPNG(this.componentRef)}>
-            Export As PNG
-          </button>
+          
         </div>
          
       </React.Fragment>
