@@ -5,8 +5,12 @@
     align-items: center;
     flex-direction: column;
 }
-.add .title {
+.add .textfield .title {
     text-align: center;
     color: #3ECFA3;
-    margin-top: 15px;
+    margin-bottom: 15px;
+    padding : 10px ;
+    font-weight: 800;
+    letter-spacing: 1px;
+
 }

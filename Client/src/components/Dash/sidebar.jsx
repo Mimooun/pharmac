@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Dash/sidebar.css";
+import "../../styles/Dash/Sidebar.css";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";

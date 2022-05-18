@@ -17,8 +17,6 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import "../../styles/Dash/add.css";
 
-
-
 export default function BasicTextFields() {
   function validate() {
     if (
@@ -63,7 +61,7 @@ export default function BasicTextFields() {
     Axios.post("http://localhost:3001/produitsbycategorie", {
       id: event.target.value,
     }).then((response) => {
-        setcategorie(response.data);
+      setcategorie(response.data);
     });
   };
 
@@ -89,8 +87,9 @@ export default function BasicTextFields() {
         noValidate
         autoComplete="off"
       >
-        <div className="title">Ajouter un Produit</div>
         <div className="textfield">
+          <div className="title">Ajouter un Produit</div>
+
           <FormControl style={{ width: "100%" }}>
             <InputLabel
               size="small"
@@ -116,96 +115,97 @@ export default function BasicTextFields() {
           <TextField
             label="Nom Produit"
             variant="outlined"
-            style={{ marginTop: "15px" }}
+            style={{ marginTop: "25px" }}
             inputRef={NomproduitRef}
+            size="small"
           />
           <TextField
             label="Code Produit"
             variant="outlined"
             style={{ marginTop: "15px" }}
             inputRef={CodeproduitRef}
+            size="small"
           />
           <TextField
             label="Quantite Produit"
             variant="outlined"
             style={{ marginTop: "15px" }}
             inputRef={QuantiteproduitRef}
+            size="small"
           />
           <TextField
             label="Prix Produit"
             variant="outlined"
             style={{ marginTop: "15px" }}
             inputRef={PrixproduitRef}
+            size="small"
           />
         </div>
         <div className="btn-form">
-                <Stack direction="row" spacing={3}>
-                  <Button
-                    variant="contained"
-                    // onClick={() => {
-                    //   validate();
-                    // }}
-                    style={{
-                      backgroundColor: "#3ecfa3",
-                      marginTop: "100px",
-                      display: "block",
-                      margin: "auto",
-                    }}
-                  >
-                    Ajouter
-                  </Button>
-                </Stack>
+          <Stack direction="row" spacing={3}>
+            <Button
+              variant="contained"
+              // onClick={() => {
+              //   validate();
+              // }}
+              style={{
+                backgroundColor: "#3ecfa3",
+                marginTop: "100px",
+                display: "block",
+                margin: "auto",
+              }}
+            >
+              Ajouter
+            </Button>
+          </Stack>
 
-                <Stack direction="row" spacing={3}>
+          <Stack direction="row" spacing={3}>
+            <Button
+              style={{
+                backgroundColor: "#3ecfa3",
+                marginTop: "100px",
+                display: "block",
+                margin: "auto",
+                color: "white",
+                border: "1px solid #3ecfa3 ",
+              }}
+              disableElevation
+              variant="contained"
+              onClick={handleClickOpen}
+            >
+              Cancel
+            </Button>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Please confirm !"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Are you sure you want to continue ?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} style={{ color: "#3ecfa3" }}>
+                  Cancel
+                </Button>
+                <Link to="/Dash/Prod">
                   <Button
-                    style={{
-                      backgroundColor: "#3ecfa3",
-                      marginTop: "100px",
-                      display: "block",
-                      margin: "auto",
-                      color: "white",
-                      border: "1px solid #3ecfa3 ",
-                    }}
-                    disableElevation
-                    variant="contained"
-                    onClick={handleClickOpen}
+                    onClick={handleClose}
+                    autoFocus
+                    style={{ color: "#3ecfa3" }}
                   >
-                    Cancel
+                    Confirm
                   </Button>
-                  <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                  >
-                    <DialogTitle id="alert-dialog-title">
-                      {"Please confirm !"}
-                    </DialogTitle>
-                    <DialogContent>
-                      <DialogContentText id="alert-dialog-description">
-                        Are you sure you want to continue ?
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button
-                        onClick={handleClose}
-                        style={{ color: "#3ecfa3" }}
-                      >
-                        Cancel
-                      </Button>
-                      <Link to="/Dash/Prod">
-                        <Button
-                          onClick={handleClose}
-                          autoFocus
-                          style={{ color: "#3ecfa3" }}
-                        >
-                          Confirm
-                        </Button>
-                      </Link>
-                    </DialogActions>
-                  </Dialog>
-                </Stack>
-              </div>
+                </Link>
+              </DialogActions>
+            </Dialog>
+          </Stack>
+        </div>
       </Box>
     </section>
   );

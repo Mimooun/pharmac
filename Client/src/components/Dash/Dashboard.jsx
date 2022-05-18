@@ -3,7 +3,7 @@ import "../../styles/Dash/Dashboard.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
 import { useLocation } from "react-router-dom";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar";
 import DashboardPage from "./DashboardPage";
 import Navdash from "./Navdash";
 import Prod from "./Prod";
