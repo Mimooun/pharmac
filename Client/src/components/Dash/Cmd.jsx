@@ -102,7 +102,7 @@ function Cmd() {
       position: "row",
       onClick: (event, rowData) => {
         history.push({
-            pathname: "/Dash/Down",
+            pathname: "/Dash/Print",
             
         })
     }

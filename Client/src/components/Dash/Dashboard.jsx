@@ -12,7 +12,7 @@ import Cmd from "./Cmd";
 import Pay from "./Pay";
 import Down from "./Down";
 import Add from "./Add";
-
+import Print from "./Print";
 
 function Dashboard() {
   return (
@@ -32,6 +32,7 @@ function Dashboard() {
                 <Route exact path="/Dash/Down" component={() => <Down/>}></Route>
                 <Route exact path="/Dash/Pay" component={() => <Pay />}></Route>
                 <Route exact path="/Dash/Add" component={() => <Add />}></Route>
+                <Route exact path="/Dash/Print" component={() => <Print />}></Route>
                 
               </Switch>
             </div>

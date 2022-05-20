@@ -26,7 +26,7 @@ function DashboardPage() {
                 <div className="card">
                     <div className="card-info">
                         <div className="number">
-                            35
+                            92
                         </div>
                         <div className="title">
                             Commande

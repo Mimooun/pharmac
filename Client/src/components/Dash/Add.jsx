@@ -15,20 +15,22 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
+import { QuantityPicker } from "react-qty-picker";
 import "../../styles/Dash/add.css";
 
 export default function BasicTextFields() {
-  function validate() {
+  function addproddash() {
+    
     if (
-      CategorieRef.current.value !== "" && 
+      categorie !== "" &&
       NomproduitRef.current.value !== "" && 
       CodeproduitRef.current.value !== "" &&  
       QuantiteproduitRef.current.value !== "" && 
       PrixproduitRef.current.value !== "" 
-    ) {
-      
+    ) 
+    {
       Axios.post("http://localhost:3001/addproduitdash", {
-        CategorieRef: CategorieRef.current.value,
+        categorie: categorie,
         NomproduitRef: NomproduitRef.current.value,
         CodeproduitRef: CodeproduitRef.current.value,
         QuantiteproduitRef: QuantiteproduitRef.current.value,
@@ -56,6 +58,8 @@ export default function BasicTextFields() {
       };
   const [categories, setcategories] = useState([""]);
   const [categorie, setcategorie] = useState();
+  const [produit, setproduit] = useState();
+  const [produits, setproduits] = useState([""]);
   const handleChangecategorie = (event) => {
     setcategorie(event.target.value);
     Axios.post("http://localhost:3001/produitsbycategorie", {
@@ -127,8 +131,13 @@ export default function BasicTextFields() {
             size="small"
           />
           <TextField
-            label="Quantite Produit"
-            variant="outlined"
+            id="outlined-number"
+            label="Number"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            
             style={{ marginTop: "15px" }}
             inputRef={QuantiteproduitRef}
             size="small"

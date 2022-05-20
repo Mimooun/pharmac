@@ -408,7 +408,28 @@ app.post("/deletepro", (req, res) => {
 /* selection de utilisateur dash */
 
 app.get("/utilisateur", (req, res) => {
-  const sqlSelect = "SELECT * FROM `utilisateur`  WHERE `id_utilisateur` = ? ";
+  const sqlSelect = "SELECT * FROM `utilisateur` ";
+  db.query(sqlSelect, (err, result) => {
+    if (err) {
+      res.send({
+        err: err,
+      });
+    } else {
+      if (result.length == 0) {
+        res.send({
+          message: "No Rows",
+        });
+      } else {
+        res.send(result);
+      }
+    }
+  });
+});
+
+/* selection de produit et panier  dash */
+
+app.get("/produitpanier", (req, res) => {
+  const sqlSelect = "SELECT * from produits inner join panier on produits.id_produit = panier.id_produit ";
   db.query(sqlSelect, (err, result) => {
     if (err) {
       res.send({
@@ -429,19 +450,18 @@ app.get("/utilisateur", (req, res) => {
 
 /** Add produit dash script */
 
-app.post("/addproduit", (req, res) => {
-  const CategorieRefRef = req.body.CategorieRefRef;
+app.post("/addproduitdash", (req, res) => {
+  const categorie = req.body.categorie;
   const NomproduitRef = req.body.NomproduitRef;
   const  CodeproduitRef= req.body.CodeproduitRef;
   const  QuantiteproduitRef= req.body.QuantiteproduitRef;
   const  PrixproduitRef= req.body.PrixproduitRef;
-  
   const sqlSelect =
-    "insert INTO `produits` (`id_produit `,`id_categorie`,`libelle_produit`,`code_produit `,`qantite`,`prix`) VALUES (NULL,?,?,?,?,?)";
+    "insert INTO `produits` (`id_produit`,`id_categorie`,`libelle_produit`,`code_produit`,`qantite`,`prix`) VALUES (NULL,?,?,?,?,?)";
   db.query(
     sqlSelect,
     [
-      CategorieRefRef,
+      categorie,
       NomproduitRef,
       CodeproduitRef,
       QuantiteproduitRef,

@@ -6,7 +6,7 @@ margin-top: 100px;
 }
 .down .container{
     width:  150mm;
-    height: 140mm;
+    height: 195mm;
     border: 0.5px solid #30B99E;
 }
 .down .container .img{
@@ -23,8 +23,8 @@ margin-top: 100px;
     text-align: center;
     margin-top: 15px;
     font-size: 22px;
-    font-weight: 800;
-    color: #30B99E;
+    font-weight: 600;
+    color: #3ECFA3;
 }
 .down .container .donnes{
     margin-top: 30px;
@@ -35,6 +35,69 @@ margin-top: 100px;
 .down .container .perso{
     margin-right: 20px;
 }
+.down .perso .card .content {
+    font-size: 14px;
+}
+.down .perso .card .content span{
+    font-size: 16px;
+}
+.down .container .table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.down .container table {
+    width: 80%;
+    border-radius: 5px;
+}
+.down .container .table .tr{
+    background-color: #30B99E;
+}
+.down .container .total {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 55px;
+    margin-top: 8px;
+}
+.down .container .ligne{
+    margin: auto;
+    width: 90%;
+    height: 0.5px;
+    background-color: #30B99E;
+    margin-top: 20px;
+}
+.down .container .footersos .donnesos{
+    text-align: center;
+    font-size: 13;
+    margin-top: 0px;
+}
+.down .container .footersos .donnesos .title{
+    font-size: 16px;
+    color: #3ECFA3;
+}
+.down .container .footersos .donnesos .seriefooter{
+    font-size: 13px;
+    color: black;
+    margin-top: 0px;
+}
+.down .container .footersos .donnesos .reffooter{
+    font-size: 13px;
+    color: black;
+    margin-top: 0px;
+}
+.down .container .footersos .donnesos .adressefooter{
+    font-size: 13px;
+    color: black;
+    margin-top: 0px;
+}
+.down .container .footersos .donnesos  .emailfooter{
+    font-size: 13px;
+    color: black;
+    margin-top: 0px;
+}
+
+
 .btn {
     margin-top: 20px;
 

@@ -64,18 +64,18 @@ function Prod() {
   };
 
   const actions = [
+    // {
+    //   icon: Edit,
+    //   tooltip: "Edit User",
+    //   position: "row",
+    //   onClick: (event, rowData) => {
+    //     // history.push({
+    //     //     pathname: "/home/students/updateStudents",
+    //     //     Student: rowData
+    //     // })
+    //   },
+    // },
     {
-      icon: Edit,
-      tooltip: "Edit User",
-      position: "row",
-      onClick: (event, rowData) => {
-        // history.push({
-        //     pathname: "/home/students/updateStudents",
-        //     Student: rowData
-        // })
-      },
-    },
-    /*{
       icon: Delete,
       tooltip: "Delete Produit",
       position: "row",
@@ -87,7 +87,7 @@ function Prod() {
           setProduit(response.data);
         });
       },
-    },*/
+    },
   ];
   return (
     <div style={{ marginTop: "150px" }}>

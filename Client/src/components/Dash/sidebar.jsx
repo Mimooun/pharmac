@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Dash/Sidebar.css";
+import "../../styles/Dash/sidebar.css";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
@@ -51,14 +51,14 @@ function Sidebar() {
           </li>
         </NavLink>
 
-        <NavLink to="/Dash/Pay">
+        {/* <NavLink to="/Dash/Pay">
           <li>
             <div className="menu__icon">
               <RiMoneyEuroCircleFill />
             </div>
             Payment
           </li>
-        </NavLink>
+        </NavLink> */}
         <li>
           <div className="menu__icon">
             <GoSettings />
