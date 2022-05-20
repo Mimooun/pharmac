@@ -33,7 +33,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
     <section className="liste-product">
       <Listepnav />
       <div className="max-width">
-        <div className="title">Products</div>
+        <div className="title">Produits</div>
         <div className="type">
           <div className="type-medicament">
             <div

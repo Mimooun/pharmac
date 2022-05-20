@@ -35,7 +35,7 @@ function Testimonial() {
     <section className="testimonial">
       <div className="overlay">
         <div className="max-width">
-          <div className="title">Testimonials Clients</div>
+          <div className="title">Clients fidèles</div>
           <div className="container">
             <OwlCarousel options={options}>
               <div className="customer">

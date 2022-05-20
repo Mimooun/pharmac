@@ -7,6 +7,7 @@ import Sidebar from "./sidebar";
 import DashboardPage from "./DashboardPage";
 import Navdash from "./Navdash";
 import Prod from "./Prod";
+import Adminlog from "./Adminlog";
 import Cmd from "./Cmd";
 import Pay from "./Pay";
 import Down from "./Down";
@@ -23,6 +24,7 @@ function Dashboard() {
             <Navdash />
             <div className="dashboard-body">
               <Switch>
+                <Route exact path="/Admin" component={() => <Adminlog />} />
                 <Route exact path="/Dash" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route>
                 <Route exact path="/Dash/Prod" component={() => <Prod />}></Route>

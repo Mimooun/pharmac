@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/chose.css";
 import img1 from "../assets/images/fast-delivery.png";
 import img2 from "../assets/images/trust.png";
-import img3 from "../assets/images/available.png";
+import img3 from "../assets/images/high-quality.png";
 import img4 from "../assets/images/price-tag.png";
 import img5 from "../assets/images/creative.png";
 function Chose() {

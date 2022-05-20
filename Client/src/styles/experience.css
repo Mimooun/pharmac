@@ -26,16 +26,14 @@
 }
 /*responsive */
 @media (max-width: 967px) {
-    .experience .container{
+    /* .experience .container{
         margin-top: 1000px;
         width: 100%;
         height: 35vh;
-    }
+    } */
     .experience .container{
-        display: grid;
-        grid-template-columns: 1fr 1fr ;
-        grid-template-rows: repeat(5,1fr);
+        display: flex;
+        flex-direction: column;
        background-image: linear-gradient(#41E099 ,#3DC1AD);
-       margin-top: 30px;
     }
 }
