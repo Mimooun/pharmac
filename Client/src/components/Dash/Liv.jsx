@@ -24,9 +24,8 @@ import { useHistory } from 'react-router-dom'
 
 import Swal from "sweetalert2";
 
-function Cmd() {
+function Liv() {
   const [selectedRow, setSelectedRow] = useState([""]);
-
   let history = useHistory();
   const [Products, setProducts] = useState([]);
 
@@ -67,59 +66,34 @@ function Cmd() {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   };
   const actions = [
-    {
-      icon: DoneIcon,
-      tooltip: "Validation",
-      position: "row",
-      onClick: (event, rowData) => {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "votre commande a bien été enregistrée",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      },
-      
-    },
-    {
-      icon: Delete,
-      tooltip: "Delete",
-      position: "row",
-      onClick: (event, rowData) => {
-        console.log(rowData);
-        Axios.post("http://localhost:3001/deletecmd", {
-          cmd: rowData.id_commande,
-        }).then((response) => {
-          Axios.get("http://localhost:3001/commande").then((response) => {
-            setProduit(response.data);
-            
-          });
-        });
-      },
-    },
-    {
-      icon: ArrowDownwardIcon,
-      tooltip: "Dowlande",
-      position: "row",
-      onClick: (event, rowData) => {
-        history.push({
-            pathname: "/Dash/Print",
-            
-        })
-    }
-    },
+    // {
+    //   icon: DoneIcon,
+    //   tooltip: "Validation",
+    //   position: "row",
+    //   onClick: (event, rowData) => {
+    //     Swal.fire({
+    //       position: "center",
+    //       icon: "success",
+    //       title: "votre commande a bien été enregistrée",
+    //       showConfirmButton: false,
+    //       timer: 1500,
+    //     });
+    //   },
+    // },
+   
+    
   ];
 
   return (
     <div style={{ marginTop: "150px" }}>
       <MaterialTable
         icons={tableIcons}
-        title="Commande"
+        title="Livraison"
         columns={[
           { title: "ID Commande", field: "id_commande" },
           { title: "Utilisateur", field: "id_utilisateur" },
-          { title: "Date Commande", field: "date_commande" , type: 'date'},
+          { title: "Date Commande", field: "date_commande" , type: 'date' },
+          { title: "Status" ,field:"status"},
         ]}
         data={Produit}
         actions={actions}
@@ -137,4 +111,4 @@ function Cmd() {
   );
 }
 
-export default Cmd;
+export default Liv;

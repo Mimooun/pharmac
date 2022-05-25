@@ -1,0 +1,16 @@
+.btnexport {
+    margin-top: 20px;
+
+}
+.btnexport button{
+    padding: 6px 8px;
+    background-color: white;
+    color: #3ECFA3;
+    border-radius: 5px;
+    border: 1px solid #3ECFA3;
+}
+.btnexport button:hover{
+    background-color: #3ECFA3;
+    color: white;
+    cursor: pointer;
+}

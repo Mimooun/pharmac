@@ -46,7 +46,7 @@ function Contact() {
               label="Phone"
             />
             <div className="btn">
-              <Button variant="contained" style={{backgroundColor:'#3ecfa3'}} size="medium">
+              <Button className="cntbtn" variant="contained" style={{backgroundColor:'#3ecfa3'}} size="medium" >
                 Submit
               </Button>
             </div>

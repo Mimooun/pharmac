@@ -20,7 +20,7 @@ import "../../styles/Dash/add.css";
 
 export default function BasicTextFields() {
   function addproddash() {
-    
+  
     if (
       categorie !== "" &&
       NomproduitRef.current.value !== "" && 
@@ -39,6 +39,11 @@ export default function BasicTextFields() {
         if (response.data.message === "Operation completed") {
           /** redirect to  list */
           console.log("Operation Completed");
+          NomproduitRef.current.value =""
+          CodeproduitRef.current.value =""
+          QuantiteproduitRef.current.value=""
+          PrixproduitRef.current.value=""
+          
           history.push({
             //pathname: "/login",
           });
@@ -65,7 +70,7 @@ export default function BasicTextFields() {
     Axios.post("http://localhost:3001/produitsbycategorie", {
       id: event.target.value,
     }).then((response) => {
-      setcategorie(response.data);
+      setproduits(response.data);
     });
   };
 
@@ -105,12 +110,13 @@ export default function BasicTextFields() {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              //value={categorie}
+              value={categorie}
               label="categorie"
               size="small"
+              onChange={handleChangecategorie}
             >
               {categories.map((categorie) => (
-                <MenuItem value={categorie.id_categorie}>
+                <MenuItem value={categorie.libelle_categorie}>
                   {categorie.libelle_categorie}
                 </MenuItem>
               ))}
@@ -132,7 +138,7 @@ export default function BasicTextFields() {
           />
           <TextField
             id="outlined-number"
-            label="Number"
+            label="Quantite"
             type="number"
             InputLabelProps={{
               shrink: true,
@@ -154,9 +160,9 @@ export default function BasicTextFields() {
           <Stack direction="row" spacing={3}>
             <Button
               variant="contained"
-              // onClick={() => {
-              //   validate();
-              // }}
+              onClick={() => {
+                addproddash();
+              }}
               style={{
                 backgroundColor: "#3ecfa3",
                 marginTop: "100px",

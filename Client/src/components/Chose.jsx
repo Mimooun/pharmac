@@ -5,6 +5,10 @@ import img2 from "../assets/images/trust.png";
 import img3 from "../assets/images/high-quality.png";
 import img4 from "../assets/images/price-tag.png";
 import img5 from "../assets/images/creative.png";
+import camion from "../assets/images/camion.png";
+import bouclier from "../assets/images/bouclier.png";
+import prix from "../assets/images/prix.png";
+
 function Chose() {
   return (
     <section id ="test2" className="chose">
@@ -15,7 +19,7 @@ function Chose() {
         <div className="cards">
           <div className="card">
             <div className="img">
-              <img src={img1} alt="" />
+              <img src={camion} alt="" />
             </div>
             <div className="text">
               <div className="title"> Service le plus rapide </div>
@@ -27,7 +31,7 @@ function Chose() {
           </div>
           <div className="card">
             <div className="img">
-              <img src={img2} alt="" />
+              <img src={bouclier} alt="" />
             </div>
             <div className="text">
               <div className="title">Haute fiabilité </div>
@@ -39,7 +43,7 @@ function Chose() {
           </div>
           <div className="card">
             <div className="img">
-              <img src={img3} alt="" />
+              <img src={prix} alt="" />
             </div>
             <div className="text">
               <div className="title">Meilleur catalogue</div>

@@ -51,14 +51,14 @@ function Sidebar() {
           </li>
         </NavLink>
 
-        {/* <NavLink to="/Dash/Pay">
+        { <NavLink to="/Dash/Liv">
           <li>
             <div className="menu__icon">
               <RiMoneyEuroCircleFill />
             </div>
-            Payment
+            Livraison
           </li>
-        </NavLink> */}
+        </NavLink> }
         <li>
           <div className="menu__icon">
             <GoSettings />

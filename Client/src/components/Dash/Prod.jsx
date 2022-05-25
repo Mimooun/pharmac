@@ -24,14 +24,17 @@ import Save from "@material-ui/icons/Save";
 import EditIcon from "@mui/icons-material/Edit";
 import { Link } from "react-router-dom";
 
+
 function Prod() {
+  const [selectedRow, setSelectedRow] = useState([""]);
   const [Products, setProducts] = useState([]);
 
   const [open, setOpen] = useState(false);
 
   const [data, setData] = useState();
   const [Produit, setProduit] = useState();
-
+  
+  
   useEffect(() => {
     Axios.get("http://localhost:3001/produits").then((response) => {
       setProduit(response.data);
@@ -118,9 +121,13 @@ function Prod() {
         ]}
         data={Produit}
         actions={actions}
+        onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.id))}
         options={{
           actionsColumnIndex: -1,
           selection: true,
+          rowStyle: rowData => ({
+            backgroundColor: (selectedRow === rowData.tableData.id) ? '#edf2f4'  : '#FFF'
+          })
         }}
       />
     </div>

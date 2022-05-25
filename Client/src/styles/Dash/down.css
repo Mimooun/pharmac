@@ -6,8 +6,8 @@ margin-top: 100px;
 }
 .down .container{
     width:  150mm;
-    height: 195mm;
-    border: 0.5px solid #30B99E;
+    height: 200mm;
+    border: 2px solid #30B99E;
 }
 .down .container .img{
     display: flex;
@@ -98,7 +98,7 @@ margin-top: 100px;
 }
 
 
-.btn {
+ .btnexport {
     margin-top: 20px;
 
 }

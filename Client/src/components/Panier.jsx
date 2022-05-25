@@ -33,6 +33,7 @@ function Panier() {
 
   const [id_utilisateur, setId_utilisateur] = useState();
   const [id_commande, setId_commande] = useState();
+  const [id_client, setid_client] = useState();
   const [id_produit, setId_produit ]= useState();
   const [open, setOpen] = React.useState(false);
   var today = new Date(),

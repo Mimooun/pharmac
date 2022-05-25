@@ -70,7 +70,7 @@ function Down() {
             <br />
             <div className="email">
               {" "}
-              <span>Email</span> : xxxxxx@gmail.com
+              <span>Email</span> : zouhrimimoun21@gmail.com
             </div>{" "}
             <br />
             <div className="site">
@@ -105,6 +105,7 @@ function Down() {
               borderWidth: "1px",
               borderColor: "#30B99E",
               borderStyle: "solid",
+              borderRadius:"4px"
             }}
           >
             <tr className="tr">
@@ -126,7 +127,7 @@ function Down() {
           </table>
         </div>
         <div className="total">
-          Total :<span className="totalpanier"> {TotalPanier[0].total}</span>
+          Total : <span className="totalpanier">  {TotalPanier[0].total} </span>
         </div>
 
         <div className="ligne"></div>

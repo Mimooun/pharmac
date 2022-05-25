@@ -8,7 +8,7 @@ import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function SignUp() {
+function Adminlog() {
   let history = useHistory();
   const [username, SetUsername] = useState("");
   const [password, SetPassword] = useState("");
@@ -20,9 +20,9 @@ function SignUp() {
       password: password,
     }).then((response) => {
       if (response.data.length > 0) {
-        history.push({
-        pathname: "/Dash",
-         });
+        // history.push({
+        // pathname: "/Dash",
+        //  });
 
         
       } else if (response.data.message === "Authentication failed") {
@@ -32,7 +32,7 @@ function SignUp() {
   }
 
   return (
-    <section className="signUp">
+    <section className="signUp" style={{marginTop:"300px"}}>
       <div className="container__form">
         <Alert
           className={authfailed ? "active" : ""}
@@ -46,7 +46,7 @@ function SignUp() {
         <div className="icon-container">
           <img src={sos} alt="" />
         </div>
-        <div className="inputs">
+        <div className="inputs" style={{marginTop:"300px"}}>
           <TextField
             error={authfailed}
             onChange={(e) => {
@@ -98,4 +98,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Adminlog;

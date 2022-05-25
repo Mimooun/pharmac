@@ -22,6 +22,7 @@ function App() {
   return (
     <Router>
       <div>
+
         <Switch >
          <Route exact path="/" component={HomePage} />
          <Route exact path="/Login" component={Login}  />
@@ -29,6 +30,7 @@ function App() {
          <Route exact path="/Signup" component={Signup} />
          <Route exact path="/Listep" component={Listep} />
          <Route exact path="/panier" component={Panier} />
+         <Route exact path="/Detailsproduct" component={Detailsproduct} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
          <Route path="/Dash" component={Dashboard} />
         </Switch>

@@ -38,6 +38,11 @@
 .contact .right .inputs .MuiTextField-root{
     width : 55% ;
 }
+.contact .right  .btn  button:hover{
+background-color: white !important;
+color: #3ecfa3;
+border: 1px solid white !important;
+}
 
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
     margin-bottom: 20px ;

@@ -13,26 +13,29 @@ import Pay from "./Pay";
 import Down from "./Down";
 import Add from "./Add";
 import Print from "./Print";
+import Liv from "./Liv";
 
 function Dashboard() {
   return (
     <Router>
       <div className="App">
+      
         <div className="app__body">
           <Sidebar />
           <div className="dashboard-container">
             <Navdash />
             <div className="dashboard-body">
               <Switch>
-                <Route exact path="/Admin" component={() => <Adminlog />} />
+                <Route exact path="/Dash/Adminlog" component={() => <Adminlog />} /> 
                 <Route exact path="/Dash" component={() => <DashboardPage />}></Route>
-                <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route>
+                 <Route exact path="/Dash/Main" component={() => <DashboardPage />}></Route> 
                 <Route exact path="/Dash/Prod" component={() => <Prod />}></Route>
                 <Route exact path="/Dash/Cmd" component={() => <Cmd />}></Route>
                 <Route exact path="/Dash/Down" component={() => <Down/>}></Route>
                 <Route exact path="/Dash/Pay" component={() => <Pay />}></Route>
                 <Route exact path="/Dash/Add" component={() => <Add />}></Route>
                 <Route exact path="/Dash/Print" component={() => <Print />}></Route>
+                <Route exact path="/Dash/Liv" component={() => <Liv />}></Route>
                 
               </Switch>
             </div>
