@@ -34,7 +34,7 @@ function Panier() {
   const [id_utilisateur, setId_utilisateur] = useState();
   const [id_commande, setId_commande] = useState();
   const [id_client, setid_client] = useState();
-  const [id_produit, setId_produit ]= useState();
+  const [id_produit, setId_produit] = useState();
   const [open, setOpen] = React.useState(false);
   var today = new Date(),
     date =
@@ -48,33 +48,31 @@ function Panier() {
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       setId_utilisateur(response.data.id);
-    });
-    Axios.post("http://localhost:3001/produitspanier", {
-      id: 1,
-    }).then((response) => {
-      setProduitPanier(response.data);
-    });
-    Axios.post("http://localhost:3001/totalPanier",{
-      idClient : 1,
-    }).then((response) => {
-      setTotalPanier(response.data);
-    });
-  }, []);
 
-
-    
+      Axios.post("http://localhost:3001/produitspanier", {
+        id: id_utilisateur,
+      }).then((response) => {
+        setProduitPanier(response.data);
+      });
+      Axios.post("http://localhost:3001/totalPanier", {
+        idClient: id_utilisateur,
+      }).then((response) => {
+        setTotalPanier(response.data);
+      });
+    });
+  }, [id_utilisateur]);
 
   function deleteCommande(id) {
     Axios.post("http://localhost:3001/deletePanier", {
-      id: id, }).then((response) => {});
+      id: id,
+    }).then((response) => {});
   }
   function addCommande() {
     Axios.post("http://localhost:3001/addcommande", {
       id: id_utilisateur,
       date: date,
-      id_commande : id_commande,
-      id_produit : id_produit,
-      TotalPanier : TotalPanier,
+      id_produit: id_produit,
+      TotalPanier: TotalPanier,
     }).then((response) => {});
   }
 
@@ -95,7 +93,7 @@ function Panier() {
       quantite: quantite,
     }).then((response) => {
       Axios.post("http://localhost:3001/produitspanier", {
-        id: 1,
+        id: id_utilisateur,
       }).then((response) => {
         setProduitPanier(response.data);
       });
@@ -106,63 +104,71 @@ function Panier() {
       <div className="title">Vos produits</div>
       <div className="cart">
         <div className="cards">
-          {produitPanier.map((produit) => (
-            <div className="card">
-              <div className="img-area">
-                <img src={doli} />
-              </div>
-              <div className="content">
-                <div className="name">{produit.libelle_produit} </div>
-                <div className="name2">{produit.prix * produit.quantite}DH</div>
-                <div className="dispo">En stock !</div>
-              </div>
-              <QuantityPicker
-                style={{ width: "40%" }}
-                value={produit.quantite}
-                min={1}
-                smooth
-                onChange={(value) => {
-                  updatequantite(produit.id_panier, value);
-                }}
-              />
-
-              <div className="trash">
-                <div className="trash">
-                  <Button
-                    startIcon={<DeleteIcon />}
-                    variant="outlined"
-                    color="error"
-                    onClick={() => {
-                      deleteCommande(produit.id_produit);
-
-                      Swal.fire({
-                        title: "êtes-vous sûr?",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3ECFA3",
-                        cancelButtonColor: "#3ECFA3",
-                        confirmButtonText: "Oui, Suprimer !",
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                          Swal.fire(
-                            "Supprimé!",
-                            "Votre produit a été supprimé.",
-                            "success"
-                          );
-                        }
-                      });
+          {produitPanier.length > 0
+            ? produitPanier.map((produit) => (
+                <div className="card">
+                  <div className="img-area">
+                    <img src={doli} />
+                  </div>
+                  <div className="content">
+                    <div className="name">{produit.libelle_produit} </div>
+                    <div className="name2">
+                      {produit.prix * produit.quantite}DH
+                    </div>
+                    <div className="dispo">En stock !</div>
+                  </div>
+                  <QuantityPicker
+                    style={{ width: "40%" }}
+                    value={produit.quantite}
+                    min={1}
+                    smooth
+                    onChange={(value) => {
+                      updatequantite(produit.id_panier, value);
                     }}
-                  >
-                    Supprimer
-                  </Button>
+                  />
+
+                  <div className="trash">
+                    <div className="trash">
+                      <Button
+                        startIcon={<DeleteIcon />}
+                        variant="outlined"
+                        color="error"
+                        onClick={() => {
+                          deleteCommande(produit.id_produit);
+
+                          Swal.fire({
+                            title: "êtes-vous sûr?",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3ECFA3",
+                            cancelButtonColor: "#3ECFA3",
+                            confirmButtonText: "Oui, Suprimer !",
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire(
+                                "Supprimé!",
+                                "Votre produit a été supprimé.",
+                                "success"
+                              );
+                            }
+                          });
+                        }}
+                      >
+                        Supprimer
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))
+            : <div className="paniervide">Panier vide</div>  }
         </div>
-        <div className="total">
-         <span className="total" >Total : </span> {TotalPanier[0].total}
-        </div>
+        {produitPanier.length > 0 ? (
+          <div className="total">
+            <span className="total">Total : </span> {TotalPanier[0].total}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="button">
         <Button
@@ -244,7 +250,7 @@ function Panier() {
                   autoFocus
                   style={{ color: "#3ecfa3" }}
                 >
-                  Confirm
+                  Confirmer
                 </Button>
               </Link>
             </DialogActions>

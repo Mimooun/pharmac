@@ -89,6 +89,7 @@
 .sec .cart .cards .card .trash {
   display: block;
   margin: auto;
+  margin-bottom:12px;
 }
 .sec .cart .card .content .name {
   font-size: 18px;
@@ -113,6 +114,12 @@
   font-size: 22px;
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.sec .paniervide{
+  text-align: center;
+  color: #3ECFA3;
+  font-size: 22px;
+  font-weight:800;
 }
 .sec .button {
   display: flex;

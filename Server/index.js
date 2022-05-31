@@ -125,7 +125,7 @@ app.post("/addcommande", (req, res) => {
   const totalPanier =req.body.totalPanier;
 
   const sqlSelect =
-    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`,`date_commande`) VALUES (NULL, ?, ?)";
+    "INSERT INTO `commande` (`id_commande`,`id_utilisateur`,`date_commande`,`status`) VALUES (NULL, ?, ?,'livre')";
   db.query(sqlSelect, [id, date], (err, result) => {
     if (err) {
       res.send({
@@ -408,7 +408,7 @@ app.post("/deletepro", (req, res) => {
 /* selection de utilisateur dash */
 
 app.get("/utilisateur", (req, res) => {
-  const sqlSelect = "SELECT * FROM `utilisateur` ";
+  const sqlSelect = "SELECT * FROM `utilisateur` where id_utilisateur=1 ";
   db.query(sqlSelect, (err, result) => {
     if (err) {
       res.send({

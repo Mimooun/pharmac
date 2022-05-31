@@ -364,6 +364,74 @@ const [activeCategorie, setActiveCategorie] = useState(1);
             </div>
           </OwlCarousel>
         </div>
+        <div
+          className="medicaments"
+          style={{ display: activeCategorie === 3 ? "grid" : "none" }}
+        >
+          <Link to="/Detailsproduct">
+            <div className="medicament">
+              <div className="img-medicament">
+                <img src={doliprane} alt="" />
+              </div>
+              <div className="title-medicament">Doliprane</div>
+              <div className="prix">10.00</div>
+            </div>
+          </Link>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={aspegic} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={aspegic} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+          <div className="medicament">
+            <div className="img-medicament">
+              <img src={doliprane} alt="" />
+            </div>
+            <div className="title-medicament">Doliprane</div>
+            <div className="prix">10.00</div>
+          </div>
+        </div>
+        {/*fin products comprimer  */}
       </div>
     </section>
   );

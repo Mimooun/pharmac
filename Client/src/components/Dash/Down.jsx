@@ -27,14 +27,17 @@ import logo from "../Dash/assets/SOSpharma2.png";
 
 import "../../styles/Dash/down.css";
 function Down() {
-  const [id_utilisateur, setId_utilisateur] = useState([]);
+  const [id_utilisateur, setId_utilisateur] = useState([""]);
   const [produit, setproduit] = useState([]);
   const [produitPanier, setProduitPanier] = useState([]);
   const [TotalPanier, setTotalPanier] = useState([""]);
 
+
+  
+
   useEffect(() => {
-    Axios.get("http://localhost:3001/utilisateur").then((response) => {
-      console.log(response.data.id);
+    Axios.get("http://localhost:3001/utilisateur" ).then((response) => {
+      //console.log(response.data.id);
       setId_utilisateur(response.data);
     });
     Axios.post("http://localhost:3001/produitspanier", {
@@ -47,7 +50,7 @@ function Down() {
     }).then((response) => {
       setTotalPanier(response.data);
     });
-  }, []);
+  }, [] );
 
   return (
     <section className="down">
