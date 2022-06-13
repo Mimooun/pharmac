@@ -1,98 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import "../../styles/Dash/adminlog.css";
-import sos from '../../assets/images/SOSpharma2.png'
-import TextField from "@material-ui/core/TextField";
-import Alert from "@material-ui/lab/Alert";
-import Button from "@material-ui/core/Button";
-import Axios from "axios";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import adlg from "../../assets/images/SOSpharma2.png";
 
 function Adminlog() {
-  let history = useHistory();
-  const [username, SetUsername] = useState("");
-  const [password, SetPassword] = useState("");
-  const [authfailed, SetAuthFailed] = useState(false);
-
-  function submitLogin() {
-    Axios.post("http://localhost:3001/Login", {
-      username: username,
-      password: password,
-    }).then((response) => {
-      if (response.data.length > 0) {
-        // history.push({
-        // pathname: "/Dash",
-        //  });
-
-        
-      } else if (response.data.message === "Authentication failed") {
-        SetAuthFailed(true);
-      }
-    });
-  }
-
   return (
-    <section className="signUp" style={{marginTop:"300px"}}>
-      <div className="container__form">
-        <Alert
-          className={authfailed ? "active" : ""}
-          severity="error"
-          onClose={() => {
-            SetAuthFailed(false);
-          }}
-        >
-          Authentication failed - try again!
-        </Alert>
-        <div className="icon-container">
-          <img src={sos} alt="" />
+    <section className="adminform">
+      <div className="admininputs">
+        <div className="logoadmin">
+          <img src={adlg} alt="" />
         </div>
-        <div className="inputs" style={{marginTop:"300px"}}>
-          <TextField
-            error={authfailed}
-            onChange={(e) => {
-              SetAuthFailed(false);
-              SetUsername(e.target.value);
-            }}
-            fullWidth
-            size="small"
-            label="Username"
-            variant="outlined"
-          />
-          <TextField
-            error={authfailed}
-            onChange={(e) => {
-              SetAuthFailed(false);
-              SetPassword(e.target.value);
-            }}
-            fullWidth
-            type="password"
-            autoComplete="current-password"
-            size="small"
-            label="Password"
-            variant="outlined"
-          />
-        </div>
-        <p>Forgot Password ?</p>
-        <div className="btn">
+        <TextField
+          style={{ display: "flex", margin: "auto", width: "60%" }}
+          id="outlined-basic"
+          label="Login"
+          variant="outlined"
+        />
+        <TextField
+          style={{ display: "flex", margin: "auto", width: "60%" }}
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          type="password"
+        />
+        <Link to="/Dash">
           <Button
-            onClick={() => {
-              submitLogin();
-            }}
-            fullWidth
-            disableElevation
+            style={{ display: "block", margin: "auto", background: "#3ecfa3" }}
             variant="contained"
           >
-            Login
+            Connexion
           </Button>
-        </div>
-        {/* <div className="register">
-          <Link to="/Signup">
-            <p>
-              Don't have an account ? <span className="lien">Register</span>
-            </p>
-
-          </Link>
-        </div> */}
+        </Link>
       </div>
     </section>
   );

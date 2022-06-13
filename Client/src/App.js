@@ -13,8 +13,9 @@ import Signup from "../src/components/Signup";
 import Listep from "./components/Listep";
 import Detailsproduct from "./components/Detailsproduct";
 import Panier from "./components/Panier";
-import Dashboard from './components/Dash/Dashboard'
+import Adminlog from "./components/Dash/Adminlog";
 import Axios from "axios";
+import Dashboard from "./components/Dash/Dashboard";
 
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
          <Route exact path="/panier" component={Panier} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
          <Route exact path="/Detailsproduct" component={Detailsproduct} />
-         <Route path="/Dash" component={Dashboard} />
+         <Route exact path="/Dash" component={Dashboard} />
+         <Route  path="/Adminlog" component={Adminlog} />
         </Switch>
       </div>
     </Router>
