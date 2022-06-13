@@ -30,7 +30,7 @@ function Adminlog() {
             style={{ display: "block", margin: "auto", background: "#3ecfa3" }}
             variant="contained"
           >
-            Zaml
+            Cnx
           </Button>
         </Link>
       </div>
