@@ -168,7 +168,7 @@ export default function FormPropsTextFields() {
         autoComplete="off"
       >
         <div className="max-width">
-          <div className="titre">Commande</div>
+          <div className="titre">Commandez ici !</div>
           <div className="box">
             <div className="textfield-container">
               <div className="inp">

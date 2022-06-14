@@ -97,7 +97,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
                 <img src={doliprane} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">35.00</div>
             </div>
           </Link>
 
@@ -106,7 +106,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={aspegic} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">30.00</div>
           </div>
 
           <div className="medicament">
@@ -114,7 +114,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={doliprane} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">35.00</div>
           </div>
 
           <div className="medicament">
@@ -122,7 +122,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={aspegic} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">30.00</div>
           </div>
 
           <div className="medicament">
@@ -130,28 +130,28 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={doliprane} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">35.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={doliprane} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">35.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={doliprane} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">35.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={doliprane} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">35.00</div>
           </div>
         </div>
         {/*fin products comprimer  */}
@@ -168,7 +168,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
                 <img src={doliprane} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">35.00</div>
             </div>
 
             <div className="best-medicament">
@@ -176,23 +176,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
                 <img src={aspegic} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
-            </div>
-
-            <div className="best-medicament">
-              <div className="img-medicament">
-                <img src={doliprane} alt="" />
-              </div>
-              <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
-            </div>
-
-            <div className="best-medicament">
-              <div className="img-medicament">
-                <img src={aspegic} alt="" />
-              </div>
-              <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">30.00</div>
             </div>
 
             <div className="best-medicament">
@@ -200,28 +184,44 @@ const [activeCategorie, setActiveCategorie] = useState(1);
                 <img src={doliprane} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">35.00</div>
+            </div>
+
+            <div className="best-medicament">
+              <div className="img-medicament">
+                <img src={aspegic} alt="" />
+              </div>
+              <div className="title-medicament">Doliprane</div>
+              <div className="prix">30.00</div>
+            </div>
+
+            <div className="best-medicament">
+              <div className="img-medicament">
+                <img src={doliprane} alt="" />
+              </div>
+              <div className="title-medicament">Doliprane</div>
+              <div className="prix">35.00</div>
             </div>
             <div className="best-medicament">
               <div className="img-medicament">
                 <img src={aspegic} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">30.00</div>
             </div>
             <div className="best-medicament">
               <div className="img-medicament">
                 <img src={doliprane} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">35.00</div>
             </div>
             <div className="best-medicament">
               <div className="img-medicament">
                 <img src={aspegic} alt="" />
               </div>
               <div className="title-medicament">Doliprane</div>
-              <div className="prix">10.00</div>
+              <div className="prix">30.00</div>
             </div>
           </OwlCarousel>
         </div>
@@ -238,7 +238,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
 
           <div className="medicament">
@@ -246,7 +246,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
 
           <div className="medicament">
@@ -254,7 +254,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
 
           <div className="medicament">
@@ -262,7 +262,7 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
 
           <div className="medicament">
@@ -270,28 +270,28 @@ const [activeCategorie, setActiveCategorie] = useState(1);
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
           <div className="medicament">
             <div className="img-medicament">
               <img src={gelule} alt="" />
             </div>
             <div className="title-medicament">Doliprane</div>
-            <div className="prix">10.00</div>
+            <div className="prix">25.00</div>
           </div>
         </div>
 
