@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Dash/Sidebar.css";
+import "../../styles/Dash/sidebar.css";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
@@ -51,26 +51,26 @@ function Sidebar() {
           </li>
         </NavLink>
 
-        { <NavLink to="/Dash/Liv">
-          <li>
-            <div className="menu__icon">
-              <RiMoneyEuroCircleFill />
-            </div>
-            Livraison
-          </li>
-        </NavLink> }
-        <li>
-          <div className="menu__icon">
-            <GoSettings />
-          </div>
-          Settings
-        </li>
-        <li onClick={logoutClick}>
-          <div className="menu__icon">
-            <CgLogOut />
-          </div>
-          Logout
-        </li>
+        {
+          <NavLink to="/Dash/Liv">
+            <li>
+              <div className="menu__icon">
+                <RiMoneyEuroCircleFill />
+              </div>
+              Livraison
+            </li>
+          </NavLink>
+        }
+        {
+          <NavLink to="/Adminlog">
+            <li onClick={logoutClick}>
+              <div className="menu__icon">
+                <CgLogOut />
+              </div>
+              Logout
+            </li>
+          </NavLink>
+        }
       </ul>
       <div className="copyRight">
         <div>

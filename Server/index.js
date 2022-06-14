@@ -50,6 +50,42 @@ app.use(
 
 /** login script */
 
+app.post("/loginadmin", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const sqlSelect = "SELECT * FROM admin WHERE `username` = ? and `password` = ?";
+  db.query(sqlSelect, [username, password], (err, result) => {
+      if (err) {
+          res.send({
+              err: err
+          })
+      } else {
+          if (result.length == 0) {
+              res.send({
+                  message: "Authentication failed"
+              })
+          } else {
+              req.session.user = result;
+              res.send(result);
+          }
+      }
+  });
+});
+
+/** fon login script */
+
+/** logout sceript */
+
+app.post("/logout", (req, res) => {
+  req.session.destroy();
+});
+
+;
+
+/** fin logout script */
+
+/** login script */
+
 app.post("/Login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
