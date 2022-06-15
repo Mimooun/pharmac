@@ -29,7 +29,7 @@ function DashboardPage() {
                             92
                         </div>
                         <div className="title">
-                            Commande
+                            Commandes
                         </div>
                     </div>
                     <FiShoppingBag />
@@ -40,7 +40,7 @@ function DashboardPage() {
                             356
                         </div>
                         <div className="title">
-                            Product
+                            Produits
                         </div>
                     </div>
                     <FaBriefcaseMedical />
@@ -48,10 +48,10 @@ function DashboardPage() {
                 <div className="card">
                     <div className="card-info">
                         <div className="number">
-                            $682.25
+                            MAD 6892.25
                         </div>
                         <div className="title">
-                            Incomes
+                            Revenu
                         </div>
                     </div>
                     <MdAttachMoney />
@@ -87,7 +87,7 @@ function DashboardPage() {
                 <div className="table-info">
                     <div className="divider"></div>
                     <div className="title">
-                        Recent  Registration
+                        Registration récentes
                     </div>
                     <div className="text">
                         Lorem ipsum dolor

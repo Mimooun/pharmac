@@ -115,7 +115,7 @@ function Cmd() {
     <div style={{ marginTop: "150px" }}>
       <MaterialTable
         icons={tableIcons}
-        title="Commande"
+        title="Commandes"
         columns={[
           { title: "ID Commande", field: "id_commande" },
           { title: "Utilisateur", field: "id_utilisateur" },
