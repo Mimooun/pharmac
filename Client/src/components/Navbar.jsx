@@ -60,7 +60,7 @@ function Navbar() {
         </div>
         <div className="menu">
           <ul>
-          <a className="nav-link3" onClick={scrollToTestDiv3}> <li>Nouveautés</li>   </a>
+          <a className="nav-link3" onClick={scrollToTestDiv3}> <li>Présentation</li>   </a>
             <Link to="/Listep">
               <li>Produits</li>
             </Link>

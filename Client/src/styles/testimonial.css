@@ -43,6 +43,7 @@ border-radius: 50%;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
+    margin-top: 20px;
 }
 .testimonial .container .customer .nom{
     color: #3ECFA3;
